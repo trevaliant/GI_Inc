@@ -41,12 +41,12 @@ namespace GI_Inc.Forms
                 string query = "SELECT agentId, concat(agentName, ' --ID#:', agentId) as Display FROM agent ";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
-                DataTable dt1 = new DataTable();
+                DataSet dataSet1 = new DataSet();
 
-                mySqlDataAdapter.Fill(dt1);
-                cbAgent.ValueMember = dt1.Columns[0].ToString();
+                mySqlDataAdapter.Fill(dataSet1, "Agent");
+                cbAgent.ValueMember = "agentId";
                 cbAgent.DisplayMember = "Display";
-                cbAgent.DataSource = dt1;
+                cbAgent.DataSource = dataSet1.Tables["Agent"];
             }
             catch (Exception ex)
             {
@@ -138,6 +138,7 @@ namespace GI_Inc.Forms
                 {
                     DataRowView dataRowView = cbAppointment.SelectedItem as DataRowView;
                     int custID = Convert.ToInt32(cbAppointment.SelectedValue);
+                    int agentID = Convert.ToInt32(cbAgent.SelectedValue);
                     DateTime start = dtStart.Value.ToUniversalTime();
                     DateTime end = dtEnd.Value.ToUniversalTime();
 
@@ -145,7 +146,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbType.SelectedItem.ToString(), cbLocation.SelectedItem.ToString(), start, end, cbAgent.SelectedItem.ToString()); ;
+                            CalendarObject.createAppointment(custID, cbType.SelectedItem.ToString(), cbLocation.SelectedItem.ToString(), start, end, agentID) ;
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();

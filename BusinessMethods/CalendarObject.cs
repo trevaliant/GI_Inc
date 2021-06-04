@@ -93,14 +93,14 @@ namespace GI_Inc.BusinessMethods
             return 0;
         }
 
-        public static void createAppointment(int custID, string location, string type, DateTime start, DateTime end, string agentName)
+        public static void createAppointment(int custID, string location, string type, DateTime start, DateTime end, int agentId)
         {
             int appointID = getID("appointment", "appointmentId") + 1;
             DateTime utc = getTime();
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
-            var query = $"INSERT into appointment (appointmentId, customerId, userId, location, type, start, end, agentName)" +
-                $"VALUES ('{appointID}', '{custID}','{getUserID()}', '{location}', '{type}', '{DTSql(start)}', '{DTSql(end)}', '{agentName}')";
+            var query = $"INSERT into appointment (appointmentId, customerId, userId, location, type, start, end, agentId)" +
+                $"VALUES ('{appointID}', '{custID}','{getUserID()}', '{location}', '{type}', '{DTSql(start)}', '{DTSql(end)}', '{agentId}')";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -172,7 +172,7 @@ namespace GI_Inc.BusinessMethods
                     list.Add(new KeyValuePair<string, object>("type", reader[7]));
                     list.Add(new KeyValuePair<string, object>("start", reader[9]));
                     list.Add(new KeyValuePair<string, object>("end", reader[10]));
-                    list.Add(new KeyValuePair<string, object>("agentName", reader[15]));
+                    list.Add(new KeyValuePair<string, object>("agentId", reader[15]));
                     reader.Close();
                 }
                 else
@@ -207,7 +207,7 @@ namespace GI_Inc.BusinessMethods
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
 
-            var query = $"UPDATE appointment SET customerId = '{dictionary["customerId"]}',  location = '{dictionary["location"]}',type = '{dictionary["type"]}',  start = '{DTSql(start.ToUniversalTime())}', end = '{DTSql(end.ToUniversalTime())}', url = '{dictionary["url"]}', agentName = '{dictionary["agentName"]} WHERE appointmentId = '{dictionary["appointmentId"]}'";
+            var query = $"UPDATE appointment SET customerId = '{dictionary["customerId"]}',  location = '{dictionary["location"]}',type = '{dictionary["type"]}',  start = '{DTSql(start.ToUniversalTime())}', end = '{DTSql(end.ToUniversalTime())}', url = '{dictionary["url"]}', agentId = '{dictionary["agentId"]} WHERE appointmentId = '{dictionary["appointmentId"]}'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             cmd.ExecuteNonQuery();

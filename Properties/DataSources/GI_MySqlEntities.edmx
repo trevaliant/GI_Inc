@@ -46,15 +46,15 @@
           <Property Name="address" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="address2" Type="varchar" MaxLength="45" />
           <Property Name="city" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="cityId" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="state" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="postalCode" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="countryId" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="country" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="createDate" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="createdBy" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="lastUpdate" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="lastUpdateBy" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Precision="0" />
+          <Property Name="createdBy" Type="varchar" MaxLength="40" />
+          <Property Name="lastUpdate" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+          <Property Name="lastUpdateBy" Type="varchar" MaxLength="40" />
+          <Property Name="email" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -117,6 +117,8 @@
           <Property Name="createdBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lastUpdate" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="lastUpdateBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -178,16 +180,16 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="U06P8DModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="customerId" ColumnName="customerId" />
                 <ScalarProperty Name="customerName" ColumnName="customerName" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="address2" ColumnName="address2" />
                 <ScalarProperty Name="city" ColumnName="city" />
-                <ScalarProperty Name="cityId" ColumnName="cityId" />
                 <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="postalCode" ColumnName="postalCode" />
-                <ScalarProperty Name="countryId" ColumnName="countryId" />
                 <ScalarProperty Name="country" ColumnName="country" />
                 <ScalarProperty Name="createDate" ColumnName="createDate" />
                 <ScalarProperty Name="createdBy" ColumnName="createdBy" />

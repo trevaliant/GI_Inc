@@ -29,5 +29,7 @@ namespace GI_Inc.Properties.DataSources
         public string createdBy { get; set; }
         public System.DateTime lastUpdate { get; set; }
         public string lastUpdateBy { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
     }
 }

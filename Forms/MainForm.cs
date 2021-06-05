@@ -14,7 +14,7 @@ namespace GI_Inc
 {
     public partial class MainForm : Form
     {
-
+        user currentUser;
         public MainForm()
         {
             InitializeComponent();
@@ -29,6 +29,9 @@ namespace GI_Inc
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            CustomerAdd customerAdd = new CustomerAdd(currentUser);
+            customerAdd.Show();
+            Hide();
 
         }
 

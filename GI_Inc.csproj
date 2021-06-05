@@ -145,45 +145,45 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\DataSources\agent.cs">
+    <Compile Include="DataSources\agent.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\appointment.cs">
+    <Compile Include="DataSources\appointment.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\customer.cs">
+    <Compile Include="DataSources\customer.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\GI_MySqlEntities.Context.cs">
+    <Compile Include="DataSources\GI_MySqlEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GI_MySqlEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\GI_MySqlEntities.cs">
+    <Compile Include="DataSources\GI_MySqlEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\GI_MySqlEntities.Designer.cs">
+    <Compile Include="DataSources\GI_MySqlEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GI_MySqlEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\user.cs">
+    <Compile Include="DataSources\user.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\DataSources\Classes\User.cs" />
-    <Compile Include="U06P8DDataSet.Designer.cs">
+    <Compile Include="DataSources\Classes\User.cs" />
+    <Compile Include="DataSources\U06P8DDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="U06P8DDataSet1.Designer.cs">
+    <Compile Include="DataSources\U06P8DDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="U06P8DDataSet2.Designer.cs">
+    <Compile Include="DataSources\U06P8DDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
@@ -216,11 +216,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <EntityDeploy Include="Properties\DataSources\GI_MySqlEntities.edmx">
+    <EntityDeploy Include="DataSources\GI_MySqlEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GI_MySqlEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Properties\DataSources\GI_MySqlEntities.edmx.diagram">
+    <None Include="DataSources\GI_MySqlEntities.edmx.diagram">
       <DependentUpon>GI_MySqlEntities.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -232,37 +232,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="U06P8DDataSet.xsc">
+    <None Include="DataSources\U06P8DDataSet.xsc">
       <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
     </None>
-    <None Include="U06P8DDataSet.xsd">
+    <None Include="DataSources\U06P8DDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>U06P8DDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="U06P8DDataSet.xss">
+    <None Include="DataSources\U06P8DDataSet.xss">
       <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
     </None>
-    <None Include="U06P8DDataSet1.xsc">
+    <None Include="DataSources\U06P8DDataSet1.xsc">
       <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="U06P8DDataSet1.xsd">
+    <None Include="DataSources\U06P8DDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>U06P8DDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="U06P8DDataSet1.xss">
+    <None Include="DataSources\U06P8DDataSet1.xss">
       <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="U06P8DDataSet2.xsc">
+    <None Include="DataSources\U06P8DDataSet2.xsc">
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="U06P8DDataSet2.xsd">
+    <None Include="DataSources\U06P8DDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>U06P8DDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="U06P8DDataSet2.xss">
+    <None Include="DataSources\U06P8DDataSet2.xss">
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
@@ -274,12 +274,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Properties\DataSources\GI_MySqlEntities.Context.tt">
+    <Content Include="DataSources\GI_MySqlEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GI_MySqlEntities.edmx</DependentUpon>
       <LastGenOutput>GI_MySqlEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Properties\DataSources\GI_MySqlEntities.tt">
+    <Content Include="DataSources\GI_MySqlEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GI_MySqlEntities.edmx</DependentUpon>
       <LastGenOutput>GI_MySqlEntities.cs</LastGenOutput>

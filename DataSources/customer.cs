@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GI_Inc.Properties.DataSources
+namespace GI_Inc.DataSources
 {
     using System;
     using System.Collections.Generic;

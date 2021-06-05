@@ -20,15 +20,13 @@ namespace GI_Inc.Properties.DataSources
         public string title { get; set; }
         public string description { get; set; }
         public string location { get; set; }
-        public string contact { get; set; }
         public string type { get; set; }
-        public string url { get; set; }
         public System.DateTime start { get; set; }
         public System.DateTime end { get; set; }
         public Nullable<System.DateTime> createDate { get; set; }
         public string createdBy { get; set; }
         public Nullable<System.DateTime> lastUpdate { get; set; }
         public string lastUpdateBy { get; set; }
-        public string agent { get; set; }
+        public int agentId { get; set; }
     }
 }

@@ -137,6 +137,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\DataSources\agent.cs">
+      <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\DataSources\appointment.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
@@ -162,6 +165,21 @@
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\DataSources\Classes\User.cs" />
+    <Compile Include="U06P8DDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="U06P8DDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="U06P8DDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AppointmentAdd.resx">
       <DependentUpon>AppointmentAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +221,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="U06P8DDataSet.xsc">
+      <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>U06P8DDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="U06P8DDataSet.xss">
+      <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet1.xsc">
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>U06P8DDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="U06P8DDataSet1.xss">
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet2.xsc">
+      <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>U06P8DDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="U06P8DDataSet2.xss">
+      <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

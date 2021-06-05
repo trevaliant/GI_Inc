@@ -40,7 +40,7 @@ namespace GI_Inc.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbLocation = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
-            this.tbDescription = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.cbAgent = new System.Windows.Forms.ComboBox();
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
@@ -73,84 +73,84 @@ namespace GI_Inc.Forms
             // 
             lblAgent.AutoSize = true;
             lblAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblAgent.Location = new System.Drawing.Point(38, 110);
+            lblAgent.Location = new System.Drawing.Point(184, 76);
             lblAgent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblAgent.Name = "lblAgent";
-            lblAgent.Size = new System.Drawing.Size(122, 20);
+            lblAgent.Size = new System.Drawing.Size(56, 20);
             lblAgent.TabIndex = 113;
-            lblAgent.Text = "Agent Assigned";
+            lblAgent.Text = "Agent:";
             // 
             // startLabel
             // 
             startLabel.AutoSize = true;
             startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            startLabel.Location = new System.Drawing.Point(112, 391);
+            startLabel.Location = new System.Drawing.Point(116, 284);
             startLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             startLabel.Name = "startLabel";
-            startLabel.Size = new System.Drawing.Size(44, 20);
+            startLabel.Size = new System.Drawing.Size(125, 20);
             startLabel.TabIndex = 105;
-            startLabel.Text = "Start";
+            startLabel.Text = "Start Date/Time:";
             // 
             // endLabel
             // 
             endLabel.AutoSize = true;
             endLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            endLabel.Location = new System.Drawing.Point(118, 445);
+            endLabel.Location = new System.Drawing.Point(122, 338);
             endLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             endLabel.Name = "endLabel";
-            endLabel.Size = new System.Drawing.Size(38, 20);
+            endLabel.Size = new System.Drawing.Size(119, 20);
             endLabel.TabIndex = 106;
-            endLabel.Text = "End";
+            endLabel.Text = "End Date/Time:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(94, 151);
+            label7.Location = new System.Drawing.Point(166, 176);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(70, 20);
+            label7.Size = new System.Drawing.Size(74, 20);
             label7.TabIndex = 102;
-            label7.Text = "Location";
+            label7.Text = "Location:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(75, 246);
+            label6.Location = new System.Drawing.Point(55, 226);
             label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(89, 20);
+            label6.Size = new System.Drawing.Size(185, 20);
             label6.TabIndex = 101;
-            label6.Text = "Description";
+            label6.Text = "Appointment description:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(37, 64);
+            label5.Location = new System.Drawing.Point(158, 29);
             label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(127, 20);
+            label5.Size = new System.Drawing.Size(82, 20);
             label5.TabIndex = 95;
-            label5.Text = "Select Customer";
+            label5.Text = "Customer:";
             // 
             // typeLabel
             // 
             typeLabel.AutoSize = true;
             typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            typeLabel.Location = new System.Drawing.Point(112, 21);
+            typeLabel.Location = new System.Drawing.Point(80, 132);
             typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             typeLabel.Name = "typeLabel";
-            typeLabel.Size = new System.Drawing.Size(43, 20);
+            typeLabel.Size = new System.Drawing.Size(160, 20);
             typeLabel.TabIndex = 90;
-            typeLabel.Text = "Type";
+            typeLabel.Text = "Type of Appointment:";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cbLocation);
             this.panel2.Controls.Add(this.cbType);
-            this.panel2.Controls.Add(this.tbDescription);
+            this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Controls.Add(this.cbAgent);
             this.panel2.Controls.Add(lblAgent);
             this.panel2.Controls.Add(this.dtStart);
@@ -169,81 +169,83 @@ namespace GI_Inc.Forms
             this.panel2.Location = new System.Drawing.Point(21, 155);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 490);
+            this.panel2.Size = new System.Drawing.Size(779, 406);
             this.panel2.TabIndex = 37;
             // 
             // cbLocation
             // 
-            this.cbLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLocation.FormattingEnabled = true;
             this.cbLocation.Items.AddRange(new object[] {
-            "Onsite",
+            "On-Site",
             "Online"});
-            this.cbLocation.Location = new System.Drawing.Point(216, 153);
+            this.cbLocation.Location = new System.Drawing.Point(261, 175);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.Size = new System.Drawing.Size(198, 21);
+            this.cbLocation.Size = new System.Drawing.Size(293, 28);
             this.cbLocation.TabIndex = 4;
             // 
             // cbType
             // 
             this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Sales",
             "Technical Support"});
-            this.cbType.Location = new System.Drawing.Point(216, 20);
+            this.cbType.Location = new System.Drawing.Point(259, 131);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(198, 21);
+            this.cbType.Size = new System.Drawing.Size(293, 28);
             this.cbType.TabIndex = 1;
             // 
-            // tbDescription
+            // txtDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(217, 213);
-            this.tbDescription.Multiline = true;
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(197, 126);
-            this.tbDescription.TabIndex = 5;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(262, 228);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(292, 26);
+            this.txtDescription.TabIndex = 5;
             // 
             // cbAgent
             // 
             this.cbAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAgent.FormattingEnabled = true;
-            this.cbAgent.Location = new System.Drawing.Point(217, 112);
+            this.cbAgent.Location = new System.Drawing.Point(262, 78);
             this.cbAgent.Name = "cbAgent";
-            this.cbAgent.Size = new System.Drawing.Size(197, 21);
+            this.cbAgent.Size = new System.Drawing.Size(292, 28);
             this.cbAgent.TabIndex = 3;
-
             // 
             // dtStart
             // 
             this.dtStart.CustomFormat = "yyy-MM-dd hh:mm:ss tt";
-            this.dtStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStart.Location = new System.Drawing.Point(218, 391);
+            this.dtStart.Location = new System.Drawing.Point(262, 284);
             this.dtStart.Margin = new System.Windows.Forms.Padding(2);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(197, 22);
+            this.dtStart.Size = new System.Drawing.Size(292, 26);
             this.dtStart.TabIndex = 6;
             // 
             // dtEnd
             // 
             this.dtEnd.CustomFormat = "yyy-MM-dd hh:mm:ss tt";
-            this.dtEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEnd.Location = new System.Drawing.Point(218, 445);
+            this.dtEnd.Location = new System.Drawing.Point(262, 338);
             this.dtEnd.Margin = new System.Windows.Forms.Padding(2);
             this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(197, 22);
+            this.dtEnd.Size = new System.Drawing.Size(292, 26);
             this.dtEnd.TabIndex = 7;
             // 
             // cbAppointment
             // 
             this.cbAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAppointment.FormattingEnabled = true;
-            this.cbAppointment.Location = new System.Drawing.Point(217, 66);
+            this.cbAppointment.Location = new System.Drawing.Point(260, 29);
             this.cbAppointment.Name = "cbAppointment";
-            this.cbAppointment.Size = new System.Drawing.Size(197, 21);
+            this.cbAppointment.Size = new System.Drawing.Size(292, 28);
             this.cbAppointment.TabIndex = 2;
             this.cbAppointment.SelectedValueChanged += new System.EventHandler(this.cbAppointment_SelectedValueChanged_1);
             // 
@@ -259,10 +261,11 @@ namespace GI_Inc.Forms
             // 
             // btnBackToDash
             // 
-            this.btnBackToDash.Location = new System.Drawing.Point(678, 408);
+            this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToDash.Location = new System.Drawing.Point(625, 143);
             this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToDash.Name = "btnBackToDash";
-            this.btnBackToDash.Size = new System.Drawing.Size(76, 37);
+            this.btnBackToDash.Size = new System.Drawing.Size(103, 58);
             this.btnBackToDash.TabIndex = 10;
             this.btnBackToDash.Text = "Back to Dashboard";
             this.btnBackToDash.UseVisualStyleBackColor = true;
@@ -270,10 +273,11 @@ namespace GI_Inc.Forms
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(476, 408);
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(625, 223);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(76, 37);
+            this.btnReset.Size = new System.Drawing.Size(103, 58);
             this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset Form";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -281,10 +285,11 @@ namespace GI_Inc.Forms
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(582, 408);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(625, 306);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(76, 37);
+            this.btnSave.Size = new System.Drawing.Size(103, 58);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -319,9 +324,9 @@ namespace GI_Inc.Forms
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(283, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(329, 46);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(245, 86);
+            this.pictureBox2.Size = new System.Drawing.Size(122, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -374,7 +379,7 @@ namespace GI_Inc.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 645);
+            this.ClientSize = new System.Drawing.Size(800, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -383,7 +388,8 @@ namespace GI_Inc.Forms
             this.Name = "AppointmentAdd";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AppointmentAdd1cs";
+            this.Text = "Appointment Add";
+            this.Load += new System.EventHandler(this.AppointmentAdd_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -413,7 +419,7 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbDescription;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ComboBox cbLocation;
     }

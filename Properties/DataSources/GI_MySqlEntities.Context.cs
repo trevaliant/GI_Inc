@@ -28,5 +28,6 @@ namespace GI_Inc.Properties.DataSources
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<agent> agents { get; set; }
     }
 }

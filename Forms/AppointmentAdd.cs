@@ -25,9 +25,10 @@ namespace GI_Inc.Forms
         }
         public void cbDefaultSettings()
         {
-            cbAgent.Text = "--Choose--";
-            cbAppointment.Text = "--Choose--";
-            cbAppointment.Text = "--Choose--";
+
+            cbAppointment.SelectedItem = null;
+            cbAgent.SelectedItem = null;
+            cbType.Text = "--Choose--";
             cbLocation.Text   = "--Choose--";
             btnSave.Enabled = false;
 
@@ -47,6 +48,7 @@ namespace GI_Inc.Forms
                 cbAgent.ValueMember = "agentId";
                 cbAgent.DisplayMember = "Display";
                 cbAgent.DataSource = dataSet1.Tables["Agent"];
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -65,10 +67,12 @@ namespace GI_Inc.Forms
                 conn.Open();
                 DataSet dataSet = new DataSet();
                 mySqlDataAdapter.Fill(dataSet, "Cust");
+
+
                 cbAppointment.DisplayMember = "Display";
                 cbAppointment.ValueMember = "customerId";
-                cbAppointment.DataSource = dataSet.Tables["Cust"];
-
+                cbAppointment.DataSource = dataSet.Tables["cust"];
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -125,7 +129,7 @@ namespace GI_Inc.Forms
         private void cbAppointment_SelectedValueChanged_1(object sender, EventArgs e)
         {
             cbLocation.Enabled = true;
-            tbDescription.Enabled = true;
+            txtDescription.Enabled = true;
             btnSave.Enabled = true;
         }
 
@@ -146,7 +150,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbType.SelectedItem.ToString(), cbLocation.SelectedItem.ToString(), start, end, agentID) ;
+                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(), txtDescription.ToString(), start, end, agentID) ;
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();
@@ -191,6 +195,9 @@ namespace GI_Inc.Forms
             Hide();
         }
 
+        private void AppointmentAdd_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

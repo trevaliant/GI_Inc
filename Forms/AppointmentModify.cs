@@ -1,5 +1,4 @@
 ﻿using GI_Inc.BusinessMethods;
-using GI_Inc.Properties.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;

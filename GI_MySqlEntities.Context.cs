@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GI_Inc.DataSources
+namespace GI_Inc
 {
     using System;
     using System.Data.Entity;

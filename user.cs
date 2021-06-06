@@ -7,26 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GI_Inc.DataSources
+namespace GI_Inc
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class appointment
+    public partial class user
     {
-        public int appointmentId { get; set; }
-        public int customerId { get; set; }
         public int userId { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        public string location { get; set; }
-        public string type { get; set; }
-        public System.DateTime start { get; set; }
-        public System.DateTime end { get; set; }
-        public Nullable<System.DateTime> createDate { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public sbyte active { get; set; }
+        public System.DateTime createDate { get; set; }
         public string createdBy { get; set; }
-        public Nullable<System.DateTime> lastUpdate { get; set; }
+        public System.DateTime lastUpdate { get; set; }
         public string lastUpdateBy { get; set; }
-        public int agentId { get; set; }
     }
 }

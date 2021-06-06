@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GI_Inc.DataSources
+namespace GI_Inc
 {
     using System;
     using System.Collections.Generic;
@@ -20,10 +20,8 @@ namespace GI_Inc.DataSources
         public string address { get; set; }
         public string address2 { get; set; }
         public string city { get; set; }
-        public string cityId { get; set; }
         public string state { get; set; }
         public string postalCode { get; set; }
-        public string countryId { get; set; }
         public string country { get; set; }
         public System.DateTime createDate { get; set; }
         public string createdBy { get; set; }

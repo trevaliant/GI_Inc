@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace GI_Inc.DataSources {
+namespace GI_Inc {
     
     
     /// <summary>
@@ -582,7 +582,7 @@ namespace GI_Inc.DataSources {
         }
     }
 }
-namespace GI_Inc.DataSources.U06P8DDataSetTableAdapters {
+namespace GI_Inc.U06P8DDataSetTableAdapters {
     
     
     /// <summary>

@@ -108,10 +108,8 @@
           <Property Name="address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="address2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="city" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="cityId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="state" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="postalCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="countryId" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="country" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="createDate" Type="DateTime" Nullable="false" />
           <Property Name="createdBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />

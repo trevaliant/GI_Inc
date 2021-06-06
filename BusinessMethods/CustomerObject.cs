@@ -1,5 +1,4 @@
-﻿using GI_Inc.Properties.DataSources;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -91,8 +90,7 @@ namespace GI_Inc.BusinessMethods
         {
             conn.Open();
             CustomerInfo customerInfo = new CustomerInfo();
-            string query = "SELECT customer.customerName, customer.address, customer.address2, customer.city, customer.state, " +
-                "customer.postalCode, customer.phone, customer.country, customer.email FROM customer";
+            string query = "SELECT customer.customerName, customer.address, customer.address2, customer.city, customer.state, customer.postalCode, customer.phone, customer.country, customer.email FROM customer";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@customerId", customerId);
 
@@ -123,7 +121,7 @@ namespace GI_Inc.BusinessMethods
             {
                 conn.Open();
                 string updateObject = "UPDATE customer SET customerName = @customerName WHERE customerId = @customerId, " +
-                                      "address = @address, address2 = @address2, city=@city, state=@state, postalCode = @postalCode, phone = @phone, country=@country, email=@email";
+                                      "address = @address, address2 = @address2, city = @city, state = @state, postalCode = @postalCode, phone = @phone, country=@country, email=@email";
              
 
 
@@ -173,14 +171,14 @@ namespace GI_Inc.BusinessMethods
             try
             {
                 conn.Open();
-                string query = "SELECT customer.customerId, customer.customerName,customer.address, customer.address2, customer.city, customer.phone, customer.postalCode,  customer.country, customer.email ";
+                string query = "SELECT customer.customerId, customer.customerName,customer.address, customer.address2, customer.city, customer.state, customer.phone, customer.postalCode,  customer.country, customer.email ";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         customersDataTable.Rows.Add(reader["customerId"], reader["customerName"], reader["address"],
-                            reader["address2"], reader["city"], reader["postalCode"], reader["phone"], reader["country"], reader["email"]);
+                            reader["address2"], reader["city"], reader["state"],reader["postalCode"], reader["phone"], reader["country"], reader["email"]);
                     }
                 }
 
@@ -300,8 +298,67 @@ namespace GI_Inc.BusinessMethods
             return 0;
         }
 
+        public static void updateCustomer(IDictionary<string, object> dictionary)
+        {
+            int customerId = getCustomerId();
 
+            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            conn.Open();
 
+            var query = $"UPDATE customer SET customerName = '{dictionary["customerName"]}', " +
+                $"address ='{dictionary["address"]}', address2 = '{dictionary["address2"]}', " +
+                $"city = '{dictionary["city"]}', state = '{dictionary["state"]}', " +
+                $"postalCode = '{dictionary["postalCode"]}', country = '{dictionary["country"]}', " +
+                $"phone = '{dictionary["phone"]}', email = '{dictionary["email"]}'WHERE customerId = '{dictionary["customerId"]}'";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        private static int customerId;
+        public static int getCustomerId()
+        {
+            return customerId;
+        }
+
+        public static List<KeyValuePair<string, object>> getCustomerList(int customerId)
+        {
+            var list = new List<KeyValuePair<string, object>>();
+            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            conn.Open();
+            var query = $"SELECT * FROM customer WHERE customerId = {customerId}";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            try
+            {
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    list.Add(new KeyValuePair<string, object>("customerId", reader[0]));
+                    list.Add(new KeyValuePair<string, object>("customerName", reader[1]));
+                    list.Add(new KeyValuePair<string, object>("address", reader[3]));
+                    list.Add(new KeyValuePair<string, object>("address2", reader[4]));
+                    list.Add(new KeyValuePair<string, object>("city", reader[5]));
+                    list.Add(new KeyValuePair<string, object>("state", reader[6]));
+                    list.Add(new KeyValuePair<string, object>("postalCode", reader[7]));
+                    list.Add(new KeyValuePair<string, object>("phone", reader[8]));
+                    list.Add(new KeyValuePair<string, object>("country", reader[9]));
+                    list.Add(new KeyValuePair<string, object>("email", reader[14]));
+                    reader.Close();
+                    conn.Close();
+                }
+                else
+                {
+                    return null;
+                }
+                return list;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
     }
 
 

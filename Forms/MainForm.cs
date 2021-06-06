@@ -1,5 +1,4 @@
 ﻿using GI_Inc.Forms;
-using GI_Inc.Properties.DataSources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +14,7 @@ namespace GI_Inc
     public partial class MainForm : Form
     {
         user currentUser;
+        int customerId;
         public MainForm()
         {
             InitializeComponent();
@@ -37,6 +37,9 @@ namespace GI_Inc
 
         private void btnModifyCustomer_Click(object sender, EventArgs e)
         {
+            CustomerModify customerModify = new CustomerModify(currentUser, customerId);
+            customerModify.Show();
+            Hide();
 
         }
 

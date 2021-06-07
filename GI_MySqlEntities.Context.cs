@@ -29,5 +29,6 @@ namespace GI_Inc
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<agent> agents { get; set; }
+        public virtual DbSet<agentSchedule> agentSchedules { get; set; }
     }
 }

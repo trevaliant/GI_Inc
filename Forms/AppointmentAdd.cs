@@ -150,7 +150,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(), txtDescription.ToString(), start, end, agentID) ;
+                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), agentID, cbType.SelectedItem.ToString(), txtDescription.Text, start, end) ;
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();

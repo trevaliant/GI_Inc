@@ -127,16 +127,17 @@ namespace GI_Inc.Forms
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(237, 143);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(395, 57);
+            this.textBox1.Size = new System.Drawing.Size(395, 23);
             this.textBox1.TabIndex = 58;
             this.textBox1.Text = "\r\nSelect an appointment from below to delete";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvAppointments
             // 
+            this.dgvAppointments.AllowUserToAddRows = false;
+            this.dgvAppointments.AllowUserToDeleteRows = false;
             this.dgvAppointments.AutoGenerateColumns = false;
             this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAppointments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -153,6 +154,7 @@ namespace GI_Inc.Forms
             this.dgvAppointments.DataSource = this.appointmentBindingSource;
             this.dgvAppointments.Location = new System.Drawing.Point(12, 205);
             this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.Size = new System.Drawing.Size(867, 238);
             this.dgvAppointments.TabIndex = 60;
             // 

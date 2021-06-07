@@ -1,4 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,15 +19,9 @@ namespace GI_Inc
         public LoginForm()
         {
             InitializeComponent();
+            lblError.Visible = false;
             
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
 
         //find file in bin>Debug
@@ -44,10 +39,10 @@ namespace GI_Inc
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserUtility userUtility = new UserUtility();
-            User userInfo = new User(txtUsername.Text, txtPassword.Text);
-            userInfo.userId = userUtility.verifyUser(userInfo);
+            Agent userInfo = new Agent(txtUsername.Text, txtPassword.Text);
+            userInfo.agentId = userUtility.verifyUser(userInfo);
 
-            if (userInfo.userId != -1)
+            if (userInfo.agentId != -1)
             {
                 DateTime dateTime = DateTime.Now;
                 writeToLoginFile();
@@ -60,7 +55,11 @@ namespace GI_Inc
             }
             else
             {
-                lblError.Text = "User credentials were not correct, press reset to try again!";
+                lblError.Visible = true;
+                lblError.Text = "User credentials were not correct, please select the Reset button to try again.";
+                lblError.AutoSize = false;
+                lblError.Dock = DockStyle.Fill;
+               
             }
         }
 
@@ -88,16 +87,31 @@ namespace GI_Inc
         //    }
         //}
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            Hide();
-        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            Hide();
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            Hide();
         }
     }
 }

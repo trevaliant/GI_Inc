@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GI_Inc.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,18 +12,18 @@ namespace GI_Inc.BusinessMethods
 {
     public class CustomerObject
     {
-        private static int userID;
+        private static int agentID;
         private static string userName;
         MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
 
         public static int getCurrentUserId()
         {
-            return userID;
+            return agentID;
         }
 
         public static void setCurrentUserId(int currentUserId)
         {
-            userID = currentUserId;
+            agentID = currentUserId;
         }
 
         public static string getCurrentUserName()
@@ -38,7 +39,7 @@ namespace GI_Inc.BusinessMethods
 
         public int verifyUser(user userInfo)
         {
-            int userId = -1;
+            int agentID = -1;
 
             string returnedUserName;
             string returnedPassword;
@@ -64,7 +65,7 @@ namespace GI_Inc.BusinessMethods
                     returnUserIdCmd.CommandText = "SELECT userId FROM user WHERE  password = @password AND userName = @userName";
                     returnUserIdCmd.Parameters.AddWithValue("@password", userInfo.password);
                     returnUserIdCmd.Parameters.AddWithValue("@userName", userInfo.userName);
-                    userId = (int)returnUserIdCmd.ExecuteScalar();
+                    agentID = (int)returnUserIdCmd.ExecuteScalar();
                 }
 
             }
@@ -77,7 +78,7 @@ namespace GI_Inc.BusinessMethods
                 conn.Close();
             }
 
-            return userId;
+            return agentID;
         }
         public static DateTime getDateTime()
         {
@@ -90,14 +91,16 @@ namespace GI_Inc.BusinessMethods
         {
             conn.Open();
             CustomerInfo customerInfo = new CustomerInfo();
-            string query = "SELECT customer.customerName, customer.address, customer.address2, customer.city, customer.state, customer.postalCode, customer.phone, customer.country, customer.email FROM customer";
+            string query = "SELECT customer.customerId, customer.customerName, customer.address, customer.address2, customer.city, customer.state, customer.postalCode, customer.phone, customer.country, customer.email FROM customer";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@customerId", customerId);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
+
                 {
+                    customerInfo.customerId = reader.GetInt32(reader["customerId"].ToString());
                     customerInfo.customerName = reader["customerName"].ToString();
                     customerInfo.address = reader["address"].ToString();
                     customerInfo.address2 = reader["address2"].ToString();
@@ -127,7 +130,7 @@ namespace GI_Inc.BusinessMethods
 
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = updateObject;
-                cmd.Parameters.AddWithValue("@customerId", customerInfo.customerID);
+                cmd.Parameters.AddWithValue("@customerId", customerInfo.customerId);
                 cmd.Parameters.AddWithValue("@customerName", customerInfo.customerName);
                 cmd.Parameters.AddWithValue("@address", customerInfo.address);
                 cmd.Parameters.AddWithValue("@address2", customerInfo.address2);
@@ -155,23 +158,23 @@ namespace GI_Inc.BusinessMethods
 
         public DataTable getCustomers()
         {
-
             DataTable customersDataTable = new DataTable();
-
-            if (!customersDataTable.Columns.Contains("customerId")) { customersDataTable.Columns.Add("customerId", typeof(int)); }
-            if (!customersDataTable.Columns.Contains("customerName")) { customersDataTable.Columns.Add("customerName", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("address")) { customersDataTable.Columns.Add("address", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("address2")) { customersDataTable.Columns.Add("address2", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("city")) { customersDataTable.Columns.Add("city", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("postalCode")) { customersDataTable.Columns.Add("postalCode", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("phone")) { customersDataTable.Columns.Add("phone", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("country")) { customersDataTable.Columns.Add("country", typeof(string)); }
-            if (!customersDataTable.Columns.Contains("email")) { customersDataTable.Columns.Add("email", typeof(string)); }
-
             try
             {
+               
+
+                if (!customersDataTable.Columns.Contains("customerId")) { customersDataTable.Columns.Add("customerId", typeof(int)); }
+                if (!customersDataTable.Columns.Contains("customerName")) { customersDataTable.Columns.Add("customerName", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("address")) { customersDataTable.Columns.Add("address", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("address2")) { customersDataTable.Columns.Add("address2", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("city")) { customersDataTable.Columns.Add("city", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("postalCode")) { customersDataTable.Columns.Add("postalCode", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("phone")) { customersDataTable.Columns.Add("phone", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("country")) { customersDataTable.Columns.Add("country", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("email")) { customersDataTable.Columns.Add("email", typeof(string)); }
+
                 conn.Open();
-                string query = "SELECT customer.customerId, customer.customerName,customer.address, customer.address2, customer.city, customer.state, customer.phone, customer.postalCode,  customer.country, customer.email ";
+                string query = "SELECT customer.customerId, customer.customerName,customer.address, customer.address2, customer.city, customer.state, customer.phone, customer.postalCode,  customer.country, customer.email FROM customer";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -227,12 +230,12 @@ namespace GI_Inc.BusinessMethods
         }
 
 
-        public DataTable schedule(string userId)
+        public DataTable schedule(string agentID)
         {
 
             conn.Open();
 
-            string query = "SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start', end as 'End', type as 'Type' FROM appointment where appointment.userId = userId order by start; ";
+            string query = "SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start', end as 'End', type as 'Type' FROM appointment where appointment.agentId = agentId order by start; ";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             DataTable datatable = new DataTable();

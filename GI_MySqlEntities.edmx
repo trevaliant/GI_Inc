@@ -8,14 +8,27 @@
         <EntityType Name="agent">
           <Key>
             <PropertyRef Name="agentId" />
-            <PropertyRef Name="userId" />
           </Key>
-          <Property Name="agentId" Type="int" Nullable="false" />
+          <Property Name="agentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="agentName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="agentDepartment" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="agentTimeZone" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="agentCountry" Type="varchar" MaxLength="45" />
-          <Property Name="userId" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="agentSchedules">
+          <Key>
+            <PropertyRef Name="scheduleId" />
+          </Key>
+          <Property Name="scheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agentId" Type="int" Nullable="false" />
+          <Property Name="agentName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="agentDepartment" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="agentTimeZone" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="workDays" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="startTime" Type="time" Precision="0" Nullable="false" />
+          <Property Name="endTime" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="appointment">
           <Key>
@@ -23,7 +36,6 @@
           </Key>
           <Property Name="appointmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="customerId" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="250" />
           <Property Name="location" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
@@ -58,9 +70,9 @@
         </EntityType>
         <EntityType Name="user">
           <Key>
-            <PropertyRef Name="userId" />
+            <PropertyRef Name="agentId" />
           </Key>
-          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="active" Type="tinyint" Nullable="false" />
@@ -71,6 +83,7 @@
         </EntityType>
         <EntityContainer Name="U06P8DModelStoreContainer">
           <EntitySet Name="agent" EntityType="Self.agent" Schema="U06P8D" store:Type="Tables" />
+          <EntitySet Name="agentSchedules" EntityType="Self.agentSchedules" Schema="U06P8D" store:Type="Tables" />
           <EntitySet Name="appointment" EntityType="Self.appointment" Schema="U06P8D" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="U06P8D" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="U06P8D" store:Type="Tables" />
@@ -85,7 +98,6 @@
           </Key>
           <Property Name="appointmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="customerId" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -121,6 +133,7 @@
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="userId" />
+            <PropertyRef Name="agentId" />
           </Key>
           <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -130,24 +143,39 @@
           <Property Name="createdBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lastUpdate" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="lastUpdateBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="agentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityContainer Name="U06P8DEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="appointments" EntityType="Self.appointment" />
           <EntitySet Name="customers" EntityType="Self.customer" />
           <EntitySet Name="users" EntityType="Self.user" />
           <EntitySet Name="agents" EntityType="U06P8DModel.agent" />
+          <EntitySet Name="agentSchedules" EntityType="U06P8DModel.agentSchedule" />
         </EntityContainer>
         <EntityType Name="agent">
           <Key>
             <PropertyRef Name="agentId" />
-            <PropertyRef Name="userId" />
           </Key>
           <Property Name="agentId" Type="Int32" Nullable="false" />
           <Property Name="agentName" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="agentDepartment" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="agentTimeZone" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="agentCountry" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="userId" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="agentSchedule">
+          <Key>
+            <PropertyRef Name="scheduleId" />
+          </Key>
+          <Property Name="scheduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agentId" Type="Int32" Nullable="false" />
+          <Property Name="agentName" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="agentDepartment" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="agentTimeZone" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="workDays" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="startTime" Type="Time" Nullable="false" />
+          <Property Name="endTime" Type="Time" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -161,7 +189,6 @@
                 <ScalarProperty Name="agentId" ColumnName="agentId" />
                 <ScalarProperty Name="appointmentId" ColumnName="appointmentId" />
                 <ScalarProperty Name="customerId" ColumnName="customerId" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="location" ColumnName="location" />
@@ -199,7 +226,7 @@
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="U06P8DModel.user">
               <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="agentId" ColumnName="agentId" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="active" ColumnName="active" />
@@ -213,12 +240,27 @@
           <EntitySetMapping Name="agents">
             <EntityTypeMapping TypeName="U06P8DModel.agent">
               <MappingFragment StoreEntitySet="agent">
-                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="agentCountry" ColumnName="agentCountry" />
                 <ScalarProperty Name="agentTimeZone" ColumnName="agentTimeZone" />
                 <ScalarProperty Name="agentDepartment" ColumnName="agentDepartment" />
                 <ScalarProperty Name="agentName" ColumnName="agentName" />
                 <ScalarProperty Name="agentId" ColumnName="agentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agentSchedules">
+            <EntityTypeMapping TypeName="U06P8DModel.agentSchedule">
+              <MappingFragment StoreEntitySet="agentSchedules">
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="workDays" ColumnName="workDays" />
+                <ScalarProperty Name="agentTimeZone" ColumnName="agentTimeZone" />
+                <ScalarProperty Name="agentDepartment" ColumnName="agentDepartment" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentId" ColumnName="agentId" />
+                <ScalarProperty Name="scheduleId" ColumnName="scheduleId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

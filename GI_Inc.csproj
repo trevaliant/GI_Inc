@@ -103,10 +103,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agentSchedule.cs">
+      <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="BusinessMethods\CalendarObject.cs" />
     <Compile Include="BusinessMethods\CustomerInfo.cs" />
     <Compile Include="BusinessMethods\CustomerObject.cs" />
     <Compile Include="BusinessMethods\UserUtility.cs" />
+    <Compile Include="Forms\AgentSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgentSchedule.Designer.cs">
+      <DependentUpon>AgentSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AppointmentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +133,12 @@
     </Compile>
     <Compile Include="Forms\CustomerAdd.Designer.cs">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerDelete.Designer.cs">
+      <DependentUpon>CustomerDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerModify.cs">
       <SubType>Form</SubType>
@@ -148,6 +163,12 @@
     </Compile>
     <Compile Include="Forms\AppointmentModify.Designer.cs">
       <DependentUpon>AppointmentModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,10 +196,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GI_MySqlEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="U06P8DDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="U06P8DDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <DependentUpon>GI_MySqlEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\User.cs" />
+    <Compile Include="DataSources\Agent.cs" />
     <Compile Include="U06P8DDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +225,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AgentSchedule.resx">
+      <DependentUpon>AgentSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AppointmentAdd.resx">
       <DependentUpon>AppointmentAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerAdd.resx">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerDelete.resx">
+      <DependentUpon>CustomerDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerModify.resx">
       <DependentUpon>CustomerModify.cs</DependentUpon>
@@ -214,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AppointmentModify.resx">
       <DependentUpon>AppointmentModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -273,6 +313,28 @@
     </None>
     <None Include="U06P8DDataSet2.xss">
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet3.xsc">
+      <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>U06P8DDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="U06P8DDataSet3.xss">
+      <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet5.xsc">
+      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="U06P8DDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>U06P8DDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="U06P8DDataSet5.xss">
+      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

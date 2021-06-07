@@ -12,24 +12,21 @@ namespace GI_Inc.BusinessMethods
     public class CalendarObject
     {
         private static string userName;
-        private static int userID;
-        private static string agentID;
+
+        private static int agentID;
 
         MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
         public static int getUserID()
         {
-            return userID;
+            return agentID;
         }
         public static void setUserID(int currUserID)
         {
-            userID = currUserID;           
-        }
-        public static string getAgentID()
-        {
-            return agentID;
+            agentID = currUserID;           
         }
 
-        public static void setAgentID(string assignedAgent)
+
+        public static void setAgentID(int assignedAgent)
         {
             agentID = assignedAgent;
         }
@@ -95,14 +92,14 @@ namespace GI_Inc.BusinessMethods
             
         }
 
-        public static void createAppointment(int custID, string location, string type, string description, DateTime start, DateTime end, int agentId)
+        public static void createAppointment(int custID, string location, int agentId, string type, string description, DateTime start, DateTime end)
         {
             int appointID = getID("appointment", "appointmentId") + 1;
             DateTime utc = getTime();
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
-            var query = $"INSERT into appointment (appointmentId, customerId, userId, location, type, description, start, end, agentId)" +
-                $"VALUES ('{appointID}', '{custID}','{getUserID()}', '{location}', '{type}', '{description}','{DTSql(start)}', '{DTSql(end)}', '{agentId}')";
+            var query = $"INSERT into appointment (appointmentId, customerId, agentId, location, type, description, start, end)" +
+                $"VALUES ('{appointID}', '{custID}','{agentId}', '{location}', '{type}', '{description}','{DTSql(start)}', '{DTSql(end)}')";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();

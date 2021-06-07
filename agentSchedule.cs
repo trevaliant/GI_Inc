@@ -12,16 +12,15 @@ namespace GI_Inc
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class agentSchedule
     {
-        public int userId { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-        public sbyte active { get; set; }
-        public System.DateTime createDate { get; set; }
-        public string createdBy { get; set; }
-        public System.DateTime lastUpdate { get; set; }
-        public string lastUpdateBy { get; set; }
+        public int scheduleId { get; set; }
         public int agentId { get; set; }
+        public string agentName { get; set; }
+        public string agentDepartment { get; set; }
+        public string agentTimeZone { get; set; }
+        public string workDays { get; set; }
+        public System.TimeSpan startTime { get; set; }
+        public System.TimeSpan endTime { get; set; }
     }
 }

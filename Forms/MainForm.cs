@@ -45,7 +45,9 @@ namespace GI_Inc
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-
+            CustomerDelete customerDelete = new CustomerDelete();
+            customerDelete.Show();
+            Hide();
         }
 
         private void btnAddAppointment_Click(object sender, EventArgs e)
@@ -72,7 +74,9 @@ namespace GI_Inc
 
         private void btnAgentSchedule_Click(object sender, EventArgs e)
         {
-
+            AgentSchedule agentSchedule = new AgentSchedule();
+            agentSchedule.Show();
+            Hide();
         }
 
         private void btnReports_Click(object sender, EventArgs e)

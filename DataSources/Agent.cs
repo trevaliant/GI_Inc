@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace GI_Inc
 {
-    public partial class User : user
+    public partial class Agent : agent
     { 
 
 
-        public User()
+        public Agent()
         {
-            userName = "test";
-            password = "test";
+
         }
 
-        public User(string _username, string _password)
+        public Agent(string _username, string _password)
         {
             userName = _username;
             password = _password;

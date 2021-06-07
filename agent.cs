@@ -19,6 +19,7 @@ namespace GI_Inc
         public string agentDepartment { get; set; }
         public string agentTimeZone { get; set; }
         public string agentCountry { get; set; }
-        public string userId { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
     }
 }

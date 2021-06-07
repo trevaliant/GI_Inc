@@ -8,7 +8,7 @@ namespace GI_Inc.BusinessMethods
 {
     public class CustomerInfo
     {
-        public int customerID { get; set; }
+        public int customerId{ get; set; }
         public string customerName { get; set; }
         public string address { get; set; }
         public string address2 { get; set; }
@@ -22,8 +22,9 @@ namespace GI_Inc.BusinessMethods
         {
 
         }
-        public CustomerInfo(string _customerName, string _address, string _address2, string _city, string _state, string _postalCode, string _phone, string _country, string _email)
+        public CustomerInfo(int _customerId, string _customerName, string _address, string _address2, string _city, string _state, string _postalCode, string _phone, string _country, string _email)
         {
+            customerId = _customerId;
             customerName = _customerName;
             address = _address;
             address2 = _address2;

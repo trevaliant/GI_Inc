@@ -1,5 +1,7 @@
 ﻿
 
+using GI_Inc.DataSources;
+
 namespace GI_Inc.Forms
 {
     partial class AppointmentModify
@@ -66,11 +68,11 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet1 = new GI_Inc.U06P8DDataSet1();
+            this.u06P8DDataSet1 = new GI_Inc.DataSources.U06P8DDataSet1();
             this.btnAgentSearch = new System.Windows.Forms.Button();
             this.txtSearchAgent = new System.Windows.Forms.TextBox();
-            this.agentTableAdapter = new GI_Inc.U06P8DDataSet1TableAdapters.agentTableAdapter();
-            this.tableAdapterManager = new GI_Inc.U06P8DDataSet1TableAdapters.TableAdapterManager();
+            this.agentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet1TableAdapters.agentTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager();
             startLabel = new System.Windows.Forms.Label();
             endLabel = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -513,7 +515,7 @@ namespace GI_Inc.Forms
             // 
             this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.U06P8DDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // AppointmentModify
             // 
@@ -570,8 +572,8 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.TextBox txtAgent;
         private U06P8DDataSet1 u06P8DDataSet1;
         private System.Windows.Forms.BindingSource agentBindingSource;
-        private U06P8DDataSet1TableAdapters.agentTableAdapter agentTableAdapter;
-        private U06P8DDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private DataSources.U06P8DDataSet1TableAdapters.agentTableAdapter agentTableAdapter;
+        private DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAgentSearch;

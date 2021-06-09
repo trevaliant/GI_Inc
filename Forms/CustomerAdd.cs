@@ -1,12 +1,6 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.DataSources;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms

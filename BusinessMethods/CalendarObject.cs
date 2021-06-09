@@ -1,10 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using GI_Inc.DataSources;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.BusinessMethods
@@ -12,9 +13,18 @@ namespace GI_Inc.BusinessMethods
     public class CalendarObject
     {
         private static string userName;
-
+        string username;
         private static int agentID;
+        U06P8DEntities entities = new U06P8DEntities();
 
+        public CalendarObject(string username)
+        {
+            this.username = username;
+        }
+        public CalendarObject()
+        {
+
+        }
         MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
         public static int getUserID()
         {
@@ -22,7 +32,7 @@ namespace GI_Inc.BusinessMethods
         }
         public static void setUserID(int currUserID)
         {
-            agentID = currUserID;           
+            agentID = currUserID;
         }
 
 
@@ -89,7 +99,7 @@ namespace GI_Inc.BusinessMethods
                 conn.Close();
             }
             return 0;
-            
+
         }
 
         public static void createAppointment(int custID, string location, int agentId, string type, string description, DateTime start, DateTime end)
@@ -122,7 +132,7 @@ namespace GI_Inc.BusinessMethods
                 conn.Close();
             }
             return nextAppt;
-       
+
         }
         public static bool overlappingAppts(DateTime start, DateTime end)
         {
@@ -150,12 +160,31 @@ namespace GI_Inc.BusinessMethods
                 string count = reader[0].ToString();
                 int result = count == "0" ? 0 : 1;
                 return result;
-                
+
             }
             return 0;
-            
-        }
 
+        }
+        public List<appointment> getAllAppointmentsForAUser(string username)
+        {
+            var appointment = entities.appointments.Where(a => String.Equals(a.agentId, username));
+            return appointment.ToList();
+        }
+        public List<appointment> getAppointmentsByWeek(int weekNum, string username)
+        {
+            CultureInfo ciCurr = CultureInfo.CurrentCulture;
+            var appointments = getAllAppointmentsForAUser(username);
+            List<appointment> appointmentsThisWeek = new List<appointment>();
+
+            for (var i = 0; i < appointments.Count; i++)
+            {
+                if (ciCurr.Calendar.GetWeekOfYear(appointments[i].start, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday) == weekNum)
+                {
+                    appointmentsThisWeek.Add(appointments[i]);
+                }
+            }
+            return appointmentsThisWeek.ToList();
+        }
         public static List<KeyValuePair<string, object>> getAppointmentList(int appointmentId)
         {
             var list = new List<KeyValuePair<string, object>>();
@@ -203,7 +232,7 @@ namespace GI_Inc.BusinessMethods
             return sqlDT;
         }
         public static void updateAppointment(IDictionary<string, object> dictionary)
-        { 
+        {
             string user = getUserName();
             DateTime utc = getTime();
             DateTime start = Convert.ToDateTime(dictionary["start"]);
@@ -218,6 +247,23 @@ namespace GI_Inc.BusinessMethods
             cmd.ExecuteNonQuery();
 
             conn.Close();
+
+        }
+
+        public List<appointment> getAppointmentsByMonth(int month, string username)
+        {
+            var appointment = entities.appointments.Where(a => (a.start.Month == month || a.end.Month == month) && String.Equals(a.agentId, username));
+            return appointment.ToList();
+        }
+        public List<TypeCount> GetAppointmentTypeandCountByMonth(int month)
+        {
+            var appointments = getAppointmentsByMonth(month, username);
+
+            var appointmentsTypeAndCount = appointments.GroupBy(a => a.type)
+                .Select(b => new TypeCount
+                { Type = b.First().type, Count = b.Count() }
+                );
+            return appointmentsTypeAndCount.ToList();
 
         }
     }

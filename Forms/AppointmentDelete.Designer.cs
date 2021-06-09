@@ -1,4 +1,6 @@
 ﻿
+using GI_Inc.DataSources;
+
 namespace GI_Inc.Forms
 {
     partial class AppointmentDelete
@@ -48,8 +50,8 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet2 = new GI_Inc.U06P8DDataSet2();
-            this.appointmentTableAdapter = new GI_Inc.U06P8DDataSet2TableAdapters.appointmentTableAdapter();
+            this.u06P8DDataSet2 = new GI_Inc.DataSources.U06P8DDataSet2();
+            this.appointmentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet2TableAdapters.appointmentTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
@@ -271,7 +273,7 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.DataGridView dgvAppointments;
         private U06P8DDataSet2 u06P8DDataSet2;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
-        private U06P8DDataSet2TableAdapters.appointmentTableAdapter appointmentTableAdapter;
+        private DataSources.U06P8DDataSet2TableAdapters.appointmentTableAdapter appointmentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;

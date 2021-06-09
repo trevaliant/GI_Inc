@@ -1,15 +1,7 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc
@@ -20,7 +12,7 @@ namespace GI_Inc
         {
             InitializeComponent();
             lblError.Visible = false;
-            
+
         }
 
 
@@ -59,7 +51,7 @@ namespace GI_Inc
                 lblError.Text = "User credentials were not correct, please select the Reset button to try again.";
                 lblError.AutoSize = false;
                 lblError.Dock = DockStyle.Fill;
-               
+
             }
         }
 

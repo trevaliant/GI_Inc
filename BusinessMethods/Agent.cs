@@ -1,14 +1,9 @@
-﻿using GI_Inc.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GI_Inc.DataSources;
 
 namespace GI_Inc
 {
     public partial class Agent : agent
-    { 
+    {
 
 
         public Agent()

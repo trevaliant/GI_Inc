@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GI_Inc.BusinessMethods
+﻿namespace GI_Inc.BusinessMethods
 {
     public class CustomerInfo
     {
-        public int customerId{ get; set; }
+        public int customerId { get; set; }
         public string customerName { get; set; }
         public string address { get; set; }
         public string address2 { get; set; }

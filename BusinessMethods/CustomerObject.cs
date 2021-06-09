@@ -1,11 +1,10 @@
-﻿using GI_Inc.Forms;
+﻿
+using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.BusinessMethods
@@ -14,8 +13,17 @@ namespace GI_Inc.BusinessMethods
     {
         private static int agentID;
         private static string userName;
+        string username;
         MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+        U06P8DEntities entities = new U06P8DEntities();
+        public CustomerObject(string username)
+        {
+            this.username = username;
+        }
+        public CustomerObject()
+        {
 
+        }
         public static int getCurrentUserId()
         {
             return agentID;
@@ -85,7 +93,11 @@ namespace GI_Inc.BusinessMethods
             return DateTime.Now.ToUniversalTime();
 
         }
-
+        public List<appointment> getAllAppointmentsForACustomer(int customerID)
+        {
+            var appointment = entities.appointments.Where(a => a.customerId == customerID);
+            return appointment.ToList();
+        }
 
         public CustomerInfo getCustomerInfo(int customerId)
         {
@@ -125,7 +137,7 @@ namespace GI_Inc.BusinessMethods
                 conn.Open();
                 string updateObject = "UPDATE customer SET customerName = @customerName WHERE customerId = @customerId, " +
                                       "address = @address, address2 = @address2, city = @city, state = @state, postalCode = @postalCode, phone = @phone, country=@country, email=@email";
-             
+
 
 
                 MySqlCommand cmd = conn.CreateCommand();
@@ -161,7 +173,7 @@ namespace GI_Inc.BusinessMethods
             DataTable customersDataTable = new DataTable();
             try
             {
-               
+
 
                 if (!customersDataTable.Columns.Contains("customerId")) { customersDataTable.Columns.Add("customerId", typeof(int)); }
                 if (!customersDataTable.Columns.Contains("customerName")) { customersDataTable.Columns.Add("customerName", typeof(string)); }
@@ -181,7 +193,7 @@ namespace GI_Inc.BusinessMethods
                     while (reader.Read())
                     {
                         customersDataTable.Rows.Add(reader["customerId"], reader["customerName"], reader["address"],
-                            reader["address2"], reader["city"], reader["state"],reader["postalCode"], reader["phone"], reader["country"], reader["email"]);
+                            reader["address2"], reader["city"], reader["state"], reader["postalCode"], reader["phone"], reader["country"], reader["email"]);
                     }
                 }
 

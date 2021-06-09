@@ -1,10 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using GI_Inc.DataSources;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GI_Inc.BusinessMethods
 {
@@ -12,7 +12,25 @@ namespace GI_Inc.BusinessMethods
     {
 
         private const string connectionString = "server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D";
+        string username;
+        U06P8DEntities entities = new U06P8DEntities();
+        public UserUtility(string username)
+        {
+            this.username = username;
+        }
 
+        public UserUtility()
+        {
+
+        }
+
+        static public string convertToTimezone(string dateTime)
+        {
+            DateTime utcDateTime = DateTime.Parse(dateTime.ToString());
+            DateTime localDateTime = utcDateTime.ToLocalTime();
+
+            return localDateTime.ToString("MM/dd/yyyy hh:mm tt");
+        }
         public int verifyUser(agent userInfo)
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
@@ -59,67 +77,36 @@ namespace GI_Inc.BusinessMethods
             return agentId;
         }
 
-        public static List<KeyValuePair<string, object>> getAgentApptList(int agentId)
+        public DataTable schedule(string agentID)
         {
-            var agentApptList = new List<KeyValuePair<string, object>>();
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-            conn.Open();
-            var query = $"SELECT * FROM appointment WHERE agentId = {agentId}";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            try
-            {
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    agentApptList.Add(new KeyValuePair<string, object>("appointmentId", reader[0]));
-                    agentApptList.Add(new KeyValuePair<string, object>("customerId", reader[1]));
-                    agentApptList.Add(new KeyValuePair<string, object>("description", reader[3]));
-                    agentApptList.Add(new KeyValuePair<string, object>("location", reader[4]));
-                    agentApptList.Add(new KeyValuePair<string, object>("type", reader[5]));
-                    agentApptList.Add(new KeyValuePair<string, object>("start", reader[6]));
-                    agentApptList.Add(new KeyValuePair<string, object>("end", reader[7]));
-                    agentApptList.Add(new KeyValuePair<string, object>("agentId", reader[12]));
-                    agentApptList.Add(new KeyValuePair<string, object>("title", reader[13]));
-                    reader.Close();
-                }
-                else
-                {
-                    return null;
-                }
-                return agentApptList;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
-            }
-        }
 
-        public DataTable schedule(string agentId)
-        {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
-            string query = "select c.customerName, a.start, a.end, a.agentId, ag.agentName from appointment a JOIN customer c on c.customerId = a.customerId Join agent ag on ag.agentId = a.agentId order by start; ";
+            string query = "SELECT distinct agentId as 'AgentID', agentName as 'Name',  agentDepartment as 'Department', workDays as 'Days', startTime as 'Start', endTime as 'End' from agentSchedules where agentSchedules.agentName = agentName order by agentId";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             DataTable datatable = new DataTable();
             datatable.Load(cmd.ExecuteReader());
 
-            foreach (DataRow row in datatable.Rows)
-            {
-                DateTime utcStart = Convert.ToDateTime(row["start"]);
-                DateTime utcEnd = Convert.ToDateTime(row["end"]);
-
-                row["Start"] = TimeZone.CurrentTimeZone.ToLocalTime(utcStart);
-                row["End"] = TimeZone.CurrentTimeZone.ToLocalTime(utcEnd);
-
-            }
 
             conn.Close();
             return datatable;
         }
+
+        public string getUserNameById(int dataId)
+        {
+            var user = entities.agents.FirstOrDefault(a => a.agentId == dataId);
+            return user.agentName;
+
+        }
+
+        public List<agent> getUsers()
+        {
+            return entities.agents.ToList();
+        }
+
+
+
     }
 }

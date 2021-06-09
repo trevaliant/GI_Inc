@@ -1,4 +1,6 @@
 ﻿
+using GI_Inc.DataSources;
+
 namespace GI_Inc.Forms
 {
     partial class CustomerDelete
@@ -47,11 +49,11 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet3 = new GI_Inc.U06P8DDataSet3();
+            this.u06P8DDataSet3 = new GI_Inc.DataSources.U06P8DDataSet3();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBackToDash = new System.Windows.Forms.Button();
-            this.customerTableAdapter = new GI_Inc.U06P8DDataSet3TableAdapters.customerTableAdapter();
-            this.tableAdapterManager = new GI_Inc.U06P8DDataSet3TableAdapters.TableAdapterManager();
+            this.customerTableAdapter = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager();
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -253,7 +255,7 @@ namespace GI_Inc.Forms
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.customerTableAdapter = this.customerTableAdapter;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // customerBindingNavigator
             // 
@@ -412,8 +414,8 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.TextBox textBox1;
         private U06P8DDataSet3 u06P8DDataSet3;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private U06P8DDataSet3TableAdapters.customerTableAdapter customerTableAdapter;
-        private U06P8DDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
+        private DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter customerTableAdapter;
+        private DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator customerBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;

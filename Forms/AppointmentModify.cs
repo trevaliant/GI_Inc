@@ -1,20 +1,18 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
 {
     public partial class AppointmentModify : Form
-        
-    {   private agent Agent;
+
+    {
+        private agent Agent;
 
         public static List<KeyValuePair<string, object>> ApptList;
         public void setAppointList(List<KeyValuePair<string, object>> list)
@@ -54,7 +52,7 @@ namespace GI_Inc.Forms
                 MessageBox.Show("There was an issue with populating the customer list: " + ex);
             }
         }
-               
+
         private void cbCustomer_SelectedValueChanged_1(object sender, EventArgs e)
         {
             populateApptList();
@@ -168,7 +166,7 @@ namespace GI_Inc.Forms
                     if (row.Cells[0].Value.ToString().Equals(searchValue))
                     {
                         row.Selected = true;
-                        
+
                         break;
                     }
 
@@ -183,7 +181,7 @@ namespace GI_Inc.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-        bool pass = CheckFields();
+            bool pass = CheckFields();
 
             if (pass == true)
             {

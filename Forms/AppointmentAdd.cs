@@ -1,13 +1,7 @@
 ﻿using GI_Inc.BusinessMethods;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
@@ -29,7 +23,7 @@ namespace GI_Inc.Forms
             cbAppointment.SelectedItem = null;
             cbAgent.SelectedItem = null;
             cbType.Text = "--Choose--";
-            cbLocation.Text   = "--Choose--";
+            cbLocation.Text = "--Choose--";
             btnSave.Enabled = false;
 
         }
@@ -150,7 +144,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), agentID, cbType.SelectedItem.ToString(), txtDescription.Text, start, end) ;
+                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), agentID, cbType.SelectedItem.ToString(), txtDescription.Text, start, end);
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();

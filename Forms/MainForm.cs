@@ -1,12 +1,7 @@
-﻿using GI_Inc.Forms;
+﻿using GI_Inc.DataSources;
+using GI_Inc.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc
@@ -72,27 +67,27 @@ namespace GI_Inc
             Hide();
         }
 
-        private void btnAgentSchedule_Click(object sender, EventArgs e)
-        {
-            AgentSchedule agentSchedule = new AgentSchedule();
-            agentSchedule.Show();
-            Hide();
-        }
 
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClientReports_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
 
+        }
+
+        private void btnReports_Click_1(object sender, EventArgs e)
+        {
+            ReportPicker reportPicker = new ReportPicker();
+            reportPicker.Show();
+            Hide();
+
+        }
+
+        private void btnAgentSchedules_Click(object sender, EventArgs e)
+        {
+            AgentSchedule agent = new AgentSchedule();
+            agent.Show();
+            Hide();
         }
     }
 }

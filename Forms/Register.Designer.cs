@@ -29,6 +29,7 @@ namespace GI_Inc.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,13 +45,12 @@ namespace GI_Inc.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.cbTimezone = new System.Windows.Forms.ComboBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,21 +92,24 @@ namespace GI_Inc.Forms
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(210, 207);
+            this.txtName.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtName.Location = new System.Drawing.Point(251, 204);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 20);
             this.txtName.TabIndex = 1;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(210, 424);
+            this.txtUserName.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtUserName.Location = new System.Drawing.Point(251, 421);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(121, 20);
             this.txtUserName.TabIndex = 5;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(210, 487);
+            this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtPassword.Location = new System.Drawing.Point(251, 470);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(121, 20);
             this.txtPassword.TabIndex = 6;
@@ -115,7 +118,7 @@ namespace GI_Inc.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 207);
+            this.label2.Location = new System.Drawing.Point(63, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 8;
@@ -125,7 +128,7 @@ namespace GI_Inc.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 261);
+            this.label3.Location = new System.Drawing.Point(63, 262);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 9;
@@ -135,7 +138,7 @@ namespace GI_Inc.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(83, 311);
+            this.label4.Location = new System.Drawing.Point(63, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 10;
@@ -145,7 +148,7 @@ namespace GI_Inc.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(102, 370);
+            this.label5.Location = new System.Drawing.Point(63, 370);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 11;
@@ -155,7 +158,7 @@ namespace GI_Inc.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(83, 424);
+            this.label6.Location = new System.Drawing.Point(63, 424);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 20);
             this.label6.TabIndex = 12;
@@ -165,7 +168,7 @@ namespace GI_Inc.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(88, 487);
+            this.label7.Location = new System.Drawing.Point(63, 473);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 13;
@@ -173,6 +176,7 @@ namespace GI_Inc.Forms
             // 
             // cbTimezone
             // 
+            this.cbTimezone.BackColor = System.Drawing.Color.Gainsboro;
             this.cbTimezone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTimezone.FormattingEnabled = true;
             this.cbTimezone.ItemHeight = 13;
@@ -180,13 +184,14 @@ namespace GI_Inc.Forms
             "CST",
             "EST",
             "DST"});
-            this.cbTimezone.Location = new System.Drawing.Point(210, 313);
+            this.cbTimezone.Location = new System.Drawing.Point(251, 310);
             this.cbTimezone.Name = "cbTimezone";
             this.cbTimezone.Size = new System.Drawing.Size(121, 21);
-            this.cbTimezone.TabIndex = 14;
+            this.cbTimezone.TabIndex = 3;
             // 
             // cbCountry
             // 
+            this.cbCountry.BackColor = System.Drawing.Color.Gainsboro;
             this.cbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCountry.FormattingEnabled = true;
             this.cbCountry.ItemHeight = 13;
@@ -194,36 +199,15 @@ namespace GI_Inc.Forms
             "USA",
             "UK",
             "Mexico"});
-            this.cbCountry.Location = new System.Drawing.Point(210, 369);
+            this.cbCountry.Location = new System.Drawing.Point(251, 366);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(121, 21);
-            this.cbCountry.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(361, 424);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(254, 16);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "(Must be at least 4 characters, no spaces)";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(361, 485);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(254, 16);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "(Must be at least 4 characters, no spaces)";
+            this.cbCountry.TabIndex = 4;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(210, 513);
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(251, 522);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(121, 20);
             this.txtConfirmPassword.TabIndex = 7;
@@ -232,7 +216,7 @@ namespace GI_Inc.Forms
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(29, 513);
+            this.label10.Location = new System.Drawing.Point(63, 525);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 20);
             this.label10.TabIndex = 19;
@@ -251,16 +235,18 @@ namespace GI_Inc.Forms
             // 
             // cbDepartment
             // 
+            this.cbDepartment.BackColor = System.Drawing.Color.Gainsboro;
             this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDepartment.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.ItemHeight = 13;
             this.cbDepartment.Items.AddRange(new object[] {
             "Sales",
             "Technical Support"});
-            this.cbDepartment.Location = new System.Drawing.Point(210, 261);
+            this.cbDepartment.Location = new System.Drawing.Point(251, 258);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(121, 21);
-            this.cbDepartment.TabIndex = 21;
+            this.cbDepartment.TabIndex = 2;
             // 
             // btnLogin
             // 
@@ -273,6 +259,16 @@ namespace GI_Inc.Forms
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.BackColor = System.Drawing.Color.Yellow;
+            this.toolTip1.InitialDelay = 100;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.Tag = "First and Last Name";
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,8 +279,6 @@ namespace GI_Inc.Forms
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.cbCountry);
             this.Controls.Add(this.cbTimezone);
             this.Controls.Add(this.label7);
@@ -303,6 +297,7 @@ namespace GI_Inc.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -327,12 +322,11 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTimezone;
         private System.Windows.Forms.ComboBox cbCountry;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

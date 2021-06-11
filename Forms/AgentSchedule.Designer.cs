@@ -31,25 +31,22 @@ namespace GI_Inc.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentSchedule));
-            System.Windows.Forms.Label agentIdLabel;
-            System.Windows.Forms.Label agentNameLabel;
-            System.Windows.Forms.Label agentDepartmentLabel;
-            System.Windows.Forms.Label agentShiftLabel;
-            System.Windows.Forms.Label workDay1Label;
-            System.Windows.Forms.Label workDay2Label;
-            System.Windows.Forms.Label workDay3Label;
-            System.Windows.Forms.Label workDay4Label;
-            System.Windows.Forms.Label workDay5Label;
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.u06P8DDataSet5 = new GI_Inc.DataSources.U06P8DDataSet5();
-            this.agentSchedulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agentSchedulesTableAdapter = new GI_Inc.DataSources.U06P8DDataSet5TableAdapters.agentSchedulesTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet5TableAdapters.TableAdapterManager();
-            this.agentSchedulesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.u06P8DDataSet6 = new GI_Inc.DataSources.U06P8DDataSet6();
+            this.agentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.agentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet6TableAdapters.agentTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager();
+            this.dgvAgentSchedule = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -61,147 +58,137 @@ namespace GI_Inc.Forms
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.agentSchedulesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.agentIdTextBox = new System.Windows.Forms.TextBox();
-            this.agentNameTextBox = new System.Windows.Forms.TextBox();
-            this.agentDepartmentTextBox = new System.Windows.Forms.TextBox();
-            this.agentShiftTextBox = new System.Windows.Forms.TextBox();
-            this.workDay1TextBox = new System.Windows.Forms.TextBox();
-            this.workDay2TextBox = new System.Windows.Forms.TextBox();
-            this.workDay3TextBox = new System.Windows.Forms.TextBox();
-            this.workDay4TextBox = new System.Windows.Forms.TextBox();
-            this.workDay5TextBox = new System.Windows.Forms.TextBox();
-            this.txtViewSchedules = new System.Windows.Forms.RichTextBox();
-            agentIdLabel = new System.Windows.Forms.Label();
-            agentNameLabel = new System.Windows.Forms.Label();
-            agentDepartmentLabel = new System.Windows.Forms.Label();
-            agentShiftLabel = new System.Windows.Forms.Label();
-            workDay1Label = new System.Windows.Forms.Label();
-            workDay2Label = new System.Windows.Forms.Label();
-            workDay3Label = new System.Windows.Forms.Label();
-            workDay4Label = new System.Windows.Forms.Label();
-            workDay5Label = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgentSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agentSchedulesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agentSchedulesBindingNavigator)).BeginInit();
-            this.agentSchedulesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // agentBindingSource
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 138);
-            this.panel1.TabIndex = 2;
+            this.agentBindingSource.DataMember = "agent";
             // 
-            // pictureBox1
+            // u06P8DDataSet6
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(343, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.u06P8DDataSet6.DataSetName = "U06P8DDataSet6";
+            this.u06P8DDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // agentBindingSource1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(115, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.UseCompatibleTextRendering = true;
+            this.agentBindingSource1.DataMember = "agent";
+            this.agentBindingSource1.DataSource = this.u06P8DDataSet6;
             // 
-            // panel2
+            // agentTableAdapter
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.txtViewSchedules);
-            this.panel2.Controls.Add(agentIdLabel);
-            this.panel2.Controls.Add(this.agentIdTextBox);
-            this.panel2.Controls.Add(agentNameLabel);
-            this.panel2.Controls.Add(this.agentNameTextBox);
-            this.panel2.Controls.Add(agentDepartmentLabel);
-            this.panel2.Controls.Add(this.agentDepartmentTextBox);
-            this.panel2.Controls.Add(agentShiftLabel);
-            this.panel2.Controls.Add(this.agentShiftTextBox);
-            this.panel2.Controls.Add(workDay1Label);
-            this.panel2.Controls.Add(this.workDay1TextBox);
-            this.panel2.Controls.Add(workDay2Label);
-            this.panel2.Controls.Add(this.workDay2TextBox);
-            this.panel2.Controls.Add(workDay3Label);
-            this.panel2.Controls.Add(this.workDay3TextBox);
-            this.panel2.Controls.Add(workDay4Label);
-            this.panel2.Controls.Add(this.workDay4TextBox);
-            this.panel2.Controls.Add(workDay5Label);
-            this.panel2.Controls.Add(this.workDay5TextBox);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 138);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(837, 587);
-            this.panel2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(268, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 46);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Agent Schedules";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.UseCompatibleTextRendering = true;
-            // 
-            // u06P8DDataSet5
-            // 
-            this.u06P8DDataSet5.DataSetName = "U06P8DDataSet5";
-            this.u06P8DDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // agentSchedulesBindingSource
-            // 
-            this.agentSchedulesBindingSource.DataMember = "agentSchedules";
-            this.agentSchedulesBindingSource.DataSource = this.u06P8DDataSet5;
-            // 
-            // agentSchedulesTableAdapter
-            // 
-            this.agentSchedulesTableAdapter.ClearBeforeFill = true;
+            this.agentTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.agentSchedulesTableAdapter = this.agentSchedulesTableAdapter;
+            this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet5TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // agentSchedulesBindingNavigator
+            // dgvAgentSchedule
             // 
-            this.agentSchedulesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.agentSchedulesBindingNavigator.BindingSource = this.agentSchedulesBindingSource;
-            this.agentSchedulesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.agentSchedulesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.agentSchedulesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dgvAgentSchedule.AutoGenerateColumns = false;
+            this.dgvAgentSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAgentSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAgentSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.dgvAgentSchedule.DataSource = this.agentBindingSource1;
+            this.dgvAgentSchedule.Location = new System.Drawing.Point(12, 186);
+            this.dgvAgentSchedule.MultiSelect = false;
+            this.dgvAgentSchedule.Name = "dgvAgentSchedule";
+            this.dgvAgentSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAgentSchedule.Size = new System.Drawing.Size(831, 330);
+            this.dgvAgentSchedule.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "agentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "agentName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Department";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "agentShift";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Shift";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "workDay1";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Day1";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "workDay2";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Day2";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "workDay3";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Day3";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "workDay4";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Day4";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "workDay5";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Day5";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AutoSize = false;
+            this.bindingNavigator1.BindingSource = this.agentBindingSource1;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -212,18 +199,24 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator3,
+            this.toolStripButton1,
+            this.toolStripSeparator2,
             this.bindingNavigatorDeleteItem,
-            this.agentSchedulesBindingNavigatorSaveItem});
-            this.agentSchedulesBindingNavigator.Location = new System.Drawing.Point(0, 138);
-            this.agentSchedulesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.agentSchedulesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.agentSchedulesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.agentSchedulesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.agentSchedulesBindingNavigator.Name = "agentSchedulesBindingNavigator";
-            this.agentSchedulesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.agentSchedulesBindingNavigator.Size = new System.Drawing.Size(837, 25);
-            this.agentSchedulesBindingNavigator.TabIndex = 4;
-            this.agentSchedulesBindingNavigator.Text = "bindingNavigator1";
+            this.toolStripSeparator4});
+            this.bindingNavigator1.Location = new System.Drawing.Point(132, 528);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(618, 61);
+            this.bindingNavigator1.Stretch = true;
+            this.bindingNavigator1.TabIndex = 1;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -231,7 +224,7 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 58);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -240,13 +233,13 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 58);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 61);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -261,14 +254,14 @@ namespace GI_Inc.Forms
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 58);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 61);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -276,7 +269,7 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 58);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -285,210 +278,123 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 58);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 61);
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(88, 58);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(74, 58);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // agentSchedulesBindingNavigatorSaveItem
+            // toolStripButton1
             // 
-            this.agentSchedulesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.agentSchedulesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("agentSchedulesBindingNavigatorSaveItem.Image")));
-            this.agentSchedulesBindingNavigatorSaveItem.Name = "agentSchedulesBindingNavigatorSaveItem";
-            this.agentSchedulesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.agentSchedulesBindingNavigatorSaveItem.Text = "Save Data";
-            this.agentSchedulesBindingNavigatorSaveItem.Click += new System.EventHandler(this.agentSchedulesBindingNavigatorSaveItem_Click);
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(65, 58);
+            this.toolStripButton1.Text = "Save";
             // 
-            // agentIdLabel
+            // toolStripButton2
             // 
-            agentIdLabel.AutoSize = true;
-            agentIdLabel.Location = new System.Drawing.Point(37, 121);
-            agentIdLabel.Name = "agentIdLabel";
-            agentIdLabel.Size = new System.Drawing.Size(49, 13);
-            agentIdLabel.TabIndex = 3;
-            agentIdLabel.Text = "agent Id:";
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(61, 58);
+            this.toolStripButton2.Text = "Edit";
             // 
-            // agentIdTextBox
+            // toolStripSeparator1
             // 
-            this.agentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "agentId", true));
-            this.agentIdTextBox.Location = new System.Drawing.Point(138, 118);
-            this.agentIdTextBox.Name = "agentIdTextBox";
-            this.agentIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.agentIdTextBox.TabIndex = 4;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 61);
             // 
-            // agentNameLabel
+            // toolStripSeparator2
             // 
-            agentNameLabel.AutoSize = true;
-            agentNameLabel.Location = new System.Drawing.Point(37, 147);
-            agentNameLabel.Name = "agentNameLabel";
-            agentNameLabel.Size = new System.Drawing.Size(68, 13);
-            agentNameLabel.TabIndex = 5;
-            agentNameLabel.Text = "agent Name:";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 61);
             // 
-            // agentNameTextBox
+            // toolStripSeparator3
             // 
-            this.agentNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "agentName", true));
-            this.agentNameTextBox.Location = new System.Drawing.Point(138, 144);
-            this.agentNameTextBox.Name = "agentNameTextBox";
-            this.agentNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.agentNameTextBox.TabIndex = 6;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 61);
             // 
-            // agentDepartmentLabel
+            // toolStripSeparator4
             // 
-            agentDepartmentLabel.AutoSize = true;
-            agentDepartmentLabel.Location = new System.Drawing.Point(37, 173);
-            agentDepartmentLabel.Name = "agentDepartmentLabel";
-            agentDepartmentLabel.Size = new System.Drawing.Size(95, 13);
-            agentDepartmentLabel.TabIndex = 7;
-            agentDepartmentLabel.Text = "agent Department:";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 61);
             // 
-            // agentDepartmentTextBox
+            // panel1
             // 
-            this.agentDepartmentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "agentDepartment", true));
-            this.agentDepartmentTextBox.Location = new System.Drawing.Point(138, 170);
-            this.agentDepartmentTextBox.Name = "agentDepartmentTextBox";
-            this.agentDepartmentTextBox.Size = new System.Drawing.Size(100, 20);
-            this.agentDepartmentTextBox.TabIndex = 8;
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(855, 138);
+            this.panel1.TabIndex = 3;
             // 
-            // agentShiftLabel
+            // pictureBox1
             // 
-            agentShiftLabel.AutoSize = true;
-            agentShiftLabel.Location = new System.Drawing.Point(37, 199);
-            agentShiftLabel.Name = "agentShiftLabel";
-            agentShiftLabel.Size = new System.Drawing.Size(61, 13);
-            agentShiftLabel.TabIndex = 9;
-            agentShiftLabel.Text = "agent Shift:";
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(355, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(108, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // agentShiftTextBox
+            // label2
             // 
-            this.agentShiftTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "agentShift", true));
-            this.agentShiftTextBox.Location = new System.Drawing.Point(138, 196);
-            this.agentShiftTextBox.Name = "agentShiftTextBox";
-            this.agentShiftTextBox.Size = new System.Drawing.Size(100, 20);
-            this.agentShiftTextBox.TabIndex = 10;
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label2.Location = new System.Drawing.Point(127, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(603, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Welcome To Global Internetworking, Inc.";
             // 
-            // workDay1Label
+            // label3
             // 
-            workDay1Label.AutoSize = true;
-            workDay1Label.Location = new System.Drawing.Point(37, 225);
-            workDay1Label.Name = "workDay1Label";
-            workDay1Label.Size = new System.Drawing.Size(61, 13);
-            workDay1Label.TabIndex = 11;
-            workDay1Label.Text = "work Day1:";
-            // 
-            // workDay1TextBox
-            // 
-            this.workDay1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "workDay1", true));
-            this.workDay1TextBox.Location = new System.Drawing.Point(138, 222);
-            this.workDay1TextBox.Name = "workDay1TextBox";
-            this.workDay1TextBox.Size = new System.Drawing.Size(100, 20);
-            this.workDay1TextBox.TabIndex = 12;
-            // 
-            // workDay2Label
-            // 
-            workDay2Label.AutoSize = true;
-            workDay2Label.Location = new System.Drawing.Point(37, 251);
-            workDay2Label.Name = "workDay2Label";
-            workDay2Label.Size = new System.Drawing.Size(61, 13);
-            workDay2Label.TabIndex = 13;
-            workDay2Label.Text = "work Day2:";
-            // 
-            // workDay2TextBox
-            // 
-            this.workDay2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "workDay2", true));
-            this.workDay2TextBox.Location = new System.Drawing.Point(138, 248);
-            this.workDay2TextBox.Name = "workDay2TextBox";
-            this.workDay2TextBox.Size = new System.Drawing.Size(100, 20);
-            this.workDay2TextBox.TabIndex = 14;
-            // 
-            // workDay3Label
-            // 
-            workDay3Label.AutoSize = true;
-            workDay3Label.Location = new System.Drawing.Point(37, 277);
-            workDay3Label.Name = "workDay3Label";
-            workDay3Label.Size = new System.Drawing.Size(61, 13);
-            workDay3Label.TabIndex = 15;
-            workDay3Label.Text = "work Day3:";
-            // 
-            // workDay3TextBox
-            // 
-            this.workDay3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "workDay3", true));
-            this.workDay3TextBox.Location = new System.Drawing.Point(138, 274);
-            this.workDay3TextBox.Name = "workDay3TextBox";
-            this.workDay3TextBox.Size = new System.Drawing.Size(100, 20);
-            this.workDay3TextBox.TabIndex = 16;
-            // 
-            // workDay4Label
-            // 
-            workDay4Label.AutoSize = true;
-            workDay4Label.Location = new System.Drawing.Point(37, 303);
-            workDay4Label.Name = "workDay4Label";
-            workDay4Label.Size = new System.Drawing.Size(61, 13);
-            workDay4Label.TabIndex = 17;
-            workDay4Label.Text = "work Day4:";
-            // 
-            // workDay4TextBox
-            // 
-            this.workDay4TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "workDay4", true));
-            this.workDay4TextBox.Location = new System.Drawing.Point(138, 300);
-            this.workDay4TextBox.Name = "workDay4TextBox";
-            this.workDay4TextBox.Size = new System.Drawing.Size(100, 20);
-            this.workDay4TextBox.TabIndex = 18;
-            // 
-            // workDay5Label
-            // 
-            workDay5Label.AutoSize = true;
-            workDay5Label.Location = new System.Drawing.Point(37, 329);
-            workDay5Label.Name = "workDay5Label";
-            workDay5Label.Size = new System.Drawing.Size(61, 13);
-            workDay5Label.TabIndex = 19;
-            workDay5Label.Text = "work Day5:";
-            // 
-            // workDay5TextBox
-            // 
-            this.workDay5TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agentSchedulesBindingSource, "workDay5", true));
-            this.workDay5TextBox.Location = new System.Drawing.Point(138, 326);
-            this.workDay5TextBox.Name = "workDay5TextBox";
-            this.workDay5TextBox.Size = new System.Drawing.Size(100, 20);
-            this.workDay5TextBox.TabIndex = 20;
-            // 
-            // txtViewSchedules
-            // 
-            this.txtViewSchedules.Location = new System.Drawing.Point(378, 108);
-            this.txtViewSchedules.Name = "txtViewSchedules";
-            this.txtViewSchedules.Size = new System.Drawing.Size(359, 356);
-            this.txtViewSchedules.TabIndex = 21;
-            this.txtViewSchedules.Text = "";
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label3.Location = new System.Drawing.Point(285, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(262, 37);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Agent Schedules";
             // 
             // AgentSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 725);
-            this.Controls.Add(this.agentSchedulesBindingNavigator);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(855, 589);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bindingNavigator1);
+            this.Controls.Add(this.dgvAgentSchedule);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgentSchedule";
@@ -496,33 +402,38 @@ namespace GI_Inc.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgentSchedule";
             this.Load += new System.EventHandler(this.AgentSchedule_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgentSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agentSchedulesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agentSchedulesBindingNavigator)).EndInit();
-            this.agentSchedulesBindingNavigator.ResumeLayout(false);
-            this.agentSchedulesBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private DataSources.U06P8DDataSet5 u06P8DDataSet5;
-        private System.Windows.Forms.BindingSource agentSchedulesBindingSource;
-        private DataSources.U06P8DDataSet5TableAdapters.agentSchedulesTableAdapter agentSchedulesTableAdapter;
-        private DataSources.U06P8DDataSet5TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator agentSchedulesBindingNavigator;
+        private System.Windows.Forms.BindingSource agentBindingSource;
+        private DataSources.U06P8DDataSet6 u06P8DDataSet6;
+        private System.Windows.Forms.BindingSource agentBindingSource1;
+        private DataSources.U06P8DDataSet6TableAdapters.agentTableAdapter agentTableAdapter;
+        private DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView dgvAgentSchedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -534,16 +445,15 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton agentSchedulesBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox agentIdTextBox;
-        private System.Windows.Forms.TextBox agentNameTextBox;
-        private System.Windows.Forms.TextBox agentDepartmentTextBox;
-        private System.Windows.Forms.TextBox agentShiftTextBox;
-        private System.Windows.Forms.TextBox workDay1TextBox;
-        private System.Windows.Forms.TextBox workDay2TextBox;
-        private System.Windows.Forms.TextBox workDay3TextBox;
-        private System.Windows.Forms.TextBox workDay4TextBox;
-        private System.Windows.Forms.TextBox workDay5TextBox;
-        private System.Windows.Forms.RichTextBox txtViewSchedules;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

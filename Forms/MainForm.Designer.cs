@@ -35,15 +35,16 @@ namespace GI_Inc
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnApptReports = new System.Windows.Forms.Button();
             this.btnDeleteAppointment = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnModifyCustomer = new System.Windows.Forms.Button();
             this.btnAddAppointment = new System.Windows.Forms.Button();
             this.btnModifyAppointment = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
             this.btnAgentSchedules = new System.Windows.Forms.Button();
+            this.btnCustomerReports = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -106,19 +107,20 @@ namespace GI_Inc
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.btnReports, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnAgentSchedules, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnApptReports, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteAppointment, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteCustomer, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnModifyCustomer, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAddAppointment, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnModifyAppointment, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAddCustomer, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgentSchedules, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnCustomerReports, 1, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(172, 202);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
@@ -130,6 +132,20 @@ namespace GI_Inc
             this.tableLayoutPanel1.Size = new System.Drawing.Size(690, 358);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // btnApptReports
+            // 
+            this.btnApptReports.BackColor = System.Drawing.Color.Transparent;
+            this.btnApptReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApptReports.Location = new System.Drawing.Point(254, 263);
+            this.btnApptReports.Margin = new System.Windows.Forms.Padding(25);
+            this.btnApptReports.Name = "btnApptReports";
+            this.btnApptReports.Padding = new System.Windows.Forms.Padding(5);
+            this.btnApptReports.Size = new System.Drawing.Size(168, 70);
+            this.btnApptReports.TabIndex = 8;
+            this.btnApptReports.Text = "Appointment Reports";
+            this.btnApptReports.UseVisualStyleBackColor = false;
+            this.btnApptReports.Click += new System.EventHandler(this.btnApptReports_Click);
+            // 
             // btnDeleteAppointment
             // 
             this.btnDeleteAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,7 +153,7 @@ namespace GI_Inc
             this.btnDeleteAppointment.Margin = new System.Windows.Forms.Padding(25);
             this.btnDeleteAppointment.Name = "btnDeleteAppointment";
             this.btnDeleteAppointment.Padding = new System.Windows.Forms.Padding(5);
-            this.btnDeleteAppointment.Size = new System.Drawing.Size(143, 69);
+            this.btnDeleteAppointment.Size = new System.Drawing.Size(168, 69);
             this.btnDeleteAppointment.TabIndex = 5;
             this.btnDeleteAppointment.Text = "Delete Appointment";
             this.btnDeleteAppointment.UseVisualStyleBackColor = true;
@@ -149,7 +165,7 @@ namespace GI_Inc
             this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(25);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Padding = new System.Windows.Forms.Padding(15);
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(143, 69);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(168, 69);
             this.btnDeleteCustomer.TabIndex = 2;
             this.btnDeleteCustomer.Text = "Delete Client";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
@@ -161,7 +177,7 @@ namespace GI_Inc
             this.btnModifyCustomer.Margin = new System.Windows.Forms.Padding(25);
             this.btnModifyCustomer.Name = "btnModifyCustomer";
             this.btnModifyCustomer.Padding = new System.Windows.Forms.Padding(15);
-            this.btnModifyCustomer.Size = new System.Drawing.Size(142, 69);
+            this.btnModifyCustomer.Size = new System.Drawing.Size(168, 69);
             this.btnModifyCustomer.TabIndex = 1;
             this.btnModifyCustomer.Text = "Modify Client";
             this.btnModifyCustomer.UseVisualStyleBackColor = true;
@@ -172,8 +188,8 @@ namespace GI_Inc
             this.btnAddAppointment.Location = new System.Drawing.Point(25, 144);
             this.btnAddAppointment.Margin = new System.Windows.Forms.Padding(25);
             this.btnAddAppointment.Name = "btnAddAppointment";
-            this.btnAddAppointment.Padding = new System.Windows.Forms.Padding(15);
-            this.btnAddAppointment.Size = new System.Drawing.Size(141, 69);
+            this.btnAddAppointment.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAddAppointment.Size = new System.Drawing.Size(168, 69);
             this.btnAddAppointment.TabIndex = 3;
             this.btnAddAppointment.Text = "Add Appointment";
             this.btnAddAppointment.UseVisualStyleBackColor = true;
@@ -185,7 +201,7 @@ namespace GI_Inc
             this.btnModifyAppointment.Margin = new System.Windows.Forms.Padding(25);
             this.btnModifyAppointment.Name = "btnModifyAppointment";
             this.btnModifyAppointment.Padding = new System.Windows.Forms.Padding(5);
-            this.btnModifyAppointment.Size = new System.Drawing.Size(142, 69);
+            this.btnModifyAppointment.Size = new System.Drawing.Size(168, 69);
             this.btnModifyAppointment.TabIndex = 4;
             this.btnModifyAppointment.Text = "Modify Appointment";
             this.btnModifyAppointment.UseVisualStyleBackColor = true;
@@ -197,45 +213,49 @@ namespace GI_Inc
             this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(25);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Padding = new System.Windows.Forms.Padding(12);
-            this.btnAddCustomer.Size = new System.Drawing.Size(141, 69);
+            this.btnAddCustomer.Size = new System.Drawing.Size(168, 69);
             this.btnAddCustomer.TabIndex = 0;
             this.btnAddCustomer.Text = "Add Client";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(904, 553);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(97, 23);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Exit Application";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.Silver;
-            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Location = new System.Drawing.Point(232, 241);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(130, 90);
-            this.btnReports.TabIndex = 6;
-            this.btnReports.Text = "Reports";
-            this.btnReports.UseVisualStyleBackColor = false;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click_1);
-            // 
             // btnAgentSchedules
             // 
-            this.btnAgentSchedules.BackColor = System.Drawing.Color.Silver;
+            this.btnAgentSchedules.BackColor = System.Drawing.Color.Transparent;
             this.btnAgentSchedules.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgentSchedules.Location = new System.Drawing.Point(3, 241);
+            this.btnAgentSchedules.Location = new System.Drawing.Point(25, 263);
+            this.btnAgentSchedules.Margin = new System.Windows.Forms.Padding(25);
             this.btnAgentSchedules.Name = "btnAgentSchedules";
-            this.btnAgentSchedules.Size = new System.Drawing.Size(141, 90);
+            this.btnAgentSchedules.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAgentSchedules.Size = new System.Drawing.Size(168, 69);
             this.btnAgentSchedules.TabIndex = 7;
             this.btnAgentSchedules.Text = "Agent Schedules";
             this.btnAgentSchedules.UseVisualStyleBackColor = false;
             this.btnAgentSchedules.Click += new System.EventHandler(this.btnAgentSchedules_Click);
+            // 
+            // btnCustomerReports
+            // 
+            this.btnCustomerReports.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomerReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerReports.Location = new System.Drawing.Point(484, 263);
+            this.btnCustomerReports.Margin = new System.Windows.Forms.Padding(25);
+            this.btnCustomerReports.Name = "btnCustomerReports";
+            this.btnCustomerReports.Padding = new System.Windows.Forms.Padding(5);
+            this.btnCustomerReports.Size = new System.Drawing.Size(168, 70);
+            this.btnCustomerReports.TabIndex = 6;
+            this.btnCustomerReports.Text = "Customner Reports";
+            this.btnCustomerReports.UseVisualStyleBackColor = false;
+            this.btnCustomerReports.Click += new System.EventHandler(this.btnCustomerReports_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(900, 519);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(101, 57);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit Application";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MainForm
             // 
@@ -279,7 +299,8 @@ namespace GI_Inc
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDeleteAppointment;
         private System.Windows.Forms.Button btnDeleteCustomer;
-        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnCustomerReports;
         private System.Windows.Forms.Button btnAgentSchedules;
+        private System.Windows.Forms.Button btnApptReports;
     }
 }

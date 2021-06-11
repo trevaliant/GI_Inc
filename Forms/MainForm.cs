@@ -1,5 +1,6 @@
 ﻿using GI_Inc.DataSources;
 using GI_Inc.Forms;
+using GI_Inc.Forms.ApptReports;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ namespace GI_Inc
 {
     public partial class MainForm : Form
     {
-        user currentUser;
+        agent currentUser;
         int customerId;
         public MainForm()
         {
@@ -69,25 +70,29 @@ namespace GI_Inc
 
 
 
+        private void btnAgentSchedules_Click(object sender, EventArgs e)
+        {
+            AgentSchedule agentSchedule = new AgentSchedule();
+            agentSchedule.Show();
+            Hide();
+        }
+
+        private void btnApptReports_Click(object sender, EventArgs e)
+        {
+            ApptReportDashboard dashboard = new ApptReportDashboard();
+            dashboard.Show();
+            Hide();
+        }
+
+        private void btnCustomerReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
-        }
-
-        private void btnReports_Click_1(object sender, EventArgs e)
-        {
-            ReportPicker reportPicker = new ReportPicker();
-            reportPicker.Show();
-            Hide();
-
-        }
-
-        private void btnAgentSchedules_Click(object sender, EventArgs e)
-        {
-            AgentSchedule agent = new AgentSchedule();
-            agent.Show();
-            Hide();
         }
     }
 }

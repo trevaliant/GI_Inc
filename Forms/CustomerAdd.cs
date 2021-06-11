@@ -7,11 +7,11 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerAdd : Form
     {
-        user currentUser;
-        public CustomerAdd(user user)
+        agent currentUser;
+        public CustomerAdd(agent user)
         {
             InitializeComponent();
-            currentUser = new user();
+            currentUser = new agent();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

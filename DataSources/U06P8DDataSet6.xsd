@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="U06P8DDataSet1" targetNamespace="http://tempuri.org/U06P8DDataSet1.xsd" xmlns:mstns="http://tempuri.org/U06P8DDataSet1.xsd" xmlns="http://tempuri.org/U06P8DDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="U06P8DDataSet6" targetNamespace="http://tempuri.org/U06P8DDataSet6.xsd" xmlns:mstns="http://tempuri.org/U06P8DDataSet6.xsd" xmlns="http://tempuri.org/U06P8DDataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -154,7 +154,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="U06P8DDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="U06P8DDataSet1" msprop:Generator_UserDSName="U06P8DDataSet1">
+  <xs:element name="U06P8DDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="U06P8DDataSet6" msprop:Generator_UserDSName="U06P8DDataSet6">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="agent" msprop:Generator_TableClassName="agentDataTable" msprop:Generator_TableVarName="tableagent" msprop:Generator_TablePropName="agent" msprop:Generator_RowDeletingName="agentRowDeleting" msprop:Generator_RowChangingName="agentRowChanging" msprop:Generator_RowEvHandlerName="agentRowChangeEventHandler" msprop:Generator_RowDeletedName="agentRowDeleted" msprop:Generator_UserTableName="agent" msprop:Generator_RowChangedName="agentRowChanged" msprop:Generator_RowEvArgName="agentRowChangeEvent" msprop:Generator_RowClassName="agentRow">

@@ -11,9 +11,9 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerModify : Form
     {
-        user currentUser;
+        agent currentUser;
         int custId;
-        public CustomerModify(user users, int modCustId)
+        public CustomerModify(agent users, int modCustId)
         {
             InitializeComponent();
             populateCustomerList();

@@ -36,7 +36,7 @@ namespace GI_Inc.Forms
                 cbReports.Show();
                 if (reportmode == (int)reportMode.consultant)
                 {
-                    setCbValuesToUsers();
+          
                 }
                 if (reportmode == (int)reportMode.customer)
                 {
@@ -57,14 +57,7 @@ namespace GI_Inc.Forms
             cbReports.DataSource = customerList;
         }
 
-        private void setCbValuesToUsers()
-        {
-            var userList = userUtility.getUsers();
-            cbReports.ValueMember = "agentId";
-            cbReports.DisplayMember = "agentName";
-            cbReports.DataSource = userList;
 
-        }
 
         private void setReportMode(int report)
         {

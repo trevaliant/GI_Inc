@@ -69,7 +69,7 @@ namespace GI_Inc.Forms
                     cmd.Parameters.AddWithValue("@agentTimeZone", cbTimezone.SelectedItem);
                     cmd.Parameters.AddWithValue("@agentCountry", cbCountry.SelectedItem);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registration was successful");
+                    MessageBox.Show("Registration was successful, click the 'Login Button' to log in!");
 
                     Clear();
 
@@ -80,6 +80,7 @@ namespace GI_Inc.Forms
 
             {
                 txtName.Text = txtPassword.Text = txtUserName.Text = txtConfirmPassword.Text = "";
+                cbTimezone.SelectedItem = cbDepartment.SelectedItem = cbCountry.SelectedItem = "";
             }
         }
 
@@ -89,6 +90,44 @@ namespace GI_Inc.Forms
             loginForm.Show();
             Hide();
 
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.Active = true;
+            toolTip.IsBalloon = true;
+            toolTip.SetToolTip(txtName, "First and Last Name");
+
+            ToolTip  toolTip2 = new ToolTip();
+            toolTip2.Active = true;
+            toolTip2.IsBalloon = true;
+            toolTip2.SetToolTip(cbDepartment, "Choose item from dropdown");
+
+            ToolTip toolTip3 = new ToolTip();
+            toolTip3.Active = true;
+            toolTip3.IsBalloon = true;
+            toolTip3.SetToolTip(cbCountry, "Choose item from dropdown");
+
+            ToolTip toolTip4 = new ToolTip();
+            toolTip4.Active = true;
+            toolTip4.IsBalloon = true;
+            toolTip4.SetToolTip(cbTimezone, "Choose item from dropdown"); 
+            
+            ToolTip toolTip5 = new ToolTip();
+            toolTip5.Active = true;
+            toolTip5.IsBalloon = true;
+            toolTip5.SetToolTip(txtPassword, "Min. 4 characters");
+
+            ToolTip toolTip6 = new ToolTip();
+            toolTip6.Active = true;
+            toolTip6.IsBalloon = true;
+            toolTip6.SetToolTip(txtConfirmPassword, "Must match initial password");
+
+            ToolTip toolTip7 = new ToolTip();
+            toolTip7.Active = true;
+            toolTip7.IsBalloon = true;
+            toolTip7.SetToolTip(txtUserName, "First Initial, Last Name");
         }
     }
 }

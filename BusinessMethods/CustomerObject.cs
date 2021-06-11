@@ -15,7 +15,7 @@ namespace GI_Inc.BusinessMethods
         private static string userName;
         string username;
         MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-        U06P8DEntities entities = new U06P8DEntities();
+        U06P8DEntities11 entities = new U06P8DEntities11();
         public CustomerObject(string username)
         {
             this.username = username;
@@ -45,7 +45,7 @@ namespace GI_Inc.BusinessMethods
         }
 
 
-        public int verifyUser(user userInfo)
+        public int verifyUser(agent userInfo)
         {
             int agentID = -1;
 
@@ -56,12 +56,12 @@ namespace GI_Inc.BusinessMethods
             {
                 conn.Open();
                 MySqlCommand checkUserNameCmd = conn.CreateCommand();
-                checkUserNameCmd.CommandText = "SELECT EXISTS(SELECT userName FROM user WHERE userName = @userName)";
+                checkUserNameCmd.CommandText = "SELECT EXISTS(SELECT userName FROM agent WHERE userName = @userName)";
                 checkUserNameCmd.Parameters.AddWithValue("@userName", userInfo.userName);
                 returnedUserName = checkUserNameCmd.ExecuteScalar().ToString();
 
                 MySqlCommand checkPasswordCmd = conn.CreateCommand();
-                checkPasswordCmd.CommandText = "SELECT EXISTS(SELECT password FROM user WHERE password = @password AND userName = @userName)";
+                checkPasswordCmd.CommandText = "SELECT EXISTS(SELECT password FROM agent WHERE password = @password AND userName = @userName)";
                 checkPasswordCmd.Parameters.AddWithValue("@password", userInfo.password);
                 checkPasswordCmd.Parameters.AddWithValue("@userName", userInfo.userName);
                 returnedPassword = checkPasswordCmd.ExecuteScalar().ToString();
@@ -70,7 +70,7 @@ namespace GI_Inc.BusinessMethods
                 if (returnedUserName == "1" && returnedPassword == "1")
                 {
                     MySqlCommand returnUserIdCmd = conn.CreateCommand();
-                    returnUserIdCmd.CommandText = "SELECT userId FROM user WHERE  password = @password AND userName = @userName";
+                    returnUserIdCmd.CommandText = "SELECT userId FROM agent WHERE  password = @password AND userName = @userName";
                     returnUserIdCmd.Parameters.AddWithValue("@password", userInfo.password);
                     returnUserIdCmd.Parameters.AddWithValue("@userName", userInfo.userName);
                     agentID = (int)returnUserIdCmd.ExecuteScalar();

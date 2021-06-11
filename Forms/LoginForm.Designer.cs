@@ -91,7 +91,7 @@ namespace GI_Inc
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(137, 170);
+            this.label3.Location = new System.Drawing.Point(149, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 37);
             this.label3.TabIndex = 2;
@@ -103,7 +103,7 @@ namespace GI_Inc
             this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(70, 317);
+            this.lblUsername.Location = new System.Drawing.Point(106, 355);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(163, 37);
             this.lblUsername.TabIndex = 3;
@@ -115,7 +115,7 @@ namespace GI_Inc
             this.lblPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(70, 422);
+            this.lblPassword.Location = new System.Drawing.Point(116, 413);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(153, 37);
             this.lblPassword.TabIndex = 4;
@@ -124,7 +124,7 @@ namespace GI_Inc
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(314, 328);
+            this.txtUsername.Location = new System.Drawing.Point(337, 366);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(176, 26);
             this.txtUsername.TabIndex = 5;
@@ -132,7 +132,7 @@ namespace GI_Inc
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(314, 433);
+            this.txtPassword.Location = new System.Drawing.Point(337, 424);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(176, 26);
             this.txtPassword.TabIndex = 6;
@@ -141,7 +141,7 @@ namespace GI_Inc
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(228, 537);
+            this.btnLogin.Location = new System.Drawing.Point(156, 565);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 47);
             this.btnLogin.TabIndex = 7;
@@ -152,7 +152,7 @@ namespace GI_Inc
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(77, 590);
+            this.btnRegister.Location = new System.Drawing.Point(337, 186);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(115, 47);
             this.btnRegister.TabIndex = 8;
@@ -163,7 +163,7 @@ namespace GI_Inc
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(415, 537);
+            this.btnExit.Location = new System.Drawing.Point(368, 565);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(87, 47);
             this.btnExit.TabIndex = 9;
@@ -188,21 +188,22 @@ namespace GI_Inc
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(198, 609);
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(124, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(419, 16);
+            this.label2.Size = new System.Drawing.Size(199, 58);
             this.label2.TabIndex = 11;
             this.label2.Text = "If you do not have a login, please click on the Register button to begin!";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(322, 537);
+            this.btnReset.Location = new System.Drawing.Point(260, 565);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(88, 47);
             this.btnReset.TabIndex = 12;

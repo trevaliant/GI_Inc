@@ -2,6 +2,7 @@
 using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,7 +14,9 @@ namespace GI_Inc.BusinessMethods
 
         private const string connectionString = "server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D";
         string username;
-        U06P8DEntities entities = new U06P8DEntities();
+        private static int agentID;
+        private static string userName;
+        U06P8DEntities11 entities = new U06P8DEntities11();
         public UserUtility(string username)
         {
             this.username = username;
@@ -23,7 +26,25 @@ namespace GI_Inc.BusinessMethods
         {
 
         }
+        public static int getCurrentUserId()
+        {
+            return agentID;
+        }
 
+        public static void setCurrentUserId(int currentUserId)
+        {
+            agentID = currentUserId;
+        }
+
+        public static string getCurrentUserName()
+        {
+            return userName;
+        }
+
+        public static void setCurrentUserName(string currentUserName)
+        {
+            userName = currentUserName;
+        }
         static public string convertToTimezone(string dateTime)
         {
             DateTime utcDateTime = DateTime.Parse(dateTime.ToString());
@@ -77,13 +98,13 @@ namespace GI_Inc.BusinessMethods
             return agentId;
         }
 
-        public DataTable schedule(string agentID)
+        public DataTable schedule(int agentShift)
         {
 
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
-            string query = "SELECT distinct agentId as 'AgentID', agentName as 'Name',  agentDepartment as 'Department', workDays as 'Days', startTime as 'Start', endTime as 'End' from agentSchedules where agentSchedules.agentName = agentName order by agentId";
+            string query = "SELECT * from agent where agent.agentName = agentName order by agentId";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             DataTable datatable = new DataTable();
@@ -101,10 +122,7 @@ namespace GI_Inc.BusinessMethods
 
         }
 
-        public List<agent> getUsers()
-        {
-            return entities.agents.ToList();
-        }
+
 
 
 

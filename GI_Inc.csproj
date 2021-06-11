@@ -128,20 +128,29 @@
     <Compile Include="BusinessMethods\CustomerInfo.cs" />
     <Compile Include="BusinessMethods\CustomerObject.cs" />
     <Compile Include="BusinessMethods\UserUtility.cs" />
-    <Compile Include="DataSources\DataEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntities.Context.tt</DependentUpon>
+    <Compile Include="DataSources\agent.cs">
+      <DependentUpon>DataEntities2.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\DataEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntities.tt</DependentUpon>
+    <Compile Include="DataSources\appointment.cs">
+      <DependentUpon>DataEntities2.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\DataEntities.Designer.cs">
+    <Compile Include="DataSources\customer.cs">
+      <DependentUpon>DataEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\DataEntities2.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntities.edmx</DependentUpon>
+      <DependentUpon>DataEntities2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\DataEntities2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEntities2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\DataEntities2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEntities2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Forms\AgentSchedule.cs">
       <SubType>Form</SubType>
@@ -160,6 +169,30 @@
     </Compile>
     <Compile Include="Forms\AppointmentDelete.Designer.cs">
       <DependentUpon>AppointmentDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentSales.Designer.cs">
+      <DependentUpon>AppointmentSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentsByWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentsByWeek.Designer.cs">
+      <DependentUpon>AppointmentsByWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApptReports\AppointmentTypes.Designer.cs">
+      <DependentUpon>AppointmentTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApptReports\ApptReportDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApptReports\ApptReportDashboard.Designer.cs">
+      <DependentUpon>ApptReportDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerAdd.cs">
       <SubType>Form</SubType>
@@ -203,12 +236,6 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReportPicker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ReportPicker.Designer.cs">
-      <DependentUpon>ReportPicker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,31 +255,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\U06P8DDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>U06P8DDataSet4.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BusinessMethods\Agent.cs" />
     <Compile Include="DataSources\U06P8DDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\U06P8DDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSources\U06P8DDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\U06P8DDataSet5.Designer.cs">
+    <Compile Include="DataSources\U06P8DDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\U06P8DDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>U06P8DDataSet6.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AgentSchedule.resx">
       <DependentUpon>AgentSchedule.cs</DependentUpon>
@@ -262,6 +284,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AppointmentDelete.resx">
       <DependentUpon>AppointmentDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApptReports\AppointmentSales.resx">
+      <DependentUpon>AppointmentSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApptReports\AppointmentsByWeek.resx">
+      <DependentUpon>AppointmentsByWeek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApptReports\AppointmentTypes.resx">
+      <DependentUpon>AppointmentTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApptReports\ApptReportDashboard.resx">
+      <DependentUpon>ApptReportDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerAdd.resx">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
@@ -284,9 +318,6 @@
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReportPicker.resx">
-      <DependentUpon>ReportPicker.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,12 +333,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="DataSources\DataEntities.edmx">
+    <EntityDeploy Include="DataSources\DataEntities2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataEntities2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataSources\DataEntities.edmx.diagram">
-      <DependentUpon>DataEntities.edmx</DependentUpon>
+    <None Include="DataSources\DataEntities2.edmx.diagram">
+      <DependentUpon>DataEntities2.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -329,17 +360,6 @@
     </None>
     <None Include="DataSources\U06P8DDataSet.xss">
       <DependentUpon>U06P8DDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataSources\U06P8DDataSet1.xsc">
-      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSources\U06P8DDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>U06P8DDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSources\U06P8DDataSet1.xss">
-      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </None>
     <None Include="DataSources\U06P8DDataSet2.xsc">
       <DependentUpon>U06P8DDataSet2.xsd</DependentUpon>
@@ -363,27 +383,27 @@
     <None Include="DataSources\U06P8DDataSet3.xss">
       <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="DataSources\U06P8DDataSet4.xsc">
-      <DependentUpon>U06P8DDataSet4.xsd</DependentUpon>
+    <None Include="DataSources\U06P8DDataSet1.xsc">
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="DataSources\U06P8DDataSet4.xsd">
+    <None Include="DataSources\U06P8DDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>U06P8DDataSet4.Designer.cs</LastGenOutput>
+      <LastGenOutput>U06P8DDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSources\U06P8DDataSet4.xss">
-      <DependentUpon>U06P8DDataSet4.xsd</DependentUpon>
+    <None Include="DataSources\U06P8DDataSet1.xss">
+      <DependentUpon>U06P8DDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="DataSources\U06P8DDataSet5.xsc">
-      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
+    <None Include="DataSources\U06P8DDataSet6.xsc">
+      <DependentUpon>U06P8DDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="DataSources\U06P8DDataSet5.xsd">
+    <None Include="DataSources\U06P8DDataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>U06P8DDataSet5.Designer.cs</LastGenOutput>
+      <LastGenOutput>U06P8DDataSet6.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSources\U06P8DDataSet5.xss">
-      <DependentUpon>U06P8DDataSet5.xsd</DependentUpon>
+    <None Include="DataSources\U06P8DDataSet6.xss">
+      <DependentUpon>U06P8DDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -405,15 +425,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataSources\DataEntities.Context.tt">
+    <Content Include="DataSources\DataEntities2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataEntities.edmx</DependentUpon>
-      <LastGenOutput>DataEntities.Context.cs</LastGenOutput>
+      <DependentUpon>DataEntities2.edmx</DependentUpon>
+      <LastGenOutput>DataEntities2.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataSources\DataEntities.tt">
+    <Content Include="DataSources\DataEntities2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataEntities.edmx</DependentUpon>
-      <LastGenOutput>DataEntities.cs</LastGenOutput>
+      <DependentUpon>DataEntities2.edmx</DependentUpon>
+      <LastGenOutput>DataEntities2.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

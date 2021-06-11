@@ -15,8 +15,8 @@ namespace GI_Inc.BusinessMethods
         private static string userName;
         string username;
         private static int agentID;
-        U06P8DEntities entities = new U06P8DEntities();
-
+        U06P8DEntities11 entities = new U06P8DEntities11();
+        private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
         public CalendarObject(string username)
         {
             this.username = username;
@@ -34,8 +34,6 @@ namespace GI_Inc.BusinessMethods
         {
             agentID = currUserID;
         }
-
-
         public static void setAgentID(int assignedAgent)
         {
             agentID = assignedAgent;
@@ -43,6 +41,15 @@ namespace GI_Inc.BusinessMethods
         public static string getUserName()
         {
             return userName;
+        }
+        public static Dictionary<int, Hashtable> getAgentList()
+        {
+            return _agents;
+        }
+
+        public static void setAgentList(Dictionary<int, Hashtable> agents)
+        {
+            _agents = agents;
         }
         private static Dictionary<int, Hashtable> currentAppointments = new Dictionary<int, Hashtable>();
         public static Dictionary<int, Hashtable> getAppts()

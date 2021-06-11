@@ -6,7 +6,7 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerDelete : Form
     {
-        user currentUser;
+        agent currentUser;
         int custId;
         public CustomerDelete()
         {

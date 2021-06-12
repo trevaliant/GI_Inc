@@ -1,4 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.DAL;   
 using GI_Inc.Forms;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace GI_Inc
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserUtility userUtility = new UserUtility();
-            Agent userInfo = new Agent(txtUsername.Text, txtPassword.Text);
+            Agents userInfo = new Agents(txtUsername.Text, txtPassword.Text);
             userInfo.agentId = userUtility.verifyUser(userInfo);
 
             if (userInfo.agentId != -1)

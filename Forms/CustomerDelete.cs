@@ -59,12 +59,13 @@ namespace GI_Inc.Forms
         {   MySqlConnection conn = new MySqlConnection(connectionString);
                 
                 conn.Open();
-                var query = "SELECT  distinct * FROM appointment  left JOIN customer on DATE(appointment.start) > current_timestamp and appointment.customerId = customer.customerId";
+                var query = $"SELECT  distinct * FROM appointment  left JOIN customer on " +
+                $"DATE(appointment.start) > current_timestamp and appointment.customerId = {custSelected}";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 var associatedAppts = cmd.ExecuteNonQuery();
                 conn.Close();
 
-            if (associatedAppts != 0)
+            if (associatedAppts == 1)
                 return true;
             else
                 return false;
@@ -73,11 +74,10 @@ namespace GI_Inc.Forms
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int custSelected = Convert.ToInt32(dgvCustomerList.Rows[dgvCustomerList.CurrentCell.RowIndex].Cells[0].Value);
-            if (custSelected != -1)
+            if (custSelected >=0)
             {
                 checkAssociatedAppts(custSelected);
                 MessageBox.Show("This customer has appointments, please delete those first before deleteing the customer.");
-
             }
             else
             {

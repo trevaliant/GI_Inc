@@ -33,5 +33,7 @@ namespace GI_Inc.Properties {
                 return ((string)(this["U06P8DConnectionString"]));
             }
         }
+
+        public string language { get; internal set; }
     }
 }

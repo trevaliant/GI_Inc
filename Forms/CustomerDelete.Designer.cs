@@ -37,6 +37,7 @@ namespace GI_Inc.Forms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.dgvCustomerList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@ namespace GI_Inc.Forms
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -63,9 +63,9 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.customerTableAdapter = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter();
             this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -128,6 +128,18 @@ namespace GI_Inc.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(891, 621);
             this.panel1.TabIndex = 22;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(253, 544);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(135, 66);
+            this.btnDelete.TabIndex = 60;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dgvCustomerList
             // 
@@ -240,7 +252,7 @@ namespace GI_Inc.Forms
             // btnBackToDash
             // 
             this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToDash.Location = new System.Drawing.Point(753, 547);
+            this.btnBackToDash.Location = new System.Drawing.Point(740, 544);
             this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToDash.Name = "btnBackToDash";
             this.btnBackToDash.Size = new System.Drawing.Size(120, 65);
@@ -256,7 +268,7 @@ namespace GI_Inc.Forms
             this.customerBindingNavigator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.customerBindingNavigator.BindingSource = this.customerBindingSource;
             this.customerBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.customerBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.customerBindingNavigator.DeleteItem = null;
             this.customerBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.customerBindingNavigator.GripMargin = new System.Windows.Forms.Padding(10);
             this.customerBindingNavigator.ImageScalingSize = new System.Drawing.Size(25, 25);
@@ -281,7 +293,7 @@ namespace GI_Inc.Forms
             this.customerBindingNavigator.Size = new System.Drawing.Size(861, 68);
             this.customerBindingNavigator.TabIndex = 2;
             this.customerBindingNavigator.Text = "bindingNavigator1";
-
+            this.customerBindingNavigator.RefreshItems += new System.EventHandler(this.customerBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorCountItem
             // 
@@ -289,23 +301,6 @@ namespace GI_Inc.Forms
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 65);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.AutoSize = false;
-            this.bindingNavigatorDeleteItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.BackgroundImage")));
-            this.bindingNavigatorDeleteItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bindingNavigatorDeleteItem.Margin = new System.Windows.Forms.Padding(0);
-            this.bindingNavigatorDeleteItem.MergeIndex = 0;
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.bindingNavigatorDeleteItem.Padding = new System.Windows.Forms.Padding(2);
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(130, 250);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -368,6 +363,23 @@ namespace GI_Inc.Forms
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 68);
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.AutoSize = false;
+            this.bindingNavigatorDeleteItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.BackgroundImage")));
+            this.bindingNavigatorDeleteItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorDeleteItem.Margin = new System.Windows.Forms.Padding(0);
+            this.bindingNavigatorDeleteItem.MergeIndex = 0;
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.bindingNavigatorDeleteItem.Padding = new System.Windows.Forms.Padding(2);
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(130, 250);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
@@ -377,18 +389,6 @@ namespace GI_Inc.Forms
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.customerTableAdapter = this.customerTableAdapter;
             this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(566, 544);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 65);
-            this.btnDelete.TabIndex = 60;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // CustomerDelete
             // 
@@ -431,17 +431,6 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.BindingSource customerBindingSource;
         private DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter customerTableAdapter;
         private DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator customerBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView dgvCustomerList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -454,5 +443,16 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.BindingNavigator customerBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }

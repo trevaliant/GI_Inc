@@ -1,4 +1,5 @@
-﻿using GI_Inc.DataSources;
+﻿using GI_Inc.DAL;
+using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;

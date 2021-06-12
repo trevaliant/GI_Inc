@@ -22,5 +22,6 @@ namespace GI_Inc.DAL
         public int agentId { get; set; }
         public string title { get; set; }
         public decimal salesAmount { get; set; }
+        public bool isDeleted { get; set; }
     }
 }

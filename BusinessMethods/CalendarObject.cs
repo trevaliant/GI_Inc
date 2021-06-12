@@ -71,6 +71,7 @@ namespace GI_Inc.BusinessMethods
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "DELETE FROM appointment WHERE appointmentId = @appointmentId";
                 cmd.Parameters.AddWithValue("@appointmentId", apptSelected);
+                cmd.Parameters.AddWithValue("@isDeleted", 1);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }

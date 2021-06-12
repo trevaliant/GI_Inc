@@ -53,17 +53,18 @@ namespace GI_Inc.Forms
             Hide();
         }
 
-        public bool removeAssociatedAppts(int custSelected)
+        //checks if customer has future appointments when deleting customer. 
+        public bool checkAssociatedAppts(int custSelected)
 
         {   MySqlConnection conn = new MySqlConnection(connectionString);
                 
                 conn.Open();
-                var query = "DELETE FROM customer where customer.customerId = appointment.customerId";
+                var query = "SELECT  distinct * FROM appointment  left JOIN customer on DATE(appointment.start) > current_timestamp and appointment.customerId = customer.customerId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                int appointmentDeleted = cmd.ExecuteNonQuery();
+                var associatedAppts = cmd.ExecuteNonQuery();
                 conn.Close();
 
-            if (appointmentDeleted != 0)
+            if (associatedAppts != 0)
                 return true;
             else
                 return false;
@@ -74,13 +75,22 @@ namespace GI_Inc.Forms
             int custSelected = Convert.ToInt32(dgvCustomerList.Rows[dgvCustomerList.CurrentCell.RowIndex].Cells[0].Value);
             if (custSelected != -1)
             {
-                
-                removeAssociatedAppts(custSelected);
+                checkAssociatedAppts(custSelected);
+                MessageBox.Show("This customer has appointments, please delete those first before deleteing the customer.");
+
+            }
+            else
+            {
                 customerObject.deleteCustomer(custSelected);
                 dgvCustomerList.DataSource = u06P8DDataSet3.customer;
 
                 MessageBox.Show("Customer was deleted");
-            }
+            }    
+        }
+
+        private void customerBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }

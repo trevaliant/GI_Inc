@@ -281,7 +281,7 @@ namespace GI_Inc.BusinessMethods
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = $"DELETE FROM customer WHERE customerId = {custSelected}";
-                cmd.Parameters.AddWithValue("@customerId", custSelected);
+
                 cmd.ExecuteNonQuery();
 
             }

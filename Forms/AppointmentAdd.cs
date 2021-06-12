@@ -1,4 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.DAL;
 using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
@@ -10,7 +11,7 @@ namespace GI_Inc.Forms
 {
     public partial class AppointmentAdd : Form
     {
-        U06P8DEntities11 entities11 = new U06P8DEntities11();
+        DBEntities entities11 = new DBEntities();
         public AppointmentAdd()
         {
             InitializeComponent();

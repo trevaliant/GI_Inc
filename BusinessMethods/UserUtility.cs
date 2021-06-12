@@ -1,4 +1,5 @@
 ﻿
+using GI_Inc.DAL;
 using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
@@ -16,7 +17,7 @@ namespace GI_Inc.BusinessMethods
         string username;
         private static int agentID;
         private static string userName;
-        U06P8DEntities11 entities = new U06P8DEntities11();
+        DBEntities entities = new DBEntities();
         public UserUtility(string username)
         {
             this.username = username;
@@ -117,7 +118,7 @@ namespace GI_Inc.BusinessMethods
 
         public string getUserNameById(int dataId)
         {
-            var user = entities.agents.FirstOrDefault(a => a.agentId == dataId);
+            var user = entities.Agents.FirstOrDefault(a => a.agentId == dataId);
             return user.agentName;
 
         }

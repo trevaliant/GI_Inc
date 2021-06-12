@@ -1,4 +1,5 @@
 ﻿
+using GI_Inc.DAL;
 using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
@@ -15,7 +16,7 @@ namespace GI_Inc.BusinessMethods
         private static string userName;
         string username;
         private static int agentID;
-        U06P8DEntities11 entities = new U06P8DEntities11();
+        DBEntities entities = new DBEntities();
         private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
         public CalendarObject(string username)
         {
@@ -128,7 +129,7 @@ namespace GI_Inc.BusinessMethods
             string utcOffset = (TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6));
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
-            var query = $"SELECT start, (SELECT customerName from customer where customerId = appointment.customerId) as 'Customer Name' from appointment where start > now() order by start limit 1";
+            var query = $"SELECT start, (SELECT agentName from agent where agentId = appointment.agentId) as 'Agent', (SELECT customerName from customer where customerId = appointment.customerId) as 'Customer Name' from appointment where start > now() order by start limit 1";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
@@ -136,6 +137,7 @@ namespace GI_Inc.BusinessMethods
                 reader.Read();
                 nextAppt.Add("start", Convert.ToDateTime(reader[0]).ToLocalTime());
                 nextAppt.Add("customerName", reader[1]);
+                nextAppt.Add("agentName", reader[2]);
                 conn.Close();
             }
             return nextAppt;
@@ -174,7 +176,7 @@ namespace GI_Inc.BusinessMethods
         }
         public List<appointment> getAllAppointmentsForAUser(string username)
         {
-            var appointment = entities.appointments.Where(a => String.Equals(a.agentId, username));
+            var appointment = entities.Appointments.Where(a => String.Equals(a.agentId, username));
             return appointment.ToList();
         }
         public List<appointment> getAppointmentsByWeek(int weekNum, string username)
@@ -207,7 +209,7 @@ namespace GI_Inc.BusinessMethods
                     reader.Read();
                     list.Add(new KeyValuePair<string, object>("appointmentId", reader[0]));
                     list.Add(new KeyValuePair<string, object>("customerId", reader[1]));
-                    list.Add(new KeyValuePair<string, object>("description", reader[3]));
+                    list.Add(new KeyValuePair<string, object>("description", reader[2]));
                     list.Add(new KeyValuePair<string, object>("location", reader[4]));
                     list.Add(new KeyValuePair<string, object>("type", reader[5]));
                     list.Add(new KeyValuePair<string, object>("start", reader[6]));
@@ -259,7 +261,7 @@ namespace GI_Inc.BusinessMethods
 
         public List<appointment> getAppointmentsByMonth(int month, string username)
         {
-            var appointment = entities.appointments.Where(a => (a.start.Month == month || a.end.Month == month) && String.Equals(a.agentId, username));
+            var appointment = entities.Appointments.Where(a => (a.start.Month == month || a.end.Month == month) && String.Equals(a.agentId, username));
             return appointment.ToList();
         }
         public List<TypeCount> GetAppointmentTypeandCountByMonth(int month)

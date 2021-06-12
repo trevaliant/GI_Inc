@@ -1,4 +1,5 @@
-﻿using GI_Inc.DataSources;
+﻿using GI_Inc.DAL;
+using GI_Inc.DataSources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

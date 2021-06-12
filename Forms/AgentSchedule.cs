@@ -26,5 +26,17 @@ namespace GI_Inc.Forms
             this.agentTableAdapter.Fill(this.u06P8DDataSet6.agent);
 
         }
+
+        private void btnEditSchedule_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
+        }
     }
 }

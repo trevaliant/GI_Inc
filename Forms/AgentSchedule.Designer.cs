@@ -47,27 +47,28 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.btnAddSchedule = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEditSchedule = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource1)).BeginInit();
@@ -123,7 +124,7 @@ namespace GI_Inc.Forms
             this.dgvAgentSchedule.Name = "dgvAgentSchedule";
             this.dgvAgentSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgentSchedule.Size = new System.Drawing.Size(831, 330);
-            this.dgvAgentSchedule.TabIndex = 0;
+            this.dgvAgentSchedule.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -181,11 +182,11 @@ namespace GI_Inc.Forms
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AddNewItem = this.btnAddSchedule;
             this.bindingNavigator1.AutoSize = false;
             this.bindingNavigator1.BindingSource = this.agentBindingSource1;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.DeleteItem = this.btnDelete;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -198,25 +199,49 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
+            this.btnAddSchedule,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.btnEditSchedule,
             this.toolStripSeparator3,
-            this.toolStripButton1,
+            this.btnSave,
             this.toolStripSeparator2,
-            this.bindingNavigatorDeleteItem,
-            this.toolStripSeparator4});
-            this.bindingNavigator1.Location = new System.Drawing.Point(132, 528);
+            this.btnDelete,
+            this.toolStripSeparator4,
+            this.toolStripButton1});
+            this.bindingNavigator1.Location = new System.Drawing.Point(45, 528);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(618, 61);
+            this.bindingNavigator1.Size = new System.Drawing.Size(760, 61);
             this.bindingNavigator1.Stretch = true;
-            this.bindingNavigator1.TabIndex = 1;
+            this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // btnAddSchedule
+            // 
+            this.btnAddSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSchedule.Image")));
+            this.btnAddSchedule.Name = "btnAddSchedule";
+            this.btnAddSchedule.RightToLeftAutoMirrorImage = true;
+            this.btnAddSchedule.Size = new System.Drawing.Size(88, 58);
+            this.btnAddSchedule.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 58);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeftAutoMirrorImage = true;
+            this.btnDelete.Size = new System.Drawing.Size(74, 58);
+            this.btnDelete.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -251,16 +276,9 @@ namespace GI_Inc.Forms
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 58);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 61);
             // 
             // bindingNavigatorMoveNextItem
@@ -283,55 +301,40 @@ namespace GI_Inc.Forms
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 61);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(88, 58);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(74, 58);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(65, 58);
-            this.toolStripButton1.Text = "Save";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(61, 58);
-            this.toolStripButton2.Text = "Edit";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 61);
             // 
-            // toolStripSeparator2
+            // btnEditSchedule
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 61);
+            this.btnEditSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnEditSchedule.Image")));
+            this.btnEditSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditSchedule.Name = "btnEditSchedule";
+            this.btnEditSchedule.Size = new System.Drawing.Size(61, 58);
+            this.btnEditSchedule.Text = "Edit";
+            this.btnEditSchedule.Click += new System.EventHandler(this.btnEditSchedule_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 61);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(65, 58);
+            this.btnSave.Text = "Save";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 61);
             // 
             // toolStripSeparator4
             // 
@@ -385,6 +388,15 @@ namespace GI_Inc.Forms
             this.label3.TabIndex = 4;
             this.label3.Text = "Agent Schedules";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(141, 58);
+            this.toolStripButton1.Text = "Back To Dashboard";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // AgentSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,9 +446,9 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton btnAddSchedule;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -446,14 +458,15 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btnEditSchedule;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

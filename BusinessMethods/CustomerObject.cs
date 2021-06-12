@@ -1,8 +1,10 @@
 ﻿
+using GI_Inc.DAL;
 using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,17 +15,22 @@ namespace GI_Inc.BusinessMethods
     {
         private static int agentID;
         private static string userName;
+        private static int customerID;
         string username;
-        MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-        U06P8DEntities11 entities = new U06P8DEntities11();
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
+        DBEntities entities = new DBEntities();
         public CustomerObject(string username)
         {
             this.username = username;
+            
         }
         public CustomerObject()
         {
-
+            this.associatedAppointments = new List<appointment>();
         }
+
+        public List<appointment> associatedAppointments { get; set; }
+
         public static int getCurrentUserId()
         {
             return agentID;
@@ -54,6 +61,7 @@ namespace GI_Inc.BusinessMethods
 
             try
             {
+                MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
                 MySqlCommand checkUserNameCmd = conn.CreateCommand();
                 checkUserNameCmd.CommandText = "SELECT EXISTS(SELECT userName FROM agent WHERE userName = @userName)";
@@ -75,15 +83,12 @@ namespace GI_Inc.BusinessMethods
                     returnUserIdCmd.Parameters.AddWithValue("@userName", userInfo.userName);
                     agentID = (int)returnUserIdCmd.ExecuteScalar();
                 }
+                conn.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Exception thrown verifying user: " + ex);
-            }
-            finally
-            {
-                conn.Close();
             }
 
             return agentID;
@@ -93,14 +98,11 @@ namespace GI_Inc.BusinessMethods
             return DateTime.Now.ToUniversalTime();
 
         }
-        public List<appointment> getAllAppointmentsForACustomer(int customerID)
-        {
-            var appointment = entities.appointments.Where(a => a.customerId == customerID);
-            return appointment.ToList();
-        }
+
 
         public CustomerInfo getCustomerInfo(int customerId)
         {
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             CustomerInfo customerInfo = new CustomerInfo();
             string query = "SELECT customer.customerId, customer.customerName, customer.address, customer.address2, customer.city, customer.state, customer.postalCode, customer.phone, customer.country, customer.email FROM customer";
@@ -134,6 +136,7 @@ namespace GI_Inc.BusinessMethods
             bool success = false;
             try
             {
+                MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
                 string updateObject = "UPDATE customer SET customerName = @customerName WHERE customerId = @customerId, " +
                                       "address = @address, address2 = @address2, city = @city, state = @state, postalCode = @postalCode, phone = @phone, country=@country, email=@email";
@@ -155,36 +158,37 @@ namespace GI_Inc.BusinessMethods
 
                 cmd.ExecuteNonQuery();
                 success = true;
+                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Customer Object not saved: ", ex.Message);
                 success = false;
             }
-            finally
-            {
-                conn.Close();
-            }
             return success;
         }
 
         public DataTable getCustomers()
         {
+            MySqlConnection conn = new MySqlConnection(connectionString);
             DataTable customersDataTable = new DataTable();
             try
             {
-
-
                 if (!customersDataTable.Columns.Contains("customerId")) { customersDataTable.Columns.Add("customerId", typeof(int)); }
                 if (!customersDataTable.Columns.Contains("customerName")) { customersDataTable.Columns.Add("customerName", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("active")) { customersDataTable.Columns.Add("active", typeof(bool)); }
                 if (!customersDataTable.Columns.Contains("address")) { customersDataTable.Columns.Add("address", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("address2")) { customersDataTable.Columns.Add("address2", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("city")) { customersDataTable.Columns.Add("city", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("postalCode")) { customersDataTable.Columns.Add("postalCode", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("phone")) { customersDataTable.Columns.Add("phone", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("country")) { customersDataTable.Columns.Add("country", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("createDate")) { customersDataTable.Columns.Add("createDate", typeof(DateTime)); }
+                if (!customersDataTable.Columns.Contains("createdBy")) { customersDataTable.Columns.Add("createdBy", typeof(string)); }
+                if (!customersDataTable.Columns.Contains("lastUpdate")) { customersDataTable.Columns.Add("lastUpdate", typeof(DateTime)); }
+                if (!customersDataTable.Columns.Contains("lastUpdateBy")) { customersDataTable.Columns.Add("lastUpdateBy", typeof(string)); }
                 if (!customersDataTable.Columns.Contains("email")) { customersDataTable.Columns.Add("email", typeof(string)); }
-
+                
                 conn.Open();
                 string query = "SELECT customer.customerId, customer.customerName,customer.address, customer.address2, customer.city, customer.state, customer.phone, customer.postalCode,  customer.country, customer.email FROM customer";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -192,8 +196,9 @@ namespace GI_Inc.BusinessMethods
                 {
                     while (reader.Read())
                     {
-                        customersDataTable.Rows.Add(reader["customerId"], reader["customerName"], reader["address"],
-                            reader["address2"], reader["city"], reader["state"], reader["postalCode"], reader["phone"], reader["country"], reader["email"]);
+                        customersDataTable.Rows.Add(reader["customerId"], reader["customerName"], reader["active"], reader["address"],
+                            reader["address2"], reader["city"], reader["state"], reader["postalCode"], reader["phone"], reader["country"], 
+                            reader["createDate"], reader["createdBy"], reader["lastUpdate"], reader["lastUpdateBy"],  reader["email"]);
                     }
                 }
 
@@ -210,7 +215,7 @@ namespace GI_Inc.BusinessMethods
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+                MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
@@ -244,7 +249,7 @@ namespace GI_Inc.BusinessMethods
 
         public DataTable schedule(string agentID)
         {
-
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
             string query = "SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start', end as 'End', type as 'Type' FROM appointment where appointment.agentId = agentId order by start; ";
@@ -270,11 +275,12 @@ namespace GI_Inc.BusinessMethods
 
         public bool deleteCustomer(int custSelected)
         {
+            MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "DELETE FROM customer WHERE customerId = @customerId";
+                cmd.CommandText = $"DELETE FROM customer WHERE customerId = {custSelected}";
                 cmd.Parameters.AddWithValue("@customerId", custSelected);
                 cmd.ExecuteNonQuery();
 
@@ -292,32 +298,39 @@ namespace GI_Inc.BusinessMethods
         }
         public static int getID(string table, string id)
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
-            conn.Open();
-            var query = $"SELECT max({id}) FROM {table}";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            if (rdr.HasRows)
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            try
             {
-                rdr.Read();
-                if (rdr[0] == DBNull.Value)
+                conn.Open();
+                var query = $"SELECT max({id}) FROM {table}";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.HasRows)
                 {
+                    rdr.Read();
+                    if (rdr[0] == DBNull.Value)
+                    {
 
-                    return 0;
+                        return 0;
+                    }
+                    return Convert.ToInt32(rdr[0]); ;
                 }
-                return Convert.ToInt32(rdr[0]); ;
-            }
 
+            
+            }
+            catch
+            {
+
+            }
             return 0;
         }
 
         public static void updateCustomer(IDictionary<string, object> dictionary)
         {
+            MySqlConnection conn = new MySqlConnection(connectionString);
             int customerId = getCustomerId();
 
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
 
             var query = $"UPDATE customer SET customerName = '{dictionary["customerName"]}', " +
@@ -338,7 +351,7 @@ namespace GI_Inc.BusinessMethods
         public static List<KeyValuePair<string, object>> getCustomerList(int customerId)
         {
             var list = new List<KeyValuePair<string, object>>();
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             var query = $"SELECT * FROM customer WHERE customerId = {customerId}";
             MySqlCommand cmd = new MySqlCommand(query, conn);

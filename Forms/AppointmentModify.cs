@@ -12,8 +12,6 @@ namespace GI_Inc.Forms
     public partial class AppointmentModify : Form
 
     {
-        private agent Agent;
-
         public static List<KeyValuePair<string, object>> ApptList;
         public void setAppointList(List<KeyValuePair<string, object>> list)
         {
@@ -28,7 +26,6 @@ namespace GI_Inc.Forms
         {
             InitializeComponent();
             populateCustList();
-
         }
 
         public void populateCustList()
@@ -37,7 +34,7 @@ namespace GI_Inc.Forms
 
             try
             {
-                string query = "SELECT customerId, concat(customerName,  ' --Id#: ', customerId) as Display FROM customer;";
+                string query = "SELECT customer.customerId, customer.customerName, concat(customerName, ' --ID#: ', customer.customerId) AS Display FROM customer INNER JOIN appointment ON customer.customerId = appointment.customerId";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
                 DataSet dataSet = new DataSet();
@@ -45,7 +42,6 @@ namespace GI_Inc.Forms
                 cbCustomer.DisplayMember = "Display";
                 cbCustomer.ValueMember = "customerId";
                 cbCustomer.DataSource = dataSet.Tables["Cust"];
-
             }
             catch (Exception ex)
             {
@@ -57,13 +53,13 @@ namespace GI_Inc.Forms
         {
             populateApptList();
             cbAppointment.Enabled = true;
-            txtAgent.Enabled = false;
-            txtLocation.Enabled = false;
-            txtType.Enabled = false;
-            txtDescription.Enabled = false;
-            dtStart.Enabled = false;
-            dtEnd.Enabled = false;
-            btnSave.Enabled = false;
+            //txtAgent.Enabled = false;
+            //txtLocation.Enabled = false;
+            //txtType.Enabled = false;
+            //txtDescription.Visible = false;
+            //dtStart.Visible = false;
+            //dtEnd.Visible = false;
+            //btnSave.Visible = false;
         }
         public void populateApptList()
         {
@@ -72,7 +68,7 @@ namespace GI_Inc.Forms
             try
             {
                 string query = $"SELECT appointmentId, concat(type, ' -- ',  DATE_FORMAT(CONVERT_TZ(start, '+00:00', '{offsetUTC}'), '%M %D %Y %r')) " +
-                    $"as DISPLAY FROM appointment WHERE customerId = '{cbCustomer.SelectedValue}';";
+                    $"as DISPLAY FROM appointment WHERE customerId = '{cbCustomer.SelectedValue}' ;";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
                 DataSet dataSet = new DataSet();
@@ -89,12 +85,12 @@ namespace GI_Inc.Forms
         }
 
 
-
+        //this is needed to populate the fields when appt is changed    
         public void popFields(List<KeyValuePair<string, object>> ApptList)
         {
-            txtAgent.Text = ApptList.First(kvp => kvp.Key == "agentId").Value.ToString();
-            txtLocation.Text = ApptList.First(kvp => kvp.Key == "location").Value.ToString();
-            txtType.Text = ApptList.First(kvp => kvp.Key == "type").Value.ToString();
+            txtAgent.Text = ApptList.Find(kvp => kvp.Key == "agentId").Value.ToString();
+            txtLocation.Text = ApptList.Find(kvp => kvp.Key == "location").Value.ToString();
+            txtType.Text = ApptList.Find(kvp => kvp.Key == "type").Value.ToString();
             string start = ApptList.Find(kvp => kvp.Key == "start").Value.ToString();
             string end = ApptList.Find(kvp => kvp.Key == "end").Value.ToString();
             dtStart.Value = Convert.ToDateTime(start).ToLocalTime();
@@ -143,7 +139,6 @@ namespace GI_Inc.Forms
         {
             // TODO: This line of code loads data into the 'u06P8DDataSet1.agent' table. You can move, or remove it, as needed.
             this.agentTableAdapter.Fill(this.u06P8DDataSet1.agent);
-
         }
 
 
@@ -152,7 +147,6 @@ namespace GI_Inc.Forms
             this.Validate();
             this.agentBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.u06P8DDataSet1);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -169,9 +163,7 @@ namespace GI_Inc.Forms
 
                         break;
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -225,7 +217,6 @@ namespace GI_Inc.Forms
                             MessageBox.Show("The appointments start and end date are on different dates.");
                             break;
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -256,12 +247,10 @@ namespace GI_Inc.Forms
 
         public int AllowedAppt(DateTime start, DateTime end)
         {
-
             DateTime firstStart = start.ToLocalTime();
             DateTime lastStart = end.ToLocalTime();
             DateTime SOD = DateTime.Today.AddHours(8);
             DateTime EOD = DateTime.Today.AddHours(17);
-
 
             if (firstStart.TimeOfDay < SOD.TimeOfDay || lastStart.TimeOfDay > EOD.TimeOfDay)
             {
@@ -279,8 +268,8 @@ namespace GI_Inc.Forms
             {
                 return 4;
             }
-
             return 0;
         }
+
     }
 }

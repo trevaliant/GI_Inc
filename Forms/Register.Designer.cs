@@ -47,10 +47,11 @@ namespace GI_Inc.Forms
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBackToDash = new System.Windows.Forms.Button();
+            this.btnLoginForm = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -222,17 +223,6 @@ namespace GI_Inc.Forms
             this.label10.TabIndex = 19;
             this.label10.Text = "Confirm Password";
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(480, 560);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 44);
-            this.btnSubmit.TabIndex = 8;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
             // cbDepartment
             // 
             this.cbDepartment.BackColor = System.Drawing.Color.Gainsboro;
@@ -248,17 +238,6 @@ namespace GI_Inc.Forms
             this.cbDepartment.Size = new System.Drawing.Size(121, 21);
             this.cbDepartment.TabIndex = 2;
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(588, 560);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 44);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 5000;
@@ -269,14 +248,51 @@ namespace GI_Inc.Forms
             this.toolTip1.Tag = "First and Last Name";
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // btnBackToDash
+            // 
+            this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToDash.Location = new System.Drawing.Point(536, 331);
+            this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBackToDash.Name = "btnBackToDash";
+            this.btnBackToDash.Size = new System.Drawing.Size(127, 47);
+            this.btnBackToDash.TabIndex = 9;
+            this.btnBackToDash.Text = "Back to Welcome Page";
+            this.btnBackToDash.UseVisualStyleBackColor = true;
+            this.btnBackToDash.Click += new System.EventHandler(this.btnBackToDash_Click);
+            // 
+            // btnLoginForm
+            // 
+            this.btnLoginForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoginForm.Location = new System.Drawing.Point(536, 411);
+            this.btnLoginForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLoginForm.Name = "btnLoginForm";
+            this.btnLoginForm.Size = new System.Drawing.Size(127, 47);
+            this.btnLoginForm.TabIndex = 10;
+            this.btnLoginForm.Text = "Login Form";
+            this.btnLoginForm.UseVisualStyleBackColor = true;
+            this.btnLoginForm.Click += new System.EventHandler(this.btnLoginForm_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(536, 494);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(127, 47);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Submit";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 635);
-            this.Controls.Add(this.btnLogin);
+            this.ClientSize = new System.Drawing.Size(687, 591);
+            this.Controls.Add(this.btnBackToDash);
+            this.Controls.Add(this.btnLoginForm);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbDepartment);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.cbCountry);
@@ -324,9 +340,10 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.ComboBox cbCountry;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cbDepartment;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnBackToDash;
+        private System.Windows.Forms.Button btnLoginForm;
+        private System.Windows.Forms.Button btnSave;
     }
 }

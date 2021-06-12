@@ -1,13 +1,16 @@
 ﻿using GI_Inc.BusinessMethods;
+using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
 {
     public partial class AppointmentAdd : Form
     {
+        U06P8DEntities11 entities11 = new U06P8DEntities11();
         public AppointmentAdd()
         {
             InitializeComponent();
@@ -173,6 +176,8 @@ namespace GI_Inc.Forms
                 MessageBox.Show("Please enter a value for all fields.");
             }
         }
+
+
 
         private void btnBackToDash_Click_1(object sender, EventArgs e)
         {

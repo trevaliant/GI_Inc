@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GI_Inc.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace GI_Inc
@@ -13,7 +14,7 @@ namespace GI_Inc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new WelcomeForm());
         }
     }
 }

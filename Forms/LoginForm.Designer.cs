@@ -39,10 +39,8 @@ namespace GI_Inc
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -91,7 +89,7 @@ namespace GI_Inc
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(149, 282);
+            this.label3.Location = new System.Drawing.Point(149, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 37);
             this.label3.TabIndex = 2;
@@ -103,7 +101,7 @@ namespace GI_Inc
             this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(106, 355);
+            this.lblUsername.Location = new System.Drawing.Point(106, 259);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(163, 37);
             this.lblUsername.TabIndex = 3;
@@ -115,7 +113,7 @@ namespace GI_Inc
             this.lblPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(116, 413);
+            this.lblPassword.Location = new System.Drawing.Point(116, 317);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(153, 37);
             this.lblPassword.TabIndex = 4;
@@ -124,50 +122,39 @@ namespace GI_Inc
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(337, 366);
+            this.txtUsername.Location = new System.Drawing.Point(337, 270);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(176, 26);
-            this.txtUsername.TabIndex = 5;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(337, 424);
+            this.txtPassword.Location = new System.Drawing.Point(337, 328);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(176, 26);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(156, 565);
+            this.btnLogin.Location = new System.Drawing.Point(113, 392);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(88, 47);
-            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Size = new System.Drawing.Size(127, 47);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(337, 186);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(115, 47);
-            this.btnRegister.TabIndex = 8;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(368, 565);
+            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(409, 392);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(87, 47);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Size = new System.Drawing.Size(127, 47);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Back to Welcome Page";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -186,27 +173,13 @@ namespace GI_Inc
             this.lblError.TabIndex = 10;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(124, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 58);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "If you do not have a login, please click on the Register button to begin!";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(260, 565);
+            this.btnReset.Location = new System.Drawing.Point(263, 392);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(88, 47);
-            this.btnReset.TabIndex = 12;
+            this.btnReset.Size = new System.Drawing.Size(127, 47);
+            this.btnReset.TabIndex = 4;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
@@ -215,7 +188,7 @@ namespace GI_Inc
             // 
             this.panel2.Controls.Add(this.lblError);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 643);
+            this.panel2.Location = new System.Drawing.Point(0, 456);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(628, 35);
             this.panel2.TabIndex = 13;
@@ -226,11 +199,9 @@ namespace GI_Inc
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(628, 678);
+            this.ClientSize = new System.Drawing.Size(628, 491);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -267,10 +238,8 @@ namespace GI_Inc
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Panel panel2;
     }

@@ -86,13 +86,12 @@ namespace GI_Inc
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
+            WelcomeForm welcomeForm = new WelcomeForm();
+            welcomeForm.Show();
+            Hide();
 
         }
+
 
         private void btnReset_Click_1(object sender, EventArgs e)
         {
@@ -102,11 +101,6 @@ namespace GI_Inc
 
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            Register register = new Register();
-            register.Show();
-            Hide();
-        }
+
     }
 }

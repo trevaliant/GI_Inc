@@ -229,7 +229,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Agents.cs" />
+    <Compile Include="BusinessMethods\Agent.cs" />
     <Compile Include="DataSources\U06P8DDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -387,12 +387,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\AddPerson.png" />
-    <Content Include="Resources\save.jpg" />
-    <Content Include="Resources\update.png" />
-    <Content Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

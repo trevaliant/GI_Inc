@@ -3,16 +3,16 @@ using GI_Inc.DataSources;
 
 namespace GI_Inc
 {
-    public partial class Agents : agent
+    public partial class Agent : agent
     {
 
 
-        public Agents()
+        public Agent()
         {
 
         }
 
-        public Agents(string _username, string _password)
+        public Agent(string _username, string _password)
         {
             userName = _username;
             password = _password;

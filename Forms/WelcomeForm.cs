@@ -32,10 +32,5 @@ namespace GI_Inc.Forms
             loginForm.Show();
             Hide();
         }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
-using GI_Inc.DataSources;
+
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -12,21 +12,37 @@ namespace GI_Inc.Forms
     public partial class AppointmentModify : Form
 
     {
-        public static List<KeyValuePair<string, object>> ApptList;
+        public static List<KeyValuePair<string, object>> getAppts;
         public void setAppointList(List<KeyValuePair<string, object>> list)
         {
-            ApptList = list;
+            getAppts = list;
         }
 
         public static List<KeyValuePair<string, object>> getAppointList()
         {
-            return ApptList;
+            return getAppts;
         }
         public AppointmentModify()
         {
             InitializeComponent();
             populateCustList();
+            cbDefaultSettings();
         }
+
+        public void cbDefaultSettings()
+        {
+            cbCustomer.SelectedItem = null;
+            cbCustomer.Text = "--Choose--";
+            cbAppointment.Enabled = false;
+            //txtAgent.Enabled = false;
+            txtType.Enabled = false;
+            txtDescription.Enabled = false;
+            txtLocation.Enabled = false;
+            dtStart.Enabled = false;
+            dtEnd.Enabled = false;
+            btnSave.Enabled = false;
+        }
+
 
         public void populateCustList()
         {
@@ -49,18 +65,7 @@ namespace GI_Inc.Forms
             }
         }
 
-        private void cbCustomer_SelectedValueChanged_1(object sender, EventArgs e)
-        {
-            populateApptList();
-            cbAppointment.Enabled = true;
-            //txtAgent.Enabled = false;
-            //txtLocation.Enabled = false;
-            //txtType.Enabled = false;
-            //txtDescription.Visible = false;
-            //dtStart.Visible = false;
-            //dtEnd.Visible = false;
-            //btnSave.Visible = false;
-        }
+
         public void populateApptList()
         {
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
@@ -88,7 +93,7 @@ namespace GI_Inc.Forms
         //this is needed to populate the fields when appt is changed    
         public void popFields(List<KeyValuePair<string, object>> ApptList)
         {
-            txtAgent.Text = ApptList.Find(kvp => kvp.Key == "agentId").Value.ToString();
+            //txtAgent.Text = ApptList.Find(kvp => kvp.Key == "agentId").Value.ToString();
             txtLocation.Text = ApptList.Find(kvp => kvp.Key == "location").Value.ToString();
             txtType.Text = ApptList.Find(kvp => kvp.Key == "type").Value.ToString();
             string start = ApptList.Find(kvp => kvp.Key == "start").Value.ToString();
@@ -96,22 +101,18 @@ namespace GI_Inc.Forms
             dtStart.Value = Convert.ToDateTime(start).ToLocalTime();
             dtEnd.Value = Convert.ToDateTime(end).ToLocalTime();
         }
-
-
-        private void btnBackToDash_Click(object sender, EventArgs e)
+        private void cbCustomer_SelectedValueChanged_1(object sender, EventArgs e)
         {
-            MainForm mf = new MainForm();
-            mf.Show();
-            Hide();
+            populateApptList();
+            //cbAppointment.Enabled = true;
+            //txtAgent.Enabled = false;
+            //txtLocation.Enabled = false;
+            //txtType.Enabled = false;
+            //txtDescription.Visible = false;
+            //dtStart.Visible = false;
+            //dtEnd.Visible = false;
+            //btnSave.Visible = false;
         }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            AppointmentModify appointmentMod = new AppointmentModify();
-            appointmentMod.Show();
-            Hide();
-        }
-
         private void cbAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView dataRowView = cbAppointment.SelectedItem as DataRowView;
@@ -121,7 +122,7 @@ namespace GI_Inc.Forms
 
             if (cbAppointment.SelectedIndex != -1)
             {
-                txtAgent.Enabled = true;
+                //txtAgent.Enabled = true;
                 txtType.Enabled = true;
                 dtStart.Enabled = true;
                 dtEnd.Enabled = true;
@@ -132,42 +133,6 @@ namespace GI_Inc.Forms
                 txtLocation.Enabled = true;
                 cbCustomer.Enabled = true;
                 popFields(ApptList);
-            }
-        }
-
-        private void AppointmentModify_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'u06P8DDataSet1.agent' table. You can move, or remove it, as needed.
-            this.agentTableAdapter.Fill(this.u06P8DDataSet1.agent);
-        }
-
-
-        private void agentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.agentBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.u06P8DDataSet1);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string searchValue = txtSearchAgent.Text;
-            dgvAgent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dgvAgent.Rows)
-                {
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                        row.Selected = true;
-
-                        break;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -195,7 +160,7 @@ namespace GI_Inc.Forms
                             dictionary["type"] = txtType.Text;
                             dictionary["start"] = dtStart.Value;
                             dictionary["end"] = dtEnd.Value;
-                            dictionary["agent"] = txtAgent.Text;
+                            //dictionary["agentName"] = txtAgent.Text;
                             CalendarObject.updateAppointment(dictionary);
 
 
@@ -270,6 +235,40 @@ namespace GI_Inc.Forms
             }
             return 0;
         }
+    private void button1_Click(object sender, EventArgs e)
+    {
+        string searchValue = txtSearchAgent.Text;
+        dgvAgent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        try
+        {
+            foreach (DataGridViewRow row in dgvAgent.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Equals(searchValue))
+                {
+                    row.Selected = true;
 
+                    break;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    }
+
+        private void btnBackToDash_Click(object sender, EventArgs e)
+        {
+            MainForm mf = new MainForm();
+            mf.Show();
+            Hide();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            AppointmentModify appointmentMod = new AppointmentModify();
+            appointmentMod.Show();
+            Hide();
+        }
     }
 }

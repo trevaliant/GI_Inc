@@ -1,6 +1,6 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.DAL;
-using GI_Inc.DataSources;
+using GI_Inc.DAL;
 using System;
 using System.Windows.Forms;
 

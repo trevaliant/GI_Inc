@@ -1,5 +1,5 @@
 ﻿
-using GI_Inc.DataSources;
+using GI_Inc.DAL;
 
 namespace GI_Inc.Forms
 {
@@ -50,7 +50,7 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet3 = new GI_Inc.DataSources.U06P8DDataSet3();
+            this.u06P8DDataSet3 = new GI_Inc.DAL.U06P8DDataSet3();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -64,8 +64,8 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.customerTableAdapter = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager();
+            this.customerTableAdapter = new GI_Inc.DAL.U06P8DDataSet3TableAdapters.customerTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DAL.U06P8DDataSet3TableAdapters.TableAdapterManager();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -388,7 +388,7 @@ namespace GI_Inc.Forms
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.customerTableAdapter = this.customerTableAdapter;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // CustomerDelete
             // 
@@ -429,8 +429,8 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.TextBox textBox1;
         private U06P8DDataSet3 u06P8DDataSet3;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private DataSources.U06P8DDataSet3TableAdapters.customerTableAdapter customerTableAdapter;
-        private DataSources.U06P8DDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
+        private DAL.U06P8DDataSet3TableAdapters.customerTableAdapter customerTableAdapter;
+        private DAL.U06P8DDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvCustomerList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

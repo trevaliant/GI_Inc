@@ -32,20 +32,11 @@ namespace GI_Inc.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentSchedule));
             this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet6 = new GI_Inc.DataSources.U06P8DDataSet6();
+            this.u06P8DDataSet6 = new GI_Inc.DAL.U06P8DDataSet6();
             this.agentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.agentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet6TableAdapters.agentTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager();
+            this.agentTableAdapter = new GI_Inc.DAL.U06P8DDataSet6TableAdapters.agentTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DAL.U06P8DDataSet6TableAdapters.TableAdapterManager();
             this.dgvAgentSchedule = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnAddSchedule = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -64,11 +55,14 @@ namespace GI_Inc.Forms
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource1)).BeginInit();
@@ -101,7 +95,7 @@ namespace GI_Inc.Forms
             // 
             this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DDataSet6TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dgvAgentSchedule
             // 
@@ -111,13 +105,7 @@ namespace GI_Inc.Forms
             this.dgvAgentSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
+            this.dataGridViewTextBoxColumn3});
             this.dgvAgentSchedule.DataSource = this.agentBindingSource1;
             this.dgvAgentSchedule.Location = new System.Drawing.Point(12, 186);
             this.dgvAgentSchedule.MultiSelect = false;
@@ -125,60 +113,6 @@ namespace GI_Inc.Forms
             this.dgvAgentSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgentSchedule.Size = new System.Drawing.Size(831, 330);
             this.dgvAgentSchedule.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "agentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "agentName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Department";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "agentShift";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Shift";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "workDay1";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Day1";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "workDay2";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Day2";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "workDay3";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Day3";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "workDay4";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Day4";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "workDay5";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Day5";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // bindingNavigator1
             // 
@@ -341,6 +275,15 @@ namespace GI_Inc.Forms
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 61);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(141, 58);
+            this.toolStripButton1.Text = "Back To Dashboard";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -388,14 +331,23 @@ namespace GI_Inc.Forms
             this.label3.TabIndex = 4;
             this.label3.Text = "Agent Schedules";
             // 
-            // toolStripButton1
+            // dataGridViewTextBoxColumn1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(141, 58);
-            this.toolStripButton1.Text = "Back To Dashboard";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "agentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "agentName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Department";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // AgentSchedule
             // 
@@ -431,20 +383,11 @@ namespace GI_Inc.Forms
 
         #endregion
         private System.Windows.Forms.BindingSource agentBindingSource;
-        private DataSources.U06P8DDataSet6 u06P8DDataSet6;
+        private DAL.U06P8DDataSet6 u06P8DDataSet6;
         private System.Windows.Forms.BindingSource agentBindingSource1;
-        private DataSources.U06P8DDataSet6TableAdapters.agentTableAdapter agentTableAdapter;
-        private DataSources.U06P8DDataSet6TableAdapters.TableAdapterManager tableAdapterManager;
+        private DAL.U06P8DDataSet6TableAdapters.agentTableAdapter agentTableAdapter;
+        private DAL.U06P8DDataSet6TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvAgentSchedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton btnAddSchedule;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -468,5 +411,8 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

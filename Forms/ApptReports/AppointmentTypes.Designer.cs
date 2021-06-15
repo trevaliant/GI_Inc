@@ -35,10 +35,10 @@ namespace GI_Inc.Forms.AppointmentReports
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.u06P8DDataSet2 = new GI_Inc.DataSources.U06P8DDataSet2();
+            this.u06P8DDataSet2 = new GI_Inc.DAL.U06P8DDataSet2();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet2TableAdapters.appointmentTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet2TableAdapters.TableAdapterManager();
+            this.appointmentTableAdapter = new GI_Inc.DAL.U06P8DDataSet2TableAdapters.appointmentTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DAL.U06P8DDataSet2TableAdapters.TableAdapterManager();
             this.appointmentDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +105,7 @@ namespace GI_Inc.Forms.AppointmentReports
             // 
             this.tableAdapterManager.appointmentTableAdapter = this.appointmentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // appointmentDataGridView
             // 
@@ -203,10 +203,10 @@ namespace GI_Inc.Forms.AppointmentReports
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private DataSources.U06P8DDataSet2 u06P8DDataSet2;
+        private DAL.U06P8DDataSet2 u06P8DDataSet2;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
-        private DataSources.U06P8DDataSet2TableAdapters.appointmentTableAdapter appointmentTableAdapter;
-        private DataSources.U06P8DDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
+        private DAL.U06P8DDataSet2TableAdapters.appointmentTableAdapter appointmentTableAdapter;
+        private DAL.U06P8DDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView appointmentDataGridView;
         private System.Windows.Forms.TextBox txtApptTypes;
         private System.Windows.Forms.Button btnBackToDash;

@@ -1,6 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.DAL;
-using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -11,7 +10,7 @@ namespace GI_Inc.Forms
 {
     public partial class AppointmentAdd : Form
     {
-        DBEntities entities11 = new DBEntities();
+        U06P8DEntities1 entities11 = new U06P8DEntities1();
         public AppointmentAdd()
         {
             InitializeComponent();
@@ -50,7 +49,7 @@ namespace GI_Inc.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an error saving the appointment! " + ex);
+                MessageBox.Show("There was an error: " + ex);
             }
 
         }
@@ -74,7 +73,7 @@ namespace GI_Inc.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an error saving the appointment! " + ex);
+                MessageBox.Show("There was an error: " + ex);
             }
 
         }
@@ -148,7 +147,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), agentID, cbType.SelectedItem.ToString(), txtDescription.Text, start, end);
+                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(),  txtDescription.Text, agentID, start, end); ;
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();

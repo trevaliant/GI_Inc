@@ -1,6 +1,5 @@
 ﻿
 using GI_Inc.DAL;
-using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
@@ -16,7 +15,7 @@ namespace GI_Inc.BusinessMethods
         private static string userName;
         string username;
         private static int agentID;
-        DBEntities entities = new DBEntities();
+        U06P8DEntities1 entities = new U06P8DEntities1();
         private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
         public CalendarObject(string username)
         {
@@ -111,14 +110,14 @@ namespace GI_Inc.BusinessMethods
 
         }
 
-        public static void createAppointment(int custID, string location, int agentId, string type, string description, DateTime start, DateTime end)
+        public static void createAppointment(int custID, string location, string type, string description, int agentId, DateTime start, DateTime end)
         {
             int appointID = getID("appointment", "appointmentId") + 1;
             DateTime utc = getTime();
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
             conn.Open();
-            var query = $"INSERT into appointment (appointmentId, customerId, agentId, location, type, description, start, end)" +
-                $"VALUES ('{appointID}', '{custID}','{agentId}', '{location}', '{type}', '{description}','{DTSql(start)}', '{DTSql(end)}')";
+            var query = $"INSERT into appointment (appointmentId, customerId, location, type, description, agentId,  start, end)" +
+                $"VALUES ('{appointID}', '{custID}','{location}', '{type}', '{description}','{agentId}', '{DTSql(start)}', '{DTSql(end)}')";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -175,26 +174,7 @@ namespace GI_Inc.BusinessMethods
             return 0;
 
         }
-        public List<appointment> getAllAppointmentsForAUser(string username)
-        {
-            var appointment = entities.Appointments.Where(a => String.Equals(a.agentId, username));
-            return appointment.ToList();
-        }
-        public List<appointment> getAppointmentsByWeek(int weekNum, string username)
-        {
-            CultureInfo ciCurr = CultureInfo.CurrentCulture;
-            var appointments = getAllAppointmentsForAUser(username);
-            List<appointment> appointmentsThisWeek = new List<appointment>();
 
-            for (var i = 0; i < appointments.Count; i++)
-            {
-                if (ciCurr.Calendar.GetWeekOfYear(appointments[i].start, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday) == weekNum)
-                {
-                    appointmentsThisWeek.Add(appointments[i]);
-                }
-            }
-            return appointmentsThisWeek.ToList();
-        }
         public static List<KeyValuePair<string, object>> getAppointmentList(int appointmentId)
         {
             var list = new List<KeyValuePair<string, object>>();
@@ -260,21 +240,5 @@ namespace GI_Inc.BusinessMethods
 
         }
 
-        public List<appointment> getAppointmentsByMonth(int month, string username)
-        {
-            var appointment = entities.Appointments.Where(a => (a.start.Month == month || a.end.Month == month) && String.Equals(a.agentId, username));
-            return appointment.ToList();
-        }
-        public List<TypeCount> GetAppointmentTypeandCountByMonth(int month)
-        {
-            var appointments = getAppointmentsByMonth(month, username);
-
-            var appointmentsTypeAndCount = appointments.GroupBy(a => a.type)
-                .Select(b => new TypeCount
-                { Type = b.First().type, Count = b.Count() }
-                );
-            return appointmentsTypeAndCount.ToList();
-
-        }
     }
 }

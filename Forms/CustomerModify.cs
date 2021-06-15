@@ -1,6 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.DAL;
-using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,6 +13,7 @@ namespace GI_Inc.Forms
     {
         agent currentUser;
         int custId;
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         public CustomerModify(agent users, int modCustId)
         {
             InitializeComponent();
@@ -33,8 +33,7 @@ namespace GI_Inc.Forms
 
         private void populateCustomerList()
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
+            MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
                 string query = "SELECT customerId, concat(customerName,  ' --Id#: ', customerId) as Display FROM customer;";

@@ -29,21 +29,21 @@ namespace GI_Inc.Forms
             string sql = @"SELECT * FROM agent WHERE userName = @userName";
             MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
 
-                conn.Open();
-                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@userName", userName);
+                MySqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.HasRows)
                 {
-                    cmd.Parameters.AddWithValue("@userName", userName);
-                    MySqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                    if (reader.HasRows)
-                    {
-                        return true;  // data exist
-                    }
-                    else
-                    {
-                        return false; //data not exist
-                    }
+                    return true;  // data exist
                 }
-            
+                else
+                {
+                    return false; //data not exist
+                }
+            }
+
         }
 
         public static int getAgentID(string table, string id)
@@ -76,7 +76,7 @@ namespace GI_Inc.Forms
             toolTip.IsBalloon = true;
             toolTip.SetToolTip(txtName, "First and Last Name");
 
-            ToolTip  toolTip2 = new ToolTip();
+            ToolTip toolTip2 = new ToolTip();
             toolTip2.Active = true;
             toolTip2.IsBalloon = true;
             toolTip2.SetToolTip(cbDepartment, "Choose item from dropdown");
@@ -89,8 +89,8 @@ namespace GI_Inc.Forms
             ToolTip toolTip4 = new ToolTip();
             toolTip4.Active = true;
             toolTip4.IsBalloon = true;
-            toolTip4.SetToolTip(cbTimezone, "Choose item from dropdown"); 
-            
+            toolTip4.SetToolTip(cbTimezone, "Choose item from dropdown");
+
             ToolTip toolTip5 = new ToolTip();
             toolTip5.Active = true;
             toolTip5.IsBalloon = true;
@@ -109,9 +109,9 @@ namespace GI_Inc.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                 if (txtUserName.Text == "" || txtUserName.Text.Length < 4 || txtPassword.Text == "" || txtPassword.Text.Length < 4)
+                if (txtUserName.Text == "" || txtUserName.Text.Length < 4 || txtPassword.Text == "" || txtPassword.Text.Length < 4)
                     MessageBox.Show("Please ensure  username and password are not blank or less than 4 characters.");
                 else if (txtPassword.Text != txtConfirmPassword.Text)
                     MessageBox.Show("Passwords do not match");
@@ -148,15 +148,15 @@ namespace GI_Inc.Forms
                 void Clear()
 
                 {
-                txtName.Text = txtPassword.Text = txtUserName.Text = txtConfirmPassword.Text = "";
-                cbTimezone.SelectedItem = cbDepartment.SelectedItem = cbCountry.SelectedItem = "";
+                    txtName.Text = txtPassword.Text = txtUserName.Text = txtConfirmPassword.Text = "";
+                    cbTimezone.SelectedItem = cbDepartment.SelectedItem = cbCountry.SelectedItem = "";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            }
+        }
 
         private void btnLoginForm_Click(object sender, EventArgs e)
         {

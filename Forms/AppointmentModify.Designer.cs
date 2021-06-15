@@ -1,8 +1,4 @@
-﻿
-
-using GI_Inc.DataSources;
-
-namespace GI_Inc.Forms
+﻿namespace GI_Inc.Forms
 {
     partial class AppointmentModify
     {
@@ -68,11 +64,9 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.u06P8DDataSet1 = new GI_Inc.DataSources.U06P8DDataSet1();
+
             this.btnAgentSearch = new System.Windows.Forms.Button();
             this.txtSearchAgent = new System.Windows.Forms.TextBox();
-            this.agentTableAdapter = new GI_Inc.DataSources.U06P8DDataSet1TableAdapters.agentTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager();
             startLabel = new System.Windows.Forms.Label();
             endLabel = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -89,7 +83,7 @@ namespace GI_Inc.Forms
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet1)).BeginInit();
+
             this.SuspendLayout();
             // 
             // startLabel
@@ -342,7 +336,7 @@ namespace GI_Inc.Forms
             this.cbAppointment.Name = "cbAppointment";
             this.cbAppointment.Size = new System.Drawing.Size(272, 28);
             this.cbAppointment.TabIndex = 114;
-            this.cbAppointment.SelectedIndexChanged += new System.EventHandler(this.cbAppointment_SelectedIndexChanged);
+
             // 
             // dtStart
             // 
@@ -375,7 +369,6 @@ namespace GI_Inc.Forms
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(272, 28);
             this.cbCustomer.TabIndex = 92;
-            this.cbCustomer.SelectedValueChanged += new System.EventHandler(this.cbCustomer_SelectedValueChanged_1);
             // 
             // label10
             // 
@@ -409,7 +402,7 @@ namespace GI_Inc.Forms
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+
             // 
             // panel4
             // 
@@ -475,15 +468,6 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 119;
             // 
-            // agentBindingSource
-            // 
-            this.agentBindingSource.DataMember = "agent";
-            this.agentBindingSource.DataSource = this.u06P8DDataSet1;
-            // 
-            // u06P8DDataSet1
-            // 
-            this.u06P8DDataSet1.DataSetName = "U06P8DDataSet1";
-            this.u06P8DDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAgentSearch
             // 
@@ -496,7 +480,7 @@ namespace GI_Inc.Forms
             this.btnAgentSearch.TabIndex = 137;
             this.btnAgentSearch.Text = "Search Agent ID";
             this.btnAgentSearch.UseVisualStyleBackColor = false;
-            this.btnAgentSearch.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // txtSearchAgent
             // 
@@ -506,16 +490,6 @@ namespace GI_Inc.Forms
             this.txtSearchAgent.Name = "txtSearchAgent";
             this.txtSearchAgent.Size = new System.Drawing.Size(56, 22);
             this.txtSearchAgent.TabIndex = 0;
-            // 
-            // agentTableAdapter
-            // 
-            this.agentTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // AppointmentModify
             // 
@@ -532,7 +506,7 @@ namespace GI_Inc.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Appointment";
-            this.Load += new System.EventHandler(this.AppointmentModify_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -545,7 +519,7 @@ namespace GI_Inc.Forms
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.u06P8DDataSet1)).EndInit();
+
             this.ResumeLayout(false);
 
         }
@@ -570,10 +544,9 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.TextBox txtAgent;
-        private U06P8DDataSet1 u06P8DDataSet1;
+
         private System.Windows.Forms.BindingSource agentBindingSource;
-        private DataSources.U06P8DDataSet1TableAdapters.agentTableAdapter agentTableAdapter;
-        private DataSources.U06P8DDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAgentSearch;

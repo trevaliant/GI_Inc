@@ -1,11 +1,7 @@
 ﻿
 using GI_Inc.DAL;
-using GI_Inc.DataSources;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace GI_Inc.BusinessMethods
@@ -17,42 +13,12 @@ namespace GI_Inc.BusinessMethods
         string username;
         private static int agentID;
         private static string userName;
-        DBEntities entities = new DBEntities();
-        public UserUtility(string username)
-        {
-            this.username = username;
-        }
-
+        U06P8DEntities1 u06P8DEntities1 = new U06P8DEntities1();
         public UserUtility()
         {
 
         }
-        public static int getCurrentUserId()
-        {
-            return agentID;
-        }
 
-        public static void setCurrentUserId(int currentUserId)
-        {
-            agentID = currentUserId;
-        }
-
-        public static string getCurrentUserName()
-        {
-            return userName;
-        }
-
-        public static void setCurrentUserName(string currentUserName)
-        {
-            userName = currentUserName;
-        }
-        static public string convertToTimezone(string dateTime)
-        {
-            DateTime utcDateTime = DateTime.Parse(dateTime.ToString());
-            DateTime localDateTime = utcDateTime.ToLocalTime();
-
-            return localDateTime.ToString("MM/dd/yyyy hh:mm tt");
-        }
         public int verifyUser(agent userInfo)
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
@@ -99,33 +65,11 @@ namespace GI_Inc.BusinessMethods
             return agentId;
         }
 
-        public DataTable schedule(int agentShift)
-        {
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-
-            string query = "SELECT * from agent where agent.agentName = agentName order by agentId";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            DataTable datatable = new DataTable();
-            datatable.Load(cmd.ExecuteReader());
-
-
-            conn.Close();
-            return datatable;
-        }
-
         public string getUserNameById(int dataId)
         {
-            var user = entities.Agents.FirstOrDefault(a => a.agentId == dataId);
+            var user = u06P8DEntities1.agents.FirstOrDefault(a => a.agentId == dataId);
             return user.agentName;
 
         }
-
-
-
-
-
     }
 }

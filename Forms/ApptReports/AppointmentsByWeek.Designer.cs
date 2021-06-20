@@ -41,6 +41,7 @@ namespace GI_Inc.Forms.ApptReports
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.dgvAppts = new System.Windows.Forms.DataGridView();
             this.btnBackToApptRep = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppts)).BeginInit();
@@ -55,14 +56,14 @@ namespace GI_Inc.Forms.ApptReports
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 138);
+            this.panel1.Size = new System.Drawing.Size(918, 138);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(332, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(396, 52);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(118, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,7 +78,7 @@ namespace GI_Inc.Forms.ApptReports
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(92, 3);
+            this.label1.Location = new System.Drawing.Point(166, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(605, 43);
             this.label1.TabIndex = 0;
@@ -89,7 +90,7 @@ namespace GI_Inc.Forms.ApptReports
             // 
             this.label2.BackColor = System.Drawing.Color.GreenYellow;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 297);
+            this.label2.Location = new System.Drawing.Point(97, 610);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(239, 43);
@@ -101,7 +102,7 @@ namespace GI_Inc.Forms.ApptReports
             // 
             this.label3.BackColor = System.Drawing.Color.GreenYellow;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(383, 297);
+            this.label3.Location = new System.Drawing.Point(392, 610);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(239, 43);
@@ -113,7 +114,7 @@ namespace GI_Inc.Forms.ApptReports
             // 
             this.dateTimePicker1.CustomFormat = "MMMM dd yyyy   hh:mm tt";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 345);
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 658);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 26;
@@ -122,7 +123,7 @@ namespace GI_Inc.Forms.ApptReports
             // 
             this.dateTimePicker2.CustomFormat = "MMMM dd yyyy   hh:mm tt";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(399, 345);
+            this.dateTimePicker2.Location = new System.Drawing.Point(408, 658);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 27;
@@ -130,7 +131,7 @@ namespace GI_Inc.Forms.ApptReports
             // btnView
             // 
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(633, 315);
+            this.btnView.Location = new System.Drawing.Point(649, 606);
             this.btnView.Margin = new System.Windows.Forms.Padding(2);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(69, 50);
@@ -141,10 +142,11 @@ namespace GI_Inc.Forms.ApptReports
             // 
             // btnBackToDash
             // 
-            this.btnBackToDash.Location = new System.Drawing.Point(707, 398);
+            this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToDash.Location = new System.Drawing.Point(791, 734);
             this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToDash.Name = "btnBackToDash";
-            this.btnBackToDash.Size = new System.Drawing.Size(82, 50);
+            this.btnBackToDash.Size = new System.Drawing.Size(116, 79);
             this.btnBackToDash.TabIndex = 28;
             this.btnBackToDash.Text = "Back To Dashboard";
             this.btnBackToDash.UseVisualStyleBackColor = true;
@@ -152,29 +154,50 @@ namespace GI_Inc.Forms.ApptReports
             // 
             // dgvAppts
             // 
+            this.dgvAppts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAppts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppts.Location = new System.Drawing.Point(26, 144);
+            this.dgvAppts.Location = new System.Drawing.Point(12, 215);
             this.dgvAppts.Name = "dgvAppts";
             this.dgvAppts.ReadOnly = true;
-            this.dgvAppts.Size = new System.Drawing.Size(762, 150);
+            this.dgvAppts.Size = new System.Drawing.Size(861, 386);
             this.dgvAppts.TabIndex = 30;
             // 
             // btnBackToApptRep
             // 
-            this.btnBackToApptRep.Location = new System.Drawing.Point(706, 344);
+            this.btnBackToApptRep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToApptRep.Location = new System.Drawing.Point(791, 651);
             this.btnBackToApptRep.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToApptRep.Name = "btnBackToApptRep";
-            this.btnBackToApptRep.Size = new System.Drawing.Size(82, 50);
+            this.btnBackToApptRep.Size = new System.Drawing.Size(116, 79);
             this.btnBackToApptRep.TabIndex = 37;
             this.btnBackToApptRep.Text = "Back To Appointment Reports";
+            this.btnBackToApptRep.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBackToApptRep.UseVisualStyleBackColor = true;
+            this.btnBackToApptRep.Click += new System.EventHandler(this.btnBackToApptRep_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Location = new System.Drawing.Point(302, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(338, 43);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Appointments by Date";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.UseCompatibleTextRendering = true;
             // 
             // AppointmentsByWeek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(918, 815);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBackToApptRep);
             this.Controls.Add(this.dgvAppts);
             this.Controls.Add(this.btnView);
@@ -191,6 +214,7 @@ namespace GI_Inc.Forms.ApptReports
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -207,5 +231,6 @@ namespace GI_Inc.Forms.ApptReports
         private System.Windows.Forms.Button btnBackToDash;
         private System.Windows.Forms.DataGridView dgvAppts;
         private System.Windows.Forms.Button btnBackToApptRep;
+        private System.Windows.Forms.Label label4;
     }
 }

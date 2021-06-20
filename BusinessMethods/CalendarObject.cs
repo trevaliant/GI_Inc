@@ -15,8 +15,10 @@ namespace GI_Inc.BusinessMethods
         private static string userName;
         string username;
         private static int agentID;
-        U06P8DEntities1 entities = new U06P8DEntities1();
+        U06P8DEntities entities = new U06P8DEntities();
         private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
+
         public CalendarObject(string username)
         {
             this.username = username;
@@ -25,7 +27,6 @@ namespace GI_Inc.BusinessMethods
         {
 
         }
-        MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
         public static int getUserID()
         {
             return agentID;
@@ -65,6 +66,7 @@ namespace GI_Inc.BusinessMethods
         {
             try
             {
+                MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
@@ -79,16 +81,13 @@ namespace GI_Inc.BusinessMethods
                 MessageBox.Show("Issue occurred when deleting appointment: " + ex);
                 return false;
             }
-            finally
-            {
-                conn.Close();
-            }
+
             return true;
         }
 
         public static int getID(string table, string id)
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
             var query = $"SELECT max({id}) FROM {table}";
@@ -114,7 +113,7 @@ namespace GI_Inc.BusinessMethods
         {
             int appointID = getID("appointment", "appointmentId") + 1;
             DateTime utc = getTime();
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             var query = $"INSERT into appointment (appointmentId, customerId, location, type, description, agentId,  start, end)" +
                 $"VALUES ('{appointID}', '{custID}','{location}', '{type}', '{description}','{agentId}', '{DTSql(start)}', '{DTSql(end)}')";
@@ -127,7 +126,7 @@ namespace GI_Inc.BusinessMethods
         {
             Dictionary<string, object> nextAppt = new Dictionary<string, object>();
             string utcOffset = (TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6));
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             var query = $"SELECT start, (SELECT agentName from agent where agentId = appointment.agentId) as 'Agent', (SELECT customerName from customer where customerId = appointment.customerId) as 'Customer Name' from appointment where start > now() order by start limit 1";
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -157,7 +156,7 @@ namespace GI_Inc.BusinessMethods
 
         public static int overlap(DateTime start, DateTime end)
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             var query = $"SELECT count(*) FROM `appointment` WHERE (('{DTSql(start.ToUniversalTime())}' > start and '{DTSql(start.ToUniversalTime())}' < end) or ('{DTSql(end.ToUniversalTime())}'> start and '{DTSql(end.ToUniversalTime())}' < end)) and end > now() order by  start limit 1;";
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -178,7 +177,7 @@ namespace GI_Inc.BusinessMethods
         public static List<KeyValuePair<string, object>> getAppointmentList(int appointmentId)
         {
             var list = new List<KeyValuePair<string, object>>();
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             var query = $"SELECT * FROM appointment WHERE appointmentId = {appointmentId}";
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -203,12 +202,17 @@ namespace GI_Inc.BusinessMethods
                     return null;
                 }
                 return list;
-                conn.Close();
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
                 return null;
+
+            }
+            finally
+            {
+                    conn.Close();
             }
         }
         public static DateTime getTime()
@@ -228,7 +232,7 @@ namespace GI_Inc.BusinessMethods
             DateTime start = Convert.ToDateTime(dictionary["start"]);
             DateTime end = Convert.ToDateTime(dictionary["end"]);
 
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
             var query = $"UPDATE appointment SET appointmentID = '{dictionary["appointmentId"]}', customerId = '{dictionary["customerId"]}', description = '{dictionary["description"]}',  location = '{dictionary["location"]}', type = '{dictionary["type"]}',  start = '{DTSql(start.ToUniversalTime())}', end = '{DTSql(end.ToUniversalTime())}',  agentId = '{dictionary["agentId"]}' WHERE appointmentId = '{dictionary["appointmentId"]}'";

@@ -2,6 +2,7 @@
 using GI_Inc.DAL;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
@@ -11,7 +12,6 @@ namespace GI_Inc.Forms
         agent currentUser;
         int custId;
         CustomerObject customerObject = new CustomerObject();
-        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         public CustomerDelete()
         {
             InitializeComponent();
@@ -52,44 +52,21 @@ namespace GI_Inc.Forms
             Hide();
         }
 
-        //checks if customer has future appointments when deleting customer. 
-        public bool checkAssociatedAppts(int custSelected)
-
-        {   MySqlConnection conn = new MySqlConnection(connectionString);
-                
-                conn.Open();
-                var query = "SELECT  distinct * FROM appointment  left JOIN customer on DATE(appointment.start) > current_timestamp and appointment.customerId = customer.customerId";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                var associatedAppts = cmd.ExecuteNonQuery();
-                conn.Close();
-
-            if (associatedAppts != 0)
-                return true;
-            else
-                return false;
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int custSelected = Convert.ToInt32(dgvCustomerList.Rows[dgvCustomerList.CurrentCell.RowIndex].Cells[0].Value);
-            if (custSelected != -1)
-            {
-                checkAssociatedAppts(custSelected);
-                MessageBox.Show("This customer has appointments, please delete those first before deleteing the customer.");
+   
+            customerObject.deleteCustomer(custSelected);
+            dgvCustomerList.DataSource = u06P8DDataSet3.customer;
+            dgvCustomerList.Update();
 
-            }
-            else
-            {
-                customerObject.deleteCustomer(custSelected);
-                dgvCustomerList.DataSource = u06P8DDataSet3.customer;
-
-                MessageBox.Show("Customer was deleted");
-            }    
+            MessageBox.Show("Customer was deleted");
+            
+            CustomerDelete customerDelete = new CustomerDelete();
+            customerDelete.Show();
+            Hide();
+               
         }
 
-        private void customerBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
     }
 }

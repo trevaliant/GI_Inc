@@ -1,6 +1,5 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.DAL;
-using GI_Inc.DAL;
 using System;
 using System.Windows.Forms;
 
@@ -34,21 +33,34 @@ namespace GI_Inc.Forms
                 customer.phone = txtPhone.Text;
                 customer.country = txtCountry.Text;
                 customer.email = txtEmail.Text;
+                customer.createDate = DateTime.Now;
+                customer.lastUpdate = DateTime.Now;
+                customer.lastUpdateBy = currentUser.userName;
 
 
                 CustomerObject.addCustomer(customer);
 
-                if (MessageBox.Show("Customer added successfully, would you like to add another customer?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Customer added successfully, would you like to add another customer?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
-                    CustomerAdd customerAdd = new CustomerAdd(currentUser);
+                    MainForm customerAdd = new MainForm();
                     customerAdd.Show();
                     Hide();
                 }
 
                 else
                 {
+                    ClearTextboxes(Controls);
 
                 }
+            }
+        }
+        void ClearTextboxes(Control.ControlCollection ctrls)
+        {
+            foreach (Control ctrl in ctrls)
+            {
+                if (ctrl is TextBox)
+                    ((TextBox)ctrl).Text = string.Empty;
+                ClearTextboxes(ctrl.Controls);
             }
         }
 

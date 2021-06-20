@@ -13,7 +13,7 @@ namespace GI_Inc.BusinessMethods
         string username;
         private static int agentID;
         private static string userName;
-        U06P8DEntities1 u06P8DEntities1 = new U06P8DEntities1();
+        U06P8DEntities u06P8DEntities1 = new U06P8DEntities();
         public UserUtility()
         {
 

@@ -1,7 +1,9 @@
-﻿using GI_Inc.DAL;
+﻿using GI_Inc.BusinessMethods;
 using GI_Inc.DAL;
 using GI_Inc.Forms;
 using GI_Inc.Forms.ApptReports;
+using GI_Inc.Forms.CustReports;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -12,6 +14,8 @@ namespace GI_Inc
     {
         agent currentUser;
         int customerId;
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
+        private BindingSource bindingSource1 = new BindingSource();
         public MainForm()
         {
             InitializeComponent();
@@ -22,6 +26,8 @@ namespace GI_Inc
             TimeZoneInfo currentTime = TimeZoneInfo.Local;
             DataTable dt = new DataTable();
             TimeZoneInfo loginTime1 = TimeZoneInfo.Local;
+            dgvApptList.DataSource = bindingSource1;
+            getData("SELECT type AS Type, start AS Start, agentId AS Agent FROM appointment WHERE start BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 DAY) order by start");
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -73,7 +79,7 @@ namespace GI_Inc
 
         private void btnAgentSchedules_Click(object sender, EventArgs e)
         {
-            AgentSchedule agentSchedule = new AgentSchedule();
+            AgentByDept agentSchedule = new AgentByDept();
             agentSchedule.Show();
             Hide();
         }
@@ -87,12 +93,33 @@ namespace GI_Inc
 
         private void btnCustomerReports_Click(object sender, EventArgs e)
         {
-
+            CustReportDashboard custRport = new CustReportDashboard();
+            custRport.Show();
+            Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void getData(string selectCommand)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter(selectCommand, conn);
+            MySqlCommandBuilder cmb = new MySqlCommandBuilder(da);
+            DataTable dt = new DataTable
+            {
+                Locale = System.Globalization.CultureInfo.InvariantCulture
+            };
+            da.Fill(dt);
+            bindingSource1.DataSource = dt;
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

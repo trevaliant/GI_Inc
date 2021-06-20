@@ -1,5 +1,4 @@
 ﻿using GI_Inc.DAL;
-using GI_Inc.DAL;
 
 namespace GI_Inc
 {

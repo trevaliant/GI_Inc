@@ -100,14 +100,16 @@ namespace GI_Inc.BusinessMethods
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
-            string query = "SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start', end as 'End', type as 'Type' FROM appointment where appointment.agentId = agentId order by start; ";
+            string query = "SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start', end as 'End', type as 'Type', agentId as 'Agent ID' FROM appointment where appointment.agentId = agentId order by start; ";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             DataTable datatable = new DataTable();
             datatable.Load(cmd.ExecuteReader());
 
             foreach (DataRow row in datatable.Rows)
+                
             {
+                agentID = Convert.ToString("agentId");
                 DateTime utcStart = Convert.ToDateTime(row["start"]);
                 DateTime utcEnd = Convert.ToDateTime(row["end"]);
 

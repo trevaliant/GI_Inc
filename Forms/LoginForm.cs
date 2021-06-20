@@ -73,7 +73,7 @@ namespace GI_Inc
             {
                 DateTime dateTime = currentTime.Value;
                 DateTime dateTime2 = nextAppt.Value;
-                string dateString = nextAppt.Value.ToString("h:mm tt");
+                string dateString = nextAppt.Value.ToString();
                 TimeSpan difference = dateTime2.Subtract(dateTime);
                 if (difference.Minutes < 15)
                 {

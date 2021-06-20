@@ -52,5 +52,12 @@ namespace GI_Inc.Forms.ApptReports
             mainForm.Show();
             Hide();
         }
+
+        private void btnBackToApptRep_Click(object sender, EventArgs e)
+        {
+            ApptReportDashboard appts = new ApptReportDashboard();
+            appts.Show();
+            Hide();
+        }
     }
 }

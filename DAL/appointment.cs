@@ -16,18 +16,18 @@ namespace GI_Inc.DAL
     {
         public int appointmentId { get; set; }
         public int customerId { get; set; }
-        public string description { get; set; }
         public string location { get; set; }
         public string type { get; set; }
+        public string description { get; set; }
         public System.DateTime start { get; set; }
         public System.DateTime end { get; set; }
+        public int agentId { get; set; }
         public Nullable<System.DateTime> createDate { get; set; }
         public string createdBy { get; set; }
         public Nullable<System.DateTime> lastUpdate { get; set; }
         public string lastUpdateBy { get; set; }
         public string title { get; set; }
         public Nullable<decimal> salesAmount { get; set; }
-        public int agentId { get; set; }
-        public string customerName { get; set; }
+        public int agent_agentId { get; set; }
     }
 }

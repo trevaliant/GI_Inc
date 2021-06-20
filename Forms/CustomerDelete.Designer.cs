@@ -66,6 +66,7 @@ namespace GI_Inc.Forms
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.customerTableAdapter = new GI_Inc.DAL.U06P8DDataSet3TableAdapters.customerTableAdapter();
             this.tableAdapterManager = new GI_Inc.DAL.U06P8DDataSet3TableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,14 +86,14 @@ namespace GI_Inc.Forms
             this.panel3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(891, 138);
+            this.panel3.Size = new System.Drawing.Size(918, 138);
             this.panel3.TabIndex = 6;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(377, 49);
+            this.pictureBox2.Location = new System.Drawing.Point(403, 49);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,7 +108,7 @@ namespace GI_Inc.Forms
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.GhostWhite;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(163, 3);
+            this.label3.Location = new System.Drawing.Point(176, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(605, 43);
             this.label3.TabIndex = 0;
@@ -118,6 +119,7 @@ namespace GI_Inc.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.dgvCustomerList);
             this.panel1.Controls.Add(this.textBox1);
@@ -126,13 +128,13 @@ namespace GI_Inc.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 621);
+            this.panel1.Size = new System.Drawing.Size(918, 815);
             this.panel1.TabIndex = 22;
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(253, 544);
+            this.btnDelete.Location = new System.Drawing.Point(268, 663);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 66);
@@ -158,7 +160,7 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn14});
             this.dgvCustomerList.DataSource = this.customerBindingSource;
-            this.dgvCustomerList.Location = new System.Drawing.Point(12, 180);
+            this.dgvCustomerList.Location = new System.Drawing.Point(21, 271);
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.Size = new System.Drawing.Size(861, 361);
@@ -240,7 +242,7 @@ namespace GI_Inc.Forms
             this.textBox1.BackColor = System.Drawing.Color.GreenYellow;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(225, 140);
+            this.textBox1.Location = new System.Drawing.Point(259, 227);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -252,7 +254,7 @@ namespace GI_Inc.Forms
             // btnBackToDash
             // 
             this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToDash.Location = new System.Drawing.Point(740, 544);
+            this.btnBackToDash.Location = new System.Drawing.Point(753, 664);
             this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToDash.Name = "btnBackToDash";
             this.btnBackToDash.Size = new System.Drawing.Size(120, 65);
@@ -283,7 +285,7 @@ namespace GI_Inc.Forms
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorDeleteItem});
-            this.customerBindingNavigator.Location = new System.Drawing.Point(12, 544);
+            this.customerBindingNavigator.Location = new System.Drawing.Point(21, 663);
             this.customerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.customerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.customerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -293,7 +295,6 @@ namespace GI_Inc.Forms
             this.customerBindingNavigator.Size = new System.Drawing.Size(861, 68);
             this.customerBindingNavigator.TabIndex = 2;
             this.customerBindingNavigator.Text = "bindingNavigator1";
-            this.customerBindingNavigator.RefreshItems += new System.EventHandler(this.customerBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorCountItem
             // 
@@ -390,11 +391,27 @@ namespace GI_Inc.Forms
             this.tableAdapterManager.customerTableAdapter = this.customerTableAdapter;
             this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(326, 169);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(255, 43);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Customer Delete";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.UseCompatibleTextRendering = true;
+            // 
             // CustomerDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 621);
+            this.ClientSize = new System.Drawing.Size(918, 815);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -402,7 +419,7 @@ namespace GI_Inc.Forms
             this.Name = "CustomerDelete";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Delete Customer";
+            this.Text = "Customer Delete";
             this.Load += new System.EventHandler(this.CustomerDelete_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -454,5 +471,6 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,14 +1,7 @@
 ﻿using GI_Inc.DAL;
-using GI_Inc.DAL;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms.ApptReports
@@ -56,6 +49,13 @@ namespace GI_Inc.Forms.ApptReports
         {
             MainForm mf = new MainForm();
             mf.Show();
+            Hide();
+        }
+
+        private void btnBackToApptRep_Click(object sender, EventArgs e)
+        {
+            ApptReportDashboard appts = new ApptReportDashboard();
+            appts.Show();
             Hide();
         }
     }

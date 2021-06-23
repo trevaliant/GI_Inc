@@ -142,16 +142,6 @@ namespace GI_Inc.BusinessMethods
             return nextAppt;
 
         }
-        public static bool overlappingAppts(DateTime start, DateTime end)
-        {
-
-            foreach (var app in getAppts().Values)
-            {
-                if (start < DateTime.Parse(app["end"].ToString()) || DateTime.Parse(app["start"].ToString()) < end)
-                    return true;
-            }
-            return false;
-        }
 
 
         public static int overlap(DateTime start, DateTime end)

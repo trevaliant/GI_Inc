@@ -12,6 +12,8 @@ namespace GI_Inc.Forms
     public partial class AppointmentModify : Form
 
     {
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
+
         public static List<KeyValuePair<string, object>> getAppts;
         public void setAppointList(List<KeyValuePair<string, object>> list)
         {
@@ -31,10 +33,10 @@ namespace GI_Inc.Forms
 
         public void cbDefaultSettings()
         {
-            cbCustomer.SelectedItem = null;
-            cbCustomer.Text = "--Choose--";
-            cbAppointment.Enabled = false;
-            //txtAgent.Enabled = false;
+
+            cbCustomer.Enabled = true;
+            cbAppointment.Enabled = true;
+            txtAgent.Enabled = true;
             txtType.Enabled = false;
             txtDescription.Enabled = false;
             txtLocation.Enabled = false;
@@ -46,8 +48,7 @@ namespace GI_Inc.Forms
 
         public void populateCustList()
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
+            MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
                 string query = "SELECT customer.customerId, customer.customerName, concat(customerName, ' --ID#: ', customer.customerId) AS Display FROM customer INNER JOIN appointment ON customer.customerId = appointment.customerId";
@@ -68,14 +69,15 @@ namespace GI_Inc.Forms
 
         public void populateApptList()
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-            string offsetUTC = (TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6));
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            
+            string offsetUTC = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6);
             try
-            {
+            {   conn.Open();
                 string query = $"SELECT appointmentId, concat(type, ' -- ',  DATE_FORMAT(CONVERT_TZ(start, '+00:00', '{offsetUTC}'), '%M %D %Y %r')) " +
-                    $"as DISPLAY FROM appointment WHERE customerId = '{cbCustomer.SelectedValue}' ;";
+                    $"as DISPLAY FROM appointment WHERE appointment.customerId = '{cbCustomer.SelectedValue}' ;";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
-                conn.Open();
+               
                 DataSet dataSet = new DataSet();
                 mySqlDataAdapter.Fill(dataSet, "Appt");
                 cbAppointment.DisplayMember = "DISPLAY";
@@ -93,7 +95,7 @@ namespace GI_Inc.Forms
         //this is needed to populate the fields when appt is changed    
         public void popFields(List<KeyValuePair<string, object>> ApptList)
         {
-            //txtAgent.Text = ApptList.Find(kvp => kvp.Key == "agentId").Value.ToString();
+            txtAgent.Text = ApptList.FirstOrDefault(kvp => kvp.Key == "agentId").Value.ToString();
             txtLocation.Text = ApptList.Find(kvp => kvp.Key == "location").Value.ToString();
             txtType.Text = ApptList.Find(kvp => kvp.Key == "type").Value.ToString();
             string start = ApptList.Find(kvp => kvp.Key == "start").Value.ToString();
@@ -104,14 +106,14 @@ namespace GI_Inc.Forms
         private void cbCustomer_SelectedValueChanged_1(object sender, EventArgs e)
         {
             populateApptList();
-            //cbAppointment.Enabled = true;
-            //txtAgent.Enabled = false;
-            //txtLocation.Enabled = false;
-            //txtType.Enabled = false;
-            //txtDescription.Visible = false;
-            //dtStart.Visible = false;
-            //dtEnd.Visible = false;
-            //btnSave.Visible = false;
+            cbAppointment.Enabled = true;
+            txtAgent.Enabled = true;
+            txtLocation.Enabled = true;
+            txtType.Enabled = true;
+            txtDescription.Enabled = true;
+            dtStart.Enabled = true;
+            dtEnd.Enabled = true;
+            btnSave.Enabled = true;
         }
         private void cbAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,7 +124,7 @@ namespace GI_Inc.Forms
 
             if (cbAppointment.SelectedIndex != -1)
             {
-                //txtAgent.Enabled = true;
+                txtAgent.Enabled = true;
                 txtType.Enabled = true;
                 dtStart.Enabled = true;
                 dtEnd.Enabled = true;
@@ -160,7 +162,7 @@ namespace GI_Inc.Forms
                             dictionary["type"] = txtType.Text;
                             dictionary["start"] = dtStart.Value;
                             dictionary["end"] = dtEnd.Value;
-                            //dictionary["agentName"] = txtAgent.Text;
+                            dictionary["agentName"] = txtAgent.Text;
                             CalendarObject.updateAppointment(dictionary);
 
 

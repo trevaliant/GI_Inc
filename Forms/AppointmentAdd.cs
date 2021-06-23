@@ -10,6 +10,7 @@ namespace GI_Inc.Forms
 {
     public partial class AppointmentAdd : Form
     {
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         U06P8DEntities entities11 = new U06P8DEntities();
         public AppointmentAdd()
         {
@@ -33,7 +34,7 @@ namespace GI_Inc.Forms
 
         public void populateAgentList()
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
+            MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
                 string query = "SELECT agentId, concat(agentName, ' --ID#:', agentId) as Display FROM agent ";
@@ -55,8 +56,7 @@ namespace GI_Inc.Forms
         }
         public void populateCustomerList()
         {
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
+            MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
                 string query = "SELECT customerId, concat(customerName, ' --ID#: ', customerId) as Display FROM customer;";
@@ -105,50 +105,23 @@ namespace GI_Inc.Forms
             {
                 return 1;
             }
-            if (firstStart.TimeOfDay > lastStart.TimeOfDay)
+            if (CalendarObject.overlap(start, end) > 0)
             {
                 return 2;
             }
-            if (firstStart.Date != lastStart.Date)
+            if (firstStart.TimeOfDay > lastStart.TimeOfDay)
             {
                 return 3;
+            }
+            if (firstStart.Date != lastStart.Date)
+            {
+                return 4;
             }
 
             return 0;
 
         }
-        public bool overlapCheck(DateTime start, DateTime end)
-        {
 
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
-
-            bool overlap = false;
-
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM appointment as A, appointment as B WHERE A.appointmentId <> B.appointmentId AND A.appointmentId > B.appointmentId AND A.end > B.start AND B.end > A.start AND A.agentId =B.agentId";
-                cmd.Parameters.AddWithValue("@start", start);
-                cmd.Parameters.AddWithValue("@end", end);
-
-                if (cmd.ExecuteScalar().ToString() == "1")
-                {
-                    overlap = true;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception thrown checking for overlapping appointments: " + ex);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return overlap;
-        }
 
         private void cbAppointment_SelectedValueChanged_1(object sender, EventArgs e)
         {
@@ -172,7 +145,7 @@ namespace GI_Inc.Forms
                     DateTime end = dtEnd.Value.ToUniversalTime();
 
                     int available = AllowedAppt(start, end);
-                    overlapCheck(start, end);
+
                     switch (available)
                     {
                         case 0:
@@ -182,16 +155,17 @@ namespace GI_Inc.Forms
                             mf.Show();
                             Close();
 
-
                             break;
                         case 1:
                             MessageBox.Show("You have chosen an appointment outside of business hours. Please choose between 8am and 5pm."); ;
-
                             break;
                         case 2:
-                            MessageBox.Show("The appointment start is after the end time.");
+                            MessageBox.Show("You have chosen an overlapping appointment time.");
                             break;
                         case 3:
+                            MessageBox.Show("The appointment start is after the end time.");
+                            break;
+                        case 4:
                             MessageBox.Show("The appointments start and end date are on different dates.");
                             break;
 

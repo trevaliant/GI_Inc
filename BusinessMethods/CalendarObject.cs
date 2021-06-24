@@ -13,16 +13,11 @@ namespace GI_Inc.BusinessMethods
     public class CalendarObject
     {
         private static string userName;
-        string username;
         private static int agentID;
         U06P8DEntities entities = new U06P8DEntities();
         private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
 
-        public CalendarObject(string username)
-        {
-            this.username = username;
-        }
         public CalendarObject()
         {
 
@@ -72,7 +67,6 @@ namespace GI_Inc.BusinessMethods
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "DELETE FROM appointment WHERE appointmentId = @appointmentId";
                 cmd.Parameters.AddWithValue("@appointmentId", apptSelected);
-                cmd.Parameters.AddWithValue("@isDeleted", 1);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -103,10 +97,11 @@ namespace GI_Inc.BusinessMethods
                     return 0;
                 }
                 return Convert.ToInt32(reader[0]);
-                conn.Close();
+                
             }
+            
+            conn.Close();
             return 0;
-
         }
 
         public static void createAppointment(int custID, string location, string type, string description, int agentId, DateTime start, DateTime end)
@@ -144,23 +139,36 @@ namespace GI_Inc.BusinessMethods
         }
 
 
-        public static int overlap(DateTime start, DateTime end)
+        public bool overlap(DateTime start, DateTime end)
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-            var query = $"SELECT count(*) FROM `appointment` WHERE (('{DTSql(start.ToUniversalTime())}' > start and '{DTSql(start.ToUniversalTime())}' < end) or ('{DTSql(end.ToUniversalTime())}'> start and '{DTSql(end.ToUniversalTime())}' < end)) and end > now() order by  start limit 1;";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            conn.Close();
-            if (reader.HasRows)
+
+            bool overlap = false;
+
+            try
             {
-                reader.Read();
-                string count = reader[0].ToString();
-                int result = count == "0" ? 0 : 1;
-                return result;
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT EXISTS(SELECT * FROM appointment WHERE start <= @end AND end >= @start)";
+                cmd.Parameters.AddWithValue("@start", start);
+                cmd.Parameters.AddWithValue("@end", end);
+
+                if (cmd.ExecuteScalar().ToString() == "1")
+                {
+                    overlap = true;
+                }
 
             }
-            return 0;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception thrown checking for overlapping appointments: " + ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return overlap;
 
         }
 
@@ -179,17 +187,17 @@ namespace GI_Inc.BusinessMethods
                     reader.Read();
                     list.Add(new KeyValuePair<string, object>("appointmentId", reader[0]));
                     list.Add(new KeyValuePair<string, object>("customerId", reader[1]));
-                    list.Add(new KeyValuePair<string, object>("description", reader[2]));
-                    list.Add(new KeyValuePair<string, object>("location", reader[4]));
-                    list.Add(new KeyValuePair<string, object>("type", reader[5]));
-                    list.Add(new KeyValuePair<string, object>("start", reader[6]));
-                    list.Add(new KeyValuePair<string, object>("end", reader[7]));
-                    list.Add(new KeyValuePair<string, object>("agentId", reader[12]));
+                    list.Add(new KeyValuePair<string, object>("location", reader[2]));
+                    list.Add(new KeyValuePair<string, object>("type", reader[3]));
+                    list.Add(new KeyValuePair<string, object>("description", reader[4]));
+                    list.Add(new KeyValuePair<string, object>("start", reader[5]));
+                    list.Add(new KeyValuePair<string, object>("end", reader[6]));
+                    list.Add(new KeyValuePair<string, object>("agentId", reader[7]));
                     reader.Close();
                 }
                 else
                 {
-                    return null;
+
                 }
                 return list;
 
@@ -225,7 +233,7 @@ namespace GI_Inc.BusinessMethods
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
-            var query = $"UPDATE appointment SET appointmentID = '{dictionary["appointmentId"]}', customerId = '{dictionary["customerId"]}', description = '{dictionary["description"]}',  location = '{dictionary["location"]}', type = '{dictionary["type"]}',  start = '{DTSql(start.ToUniversalTime())}', end = '{DTSql(end.ToUniversalTime())}',  agentId = '{dictionary["agentId"]}' WHERE appointmentId = '{dictionary["appointmentId"]}'";
+            var query = $"UPDATE appointment SET `appointmentId` = '{dictionary["appointmentId"]}', `customerId` = '{dictionary["customerId"]}', `description` = '{dictionary["description"]}',  `location`= '{dictionary["location"]}', `type` = '{dictionary["type"]}',  `start` = '{DTSql(start.ToUniversalTime())}', `end` = '{DTSql(end.ToUniversalTime())}',  `agentId` = '{dictionary["agentId"]}' WHERE `appointmentId` = '{dictionary["appointmentId"]}'";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             cmd.ExecuteNonQuery();

@@ -12,6 +12,7 @@ namespace GI_Inc.Forms
     {
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         U06P8DEntities entities11 = new U06P8DEntities();
+        CalendarObject calObj = new CalendarObject();
         public AppointmentAdd()
         {
             InitializeComponent();
@@ -105,7 +106,7 @@ namespace GI_Inc.Forms
             {
                 return 1;
             }
-            if (CalendarObject.overlap(start, end) > 0)
+            if (calObj.overlap(start, end) == true)
             {
                 return 2;
             }

@@ -11,18 +11,20 @@ namespace GI_Inc.Forms
 {
     public partial class AppointmentModify : Form
 
+
     {
+        CalendarObject calObj = new CalendarObject();
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
 
-        public static List<KeyValuePair<string, object>> getAppts;
+        public static List<KeyValuePair<string, object>> ApptList;
         public void setAppointList(List<KeyValuePair<string, object>> list)
         {
-            getAppts = list;
+            ApptList = list;
         }
 
         public static List<KeyValuePair<string, object>> getAppointList()
         {
-            return getAppts;
+            return ApptList;
         }
         public AppointmentModify()
         {
@@ -34,15 +36,18 @@ namespace GI_Inc.Forms
         public void cbDefaultSettings()
         {
 
-            cbCustomer.Enabled = true;
+            cbCustomer.SelectedItem = null;
+            cbCustomer.Text = "--Choose--";
             cbAppointment.Enabled = true;
-            txtAgent.Enabled = true;
-            txtType.Enabled = false;
-            txtDescription.Enabled = false;
-            txtLocation.Enabled = false;
-            dtStart.Enabled = false;
-            dtEnd.Enabled = false;
-            btnSave.Enabled = false;
+            txtCustId.Visible = false;
+            txtApptId.Visible = false;
+            txtAgent.Visible = false;
+            txtType.Visible = false;
+            txtDescription.Visible = false;
+            txtLocation.Visible = false;
+            dtStart.Visible = false;
+            dtEnd.Visible = false;
+            btnSave.Visible = false;
         }
 
 
@@ -51,7 +56,7 @@ namespace GI_Inc.Forms
             MySqlConnection conn = new MySqlConnection(connectionString);
             try
             {
-                string query = "SELECT customer.customerId, customer.customerName, concat(customerName, ' --ID#: ', customer.customerId) AS Display FROM customer INNER JOIN appointment ON customer.customerId = appointment.customerId";
+                string query = "SELECT DISTINCT `customer`.`customerId`, `customer`.`customerName`, concat( customerName, ' --Cust ID#  ', customer.customerId) AS DISPLAY from customer join appointment ON customer.customerId = appointment.customerId";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
                 DataSet dataSet = new DataSet();
@@ -59,6 +64,7 @@ namespace GI_Inc.Forms
                 cbCustomer.DisplayMember = "Display";
                 cbCustomer.ValueMember = "customerId";
                 cbCustomer.DataSource = dataSet.Tables["Cust"];
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -70,14 +76,15 @@ namespace GI_Inc.Forms
         public void populateApptList()
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
-            
+
             string offsetUTC = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6);
             try
-            {   conn.Open();
+            {
+                
                 string query = $"SELECT appointmentId, concat(type, ' -- ',  DATE_FORMAT(CONVERT_TZ(start, '+00:00', '{offsetUTC}'), '%M %D %Y %r')) " +
                     $"as DISPLAY FROM appointment WHERE appointment.customerId = '{cbCustomer.SelectedValue}' ;";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
-               
+                conn.Open();
                 DataSet dataSet = new DataSet();
                 mySqlDataAdapter.Fill(dataSet, "Appt");
                 cbAppointment.DisplayMember = "DISPLAY";
@@ -95,52 +102,23 @@ namespace GI_Inc.Forms
         //this is needed to populate the fields when appt is changed    
         public void popFields(List<KeyValuePair<string, object>> ApptList)
         {
-            txtAgent.Text = ApptList.FirstOrDefault(kvp => kvp.Key == "agentId").Value.ToString();
-            txtLocation.Text = ApptList.Find(kvp => kvp.Key == "location").Value.ToString();
-            txtType.Text = ApptList.Find(kvp => kvp.Key == "type").Value.ToString();
+
+            txtApptId.Text = ApptList.First(kvp => kvp.Key == "appointmentId").Value.ToString();
+            txtCustId.Text = ApptList.First(kvp => kvp.Key == "customerId").Value.ToString();
+            txtDescription.Text = ApptList.First(kvp => kvp.Key == "description").Value.ToString();
+            txtLocation.Text = ApptList.First(kvp => kvp.Key == "location").Value.ToString();
+            txtType.Text = ApptList.First(kvp => kvp.Key == "type").Value.ToString();
             string start = ApptList.Find(kvp => kvp.Key == "start").Value.ToString();
             string end = ApptList.Find(kvp => kvp.Key == "end").Value.ToString();
             dtStart.Value = Convert.ToDateTime(start).ToLocalTime();
             dtEnd.Value = Convert.ToDateTime(end).ToLocalTime();
-        }
-        private void cbCustomer_SelectedValueChanged_1(object sender, EventArgs e)
-        {
-            populateApptList();
-            cbAppointment.Enabled = true;
-            txtAgent.Enabled = true;
-            txtLocation.Enabled = true;
-            txtType.Enabled = true;
-            txtDescription.Enabled = true;
-            dtStart.Enabled = true;
-            dtEnd.Enabled = true;
-            btnSave.Enabled = true;
-        }
-        private void cbAppointment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView dataRowView = cbAppointment.SelectedItem as DataRowView;
-            int id = Convert.ToInt32(cbAppointment.SelectedValue);
-            var ApptList = CalendarObject.getAppointmentList(id);
-            setAppointList(ApptList);
-
-            if (cbAppointment.SelectedIndex != -1)
-            {
-                txtAgent.Enabled = true;
-                txtType.Enabled = true;
-                dtStart.Enabled = true;
-                dtEnd.Enabled = true;
-                btnSave.Enabled = true;
-                cbAppointment.Enabled = true;
-                cbAppointment.Text = null;
-                txtDescription.Enabled = true;
-                txtLocation.Enabled = true;
-                cbCustomer.Enabled = true;
-                popFields(ApptList);
-            }
+            txtAgent.Text = ApptList.First(kvp => kvp.Key == "agentId").Value.ToString();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
-            bool pass = CheckFields();
+          bool pass = CheckFields();
 
             if (pass == true)
             {
@@ -155,14 +133,14 @@ namespace GI_Inc.Forms
                             var list = getAppointList();
                             //lambda expression to convert the appointment list to a dictionary
                             IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
-                            dictionary["appointmentId"] = cbAppointment.SelectedValue;
-                            dictionary["customerId"] = cbCustomer.SelectedValue;
+                            dictionary["appointmentId"] = txtApptId.Text;
+                            dictionary["customerId"] = txtCustId.Text;
                             dictionary["description"] = txtDescription.Text;
                             dictionary["location"] = txtLocation.Text;
                             dictionary["type"] = txtType.Text;
                             dictionary["start"] = dtStart.Value;
                             dictionary["end"] = dtEnd.Value;
-                            dictionary["agentName"] = txtAgent.Text;
+                            dictionary["agentId"] = txtAgent.Text;
                             CalendarObject.updateAppointment(dictionary);
 
 
@@ -223,7 +201,7 @@ namespace GI_Inc.Forms
             {
                 return 1;
             }
-            if (CalendarObject.overlap(start, end) > 0)
+            if (calObj.overlap(start, end) == true)
             {
                 return 2;
             }
@@ -237,27 +215,6 @@ namespace GI_Inc.Forms
             }
             return 0;
         }
-    private void button1_Click(object sender, EventArgs e)
-    {
-        string searchValue = txtSearchAgent.Text;
-        dgvAgent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        try
-        {
-            foreach (DataGridViewRow row in dgvAgent.Rows)
-            {
-                if (row.Cells[0].Value.ToString().Equals(searchValue))
-                {
-                    row.Selected = true;
-
-                    break;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message);
-        }
-    }
 
         private void btnBackToDash_Click(object sender, EventArgs e)
         {
@@ -271,6 +228,119 @@ namespace GI_Inc.Forms
             AppointmentModify appointmentMod = new AppointmentModify();
             appointmentMod.Show();
             Hide();
+        }
+
+        private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                populateApptList();
+                cbAppointment.Visible = true;
+                txtCustId.Visible = false;
+                txtApptId.Visible = false;
+                txtAgent.Visible = false;
+                txtLocation.Visible = false;
+                txtType.Visible = false;
+                txtDescription.Visible = false;
+                dtStart.Visible = false;
+                dtEnd.Visible = false;
+                btnSave.Visible = false;
+            }
+        }
+
+        private void cbAppointment_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            DataRowView dataRowView = cbAppointment.SelectedItem as DataRowView;
+            int id = Convert.ToInt32(cbAppointment.SelectedValue);
+            var ApptList = CalendarObject.getAppointmentList(id);
+            setAppointList(ApptList);
+
+            if (cbAppointment.SelectedIndex != -1)
+            {
+                txtCustId.Visible = true;
+                txtApptId.Visible = true;
+                txtAgent.Visible = true;
+                txtType.Visible = true;
+                dtStart.Visible = true;
+                dtEnd.Visible = true;
+                btnSave.Visible = true;
+                cbAppointment.Visible = true;
+                cbAppointment.Text = null;
+                txtDescription.Visible = true;
+                txtLocation.Visible = true;
+                cbCustomer.Visible = true;
+                popFields(ApptList);
+            }
+        }
+
+
+        private void btnAgentSearch_Click(object sender, EventArgs e)
+        {
+            string searchValue = txtSearchAgent.Text;
+            dgvAgent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dgvAgent.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void AppointmentModify_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'u06P8DDataSet1.agent' table. You can move, or remove it, as needed.
+            this.agentTableAdapter.Fill(this.u06P8DDataSet1.agent);
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCustId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAgent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAgent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApptId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

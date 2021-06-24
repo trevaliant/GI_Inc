@@ -28,6 +28,5 @@ namespace GI_Inc.DAL
         public string lastUpdateBy { get; set; }
         public string title { get; set; }
         public Nullable<decimal> salesAmount { get; set; }
-        public int agent_agentId { get; set; }
     }
 }

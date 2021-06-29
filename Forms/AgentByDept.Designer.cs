@@ -31,6 +31,7 @@ namespace GI_Inc.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentByDept));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,17 +40,16 @@ namespace GI_Inc.Forms
             this.u06P8DAgentDept = new GI_Inc.DAL.U06P8DAgentDept();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBackToDashboard = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvAgent = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.agentTableAdapter = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.agentTableAdapter();
             this.tableAdapterManager = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingNavigator)).BeginInit();
@@ -109,18 +109,16 @@ namespace GI_Inc.Forms
             this.agentBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDelete,
             this.toolStripSeparator2,
-            this.btnSave,
-            this.toolStripSeparator4,
             this.btnBackToDashboard,
             this.toolStripSeparator5});
-            this.agentBindingNavigator.Location = new System.Drawing.Point(241, 670);
+            this.agentBindingNavigator.Location = new System.Drawing.Point(319, 650);
             this.agentBindingNavigator.MoveFirstItem = null;
             this.agentBindingNavigator.MoveLastItem = null;
             this.agentBindingNavigator.MoveNextItem = null;
             this.agentBindingNavigator.MovePreviousItem = null;
             this.agentBindingNavigator.Name = "agentBindingNavigator";
             this.agentBindingNavigator.PositionItem = null;
-            this.agentBindingNavigator.Size = new System.Drawing.Size(442, 59);
+            this.agentBindingNavigator.Size = new System.Drawing.Size(311, 59);
             this.agentBindingNavigator.TabIndex = 7;
             this.agentBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -147,19 +145,6 @@ namespace GI_Inc.Forms
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 59);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 56);
-            this.btnSave.Text = "Save Changes";
-            this.btnSave.Click += new System.EventHandler(this.agentBindingNavigatorSaveItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 59);
             // 
             // btnBackToDashboard
             // 
@@ -188,11 +173,46 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgvAgent.DataSource = this.agentBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAgent.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAgent.Location = new System.Drawing.Point(137, 225);
             this.dgvAgent.Name = "dgvAgent";
             this.dgvAgent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgent.Size = new System.Drawing.Size(682, 409);
             this.dgvAgent.TabIndex = 7;
+            this.dgvAgent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgent_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(342, 141);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 43);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Agent Information";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.UseCompatibleTextRendering = true;
+            // 
+            // agentTableAdapter
+            // 
+            this.agentTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -211,32 +231,24 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
             this.dataGridViewTextBoxColumn3.HeaderText = "Agent Department";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // label1
+            // label3
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(356, 155);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 43);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Agent Information";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.UseCompatibleTextRendering = true;
-            // 
-            // agentTableAdapter
-            // 
-            this.agentTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LawnGreen;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Location = new System.Drawing.Point(319, 197);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(298, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Select an agent below to deactivate";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.UseCompatibleTextRendering = true;
             // 
             // AgentByDept
             // 
@@ -244,6 +256,7 @@ namespace GI_Inc.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(918, 815);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAgent);
             this.Controls.Add(this.agentBindingNavigator);
@@ -279,15 +292,14 @@ namespace GI_Inc.Forms
         private DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator agentBindingNavigator;
         private System.Windows.Forms.ToolStripButton btnDelete;
-        private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnBackToDashboard;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.DataGridView dgvAgent;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

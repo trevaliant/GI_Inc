@@ -24,27 +24,7 @@ namespace GI_Inc.Forms
         {
             agentId = currentAgentId;
         }
-        public static bool CheckUserData(string userName)
-        {
-            string sql = @"SELECT * FROM agent WHERE userName = @userName";
-            MySqlConnection conn = new MySqlConnection("server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D");
 
-            conn.Open();
-            using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@userName", userName);
-                MySqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                if (reader.HasRows)
-                {
-                    return true;  // data exist
-                }
-                else
-                {
-                    return false; //data not exist
-                }
-            }
-
-        }
 
         public static int getAgentID(string table, string id)
         {
@@ -117,11 +97,6 @@ namespace GI_Inc.Forms
                     MessageBox.Show("Passwords do not match");
                 else
                 {
-                    bool CheckUserData = false;
-                    if (CheckUserData)
-                    {
-                        MessageBox.Show("That username is already in use, please choose another");
-                    }
 
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
@@ -138,23 +113,19 @@ namespace GI_Inc.Forms
                         cmd.Parameters.AddWithValue("@agentTimeZone", cbTimezone.SelectedItem);
                         cmd.Parameters.AddWithValue("@agentCountry", cbCountry.SelectedItem);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registration was successful, click the 'Login Button' to log in!");
+                        MessageBox.Show("Registration was successful.");
 
-                        Clear();
+                        WelcomeForm welcome = new WelcomeForm();
+                        welcome.Show();
+                        Hide();
 
                     }
                 }
 
-                void Clear()
-
-                {
-                    txtName.Text = txtPassword.Text = txtUserName.Text = txtConfirmPassword.Text = "";
-                    cbTimezone.SelectedItem = cbDepartment.SelectedItem = cbCountry.SelectedItem = "";
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("You have chosen a username that is already in use, please try again.");
             }
         }
 

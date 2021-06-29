@@ -88,9 +88,14 @@ namespace GI_Inc.Forms.ApptReports
             // 
             // dgvSales
             // 
+            this.dgvSales.AllowUserToAddRows = false;
+            this.dgvSales.AllowUserToDeleteRows = false;
+            this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Location = new System.Drawing.Point(66, 261);
             this.dgvSales.Name = "dgvSales";
+            this.dgvSales.ReadOnly = true;
             this.dgvSales.Size = new System.Drawing.Size(802, 232);
             this.dgvSales.TabIndex = 3;
             // 

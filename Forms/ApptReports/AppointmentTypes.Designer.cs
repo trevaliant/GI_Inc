@@ -40,11 +40,11 @@ namespace GI_Inc.Forms.AppointmentReports
             this.appointmentTableAdapter = new GI_Inc.DAL.U06P8DDataSet2TableAdapters.appointmentTableAdapter();
             this.tableAdapterManager = new GI_Inc.DAL.U06P8DDataSet2TableAdapters.TableAdapterManager();
             this.appointmentDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtApptTypes = new System.Windows.Forms.TextBox();
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.btnBackToApptRep = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,18 +117,35 @@ namespace GI_Inc.Forms.AppointmentReports
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.appointmentDataGridView.DataSource = this.appointmentBindingSource;
-            this.appointmentDataGridView.Location = new System.Drawing.Point(95, 283);
+            this.appointmentDataGridView.Location = new System.Drawing.Point(51, 173);
             this.appointmentDataGridView.Name = "appointmentDataGridView";
             this.appointmentDataGridView.ReadOnly = true;
-            this.appointmentDataGridView.Size = new System.Drawing.Size(384, 176);
+            this.appointmentDataGridView.Size = new System.Drawing.Size(384, 573);
             this.appointmentDataGridView.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Appointment Type";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "start";
+            dataGridViewCellStyle1.Format = "M";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Appointment Date";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // txtApptTypes
             // 
-            this.txtApptTypes.Location = new System.Drawing.Point(539, 173);
+            this.txtApptTypes.Location = new System.Drawing.Point(516, 173);
             this.txtApptTypes.Multiline = true;
             this.txtApptTypes.Name = "txtApptTypes";
-            this.txtApptTypes.Size = new System.Drawing.Size(219, 573);
+            this.txtApptTypes.Size = new System.Drawing.Size(242, 573);
             this.txtApptTypes.TabIndex = 6;
             // 
             // btnBackToDash
@@ -155,30 +172,13 @@ namespace GI_Inc.Forms.AppointmentReports
             this.btnBackToApptRep.UseVisualStyleBackColor = true;
             this.btnBackToApptRep.Click += new System.EventHandler(this.btnBackToApptRep_Click);
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Appointment Type";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "start";
-            dataGridViewCellStyle1.Format = "M";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Appointment Date";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(125, 207);
+            this.label1.Location = new System.Drawing.Point(285, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(338, 37);
             this.label1.TabIndex = 2;

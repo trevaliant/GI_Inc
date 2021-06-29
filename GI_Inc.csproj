@@ -15,17 +15,20 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\taust49\OneDrive - Western Governors University\Desktop\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://www.globalappointmentsinc.net/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -72,6 +75,8 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.25\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
@@ -127,11 +132,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessMethods\TypeCount.cs" />
-    <Compile Include="BusinessMethods\CalendarObject.cs" />
-    <Compile Include="BusinessMethods\CustomerInfo.cs" />
-    <Compile Include="BusinessMethods\CustomerObject.cs" />
-    <Compile Include="BusinessMethods\UserUtility.cs" />
+    <Compile Include="Methods\FileProcesClass.cs" />
+    <Compile Include="Methods\TypeCount.cs" />
+    <Compile Include="Methods\CalendarObject.cs" />
+    <Compile Include="Methods\CustomerInfo.cs" />
+    <Compile Include="Methods\CustomerObject.cs" />
+    <Compile Include="Methods\UserUtility.cs" />
     <Compile Include="DAL\agent.cs">
       <DependentUpon>ModelMySql.tt</DependentUpon>
     </Compile>
@@ -173,11 +179,11 @@
     <Compile Include="Forms\AppointmentAdd.Designer.cs">
       <DependentUpon>AppointmentAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AppointmentDelete.cs">
+    <Compile Include="Forms\AppointmentDeactivate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AppointmentDelete.Designer.cs">
-      <DependentUpon>AppointmentDelete.cs</DependentUpon>
+    <Compile Include="Forms\AppointmentDeactivate.Designer.cs">
+      <DependentUpon>AppointmentDeactivate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ApptReports\AppointmentSales.cs">
       <SubType>Form</SubType>
@@ -209,11 +215,11 @@
     <Compile Include="Forms\CustomerAdd.Designer.cs">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CustomerDelete.cs">
+    <Compile Include="Forms\CustomerDeactivate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerDelete.Designer.cs">
-      <DependentUpon>CustomerDelete.cs</DependentUpon>
+    <Compile Include="Forms\CustomerDeactivate.Designer.cs">
+      <DependentUpon>CustomerDeactivate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerModify.cs">
       <SubType>Form</SubType>
@@ -282,7 +288,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>U06P8DDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BusinessMethods\Agent.cs" />
+    <Compile Include="Methods\Agent.cs" />
     <Compile Include="DAL\U06P8DDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -310,8 +316,8 @@
       <DependentUpon>AppointmentAdd.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AppointmentDelete.resx">
-      <DependentUpon>AppointmentDelete.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AppointmentDeactivate.resx">
+      <DependentUpon>AppointmentDeactivate.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApptReports\AppointmentSales.resx">
@@ -329,8 +335,8 @@
     <EmbeddedResource Include="Forms\CustomerAdd.resx">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerDelete.resx">
-      <DependentUpon>CustomerDelete.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CustomerDeactivate.resx">
+      <DependentUpon>CustomerDeactivate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerModify.resx">
       <DependentUpon>CustomerModify.cs</DependentUpon>

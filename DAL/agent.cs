@@ -11,9 +11,10 @@ namespace GI_Inc.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class agent
     {
+
         public int agentId { get; set; }
         public string agentName { get; set; }
         public string agentDepartment { get; set; }
@@ -26,5 +27,9 @@ namespace GI_Inc.DAL
         public string createdBy { get; set; }
         public System.DateTime lastUpdate { get; set; }
         public string lastUpdateBy { get; set; }
+
+
     }
+    
+
 }

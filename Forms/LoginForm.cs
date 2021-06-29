@@ -1,9 +1,7 @@
 ﻿using GI_Inc.BusinessMethods;
 using GI_Inc.Forms;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GI_Inc
@@ -44,7 +42,6 @@ namespace GI_Inc
                 MainForm mainForm = new MainForm();
                 Hide();
                 mainForm.Show();
-                apptReminder();
 
             }
             else
@@ -56,33 +53,6 @@ namespace GI_Inc
 
             }
         }
-
-        public static DateTime getTime()
-        {
-            return DateTime.Now.ToLocalTime();
-        }
-        public static void apptReminder()
-        {
-            var list = CalendarObject.getNextAppt();
-            IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
-            DateTime? currentTime = getTime();
-            DateTime? nextAppt = Convert.ToDateTime(dictionary["start"]);
-            string agent = dictionary["agentName"].ToString();
-            string name = dictionary["customerName"].ToString();
-            if (currentTime != null && nextAppt != null)
-            {
-                DateTime dateTime = currentTime.Value;
-                DateTime dateTime2 = nextAppt.Value;
-                string dateString = nextAppt.Value.ToString();
-                TimeSpan difference = dateTime2.Subtract(dateTime);
-                if (difference.Minutes < 15)
-                {
-                    MessageBox.Show("ALERT: " +agent+ " has an appointment coming up at " + dateString + " with " + name + "!");
-                }
-            }
-        }
-
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {

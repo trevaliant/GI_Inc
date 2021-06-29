@@ -25,7 +25,7 @@ namespace GI_Inc.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<agent> agents { get; set; }
+        public virtual DbSet<Agent> agents { get; set; }
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<customer> customers { get; set; }
     }

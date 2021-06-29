@@ -25,7 +25,7 @@ namespace GI_Inc.Forms.ApptReports
         {
             MySqlConnection conn = new MySqlConnection("server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo = True; password =53688828432; database = U06P8D");
 
-            var query = "SELECT type, salesAmount, start, end FROM `appointment` WHERE (`start` BETWEEN @start and @end AND salesAmount IS NOT NULL)";
+            var query = "SELECT type AS Type, salesAmount AS Sales_Amount, start AS Start, end AS End FROM `appointment` WHERE (`start` BETWEEN @start and @end AND salesAmount IS NOT NULL)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@start", dateTimePicker1.Value);
             cmd.Parameters.AddWithValue("@end", dateTimePicker2.Value);

@@ -34,6 +34,7 @@ namespace GI_Inc.Forms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtCountry = new System.Windows.Forms.TextBox();
@@ -55,7 +56,7 @@ namespace GI_Inc.Forms
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -103,6 +104,7 @@ namespace GI_Inc.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtPhone);
@@ -130,6 +132,22 @@ namespace GI_Inc.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(918, 677);
             this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(359, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 43);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Customer Add";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.UseCompatibleTextRendering = true;
             // 
             // txtEmail
             // 
@@ -329,21 +347,21 @@ namespace GI_Inc.Forms
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
+            // label4
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(359, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 43);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Customer Add";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.UseCompatibleTextRendering = true;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Location = new System.Drawing.Point(388, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 25);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "All fields are required";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.UseCompatibleTextRendering = true;
             // 
             // CustomerAdd
             // 
@@ -396,5 +414,6 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

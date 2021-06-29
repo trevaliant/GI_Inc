@@ -11,7 +11,7 @@ namespace GI_Inc.Forms
         public CustomerAdd(agent user)
         {
             InitializeComponent();
-            currentUser = new agent();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -24,7 +24,6 @@ namespace GI_Inc.Forms
                 customer customer = new customer();
 
                 customer.customerName = txtName.Text;
-                customer.createdBy = currentUser.userName;
                 customer.address = txtAddress.Text;
                 customer.address2 = txtAddress2.Text;
                 customer.city = txtCity.Text;
@@ -35,7 +34,7 @@ namespace GI_Inc.Forms
                 customer.email = txtEmail.Text;
                 customer.createDate = DateTime.Now;
                 customer.lastUpdate = DateTime.Now;
-                customer.lastUpdateBy = currentUser.userName;
+
 
 
                 CustomerObject.addCustomer(customer);
@@ -135,7 +134,7 @@ namespace GI_Inc.Forms
 
         private void showError(string item)
         {
-            MessageBox.Show("Please enter a valid information for " + item);
+            MessageBox.Show("Please enter valid information for " + item);
 
         }
 

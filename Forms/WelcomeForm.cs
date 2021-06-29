@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
@@ -20,9 +13,9 @@ namespace GI_Inc.Forms
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-                Register register = new Register();
-                register.Show();
-                Hide();
+            Register register = new Register();
+            register.Show();
+            Hide();
 
         }
 

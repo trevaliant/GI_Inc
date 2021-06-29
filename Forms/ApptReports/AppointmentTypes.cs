@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace GI_Inc.Forms.AppointmentReports
 {
-    public struct AppointmentReportTypes    
+    public struct AppointmentReportTypes
     {
         public string Month;
         public string appointmentType;

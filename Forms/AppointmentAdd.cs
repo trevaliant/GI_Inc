@@ -3,7 +3,6 @@ using GI_Inc.DAL;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
@@ -95,6 +94,50 @@ namespace GI_Inc.Forms
             return true;
         }
 
+
+
+        private bool validAppointment()
+        {
+            if (string.IsNullOrEmpty(cbAppointment.Text))
+            {
+                showError(lblCustomer.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(cbAgent.Text))
+            {
+                showError(lblAgent.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(cbLocation.Text))
+            {
+                showError(lblLocation.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(cbType.Text))
+            {
+                showError(lblType.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtDescription.Text))
+            {
+                showError(lblDescription.Text);
+                return false;
+            }
+
+            if (checkFields() == false)
+            {
+                MessageBox.Show("Please complete all Customer Information fields.");
+            }
+
+            return true;
+        }
+
+        private void showError(string item)
+        {
+            MessageBox.Show("Please enter valid information for " + item);
+
+        }
+
         public int AllowedAppt(DateTime start, DateTime end)
         {
             DateTime firstStart = start.ToLocalTime();
@@ -133,9 +176,8 @@ namespace GI_Inc.Forms
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            bool pass = checkFields();
-
-            if (pass == true)
+            bool pass = validAppointment();
+            if (pass)
             {
                 if (cbAppointment.SelectedItem != null)
                 {
@@ -150,7 +192,7 @@ namespace GI_Inc.Forms
                     switch (available)
                     {
                         case 0:
-                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(),  txtDescription.Text, agentID, start, end); ;
+                            CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(), txtDescription.Text, agentID, start, end); ;
                             MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
                             MainForm mf = new MainForm();
                             mf.Show();
@@ -172,10 +214,6 @@ namespace GI_Inc.Forms
 
                     }
                 }
-            }
-            if (pass == false)
-            {
-                MessageBox.Show("Please enter a value for all fields.");
             }
         }
 

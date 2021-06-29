@@ -1,14 +1,7 @@
-﻿using GI_Inc.BusinessMethods;
-using GI_Inc.DAL;
+﻿using GI_Inc.DAL;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
@@ -21,6 +14,7 @@ namespace GI_Inc.Forms
         public AgentByDept()
         {
             InitializeComponent();
+            btnDelete.Enabled = false;
         }
 
 
@@ -29,7 +23,7 @@ namespace GI_Inc.Forms
             this.Validate();
             this.agentBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.u06P8DAgentDept);
-            MessageBox.Show("Agent information has been updated.");
+            
 
         }
 
@@ -102,5 +96,21 @@ namespace GI_Inc.Forms
             return true;
         }
 
+        private void dgvAgent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            {
+                DialogResult deactivateAgent = MessageBox.Show("Are you sure you want to deactivate this agent? If so, click on the deactivate button option ", "Deactivate Agent", MessageBoxButtons.YesNo);
+
+                if (deactivateAgent == DialogResult.Yes)
+                {
+                    btnDelete.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Please choose an agent to deactivate.", "Message");
+                }
+            }
+        }
     }
 }

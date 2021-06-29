@@ -180,7 +180,7 @@ namespace GI_Inc
             this.btnAgentSchedules.Padding = new System.Windows.Forms.Padding(5);
             this.btnAgentSchedules.Size = new System.Drawing.Size(168, 69);
             this.btnAgentSchedules.TabIndex = 7;
-            this.btnAgentSchedules.Text = "Agent Schedules";
+            this.btnAgentSchedules.Text = "Agent Information";
             this.btnAgentSchedules.UseVisualStyleBackColor = false;
             this.btnAgentSchedules.Click += new System.EventHandler(this.btnAgentSchedules_Click);
             // 
@@ -229,7 +229,7 @@ namespace GI_Inc
             this.btnDeleteCustomer.Padding = new System.Windows.Forms.Padding(15);
             this.btnDeleteCustomer.Size = new System.Drawing.Size(168, 69);
             this.btnDeleteCustomer.TabIndex = 2;
-            this.btnDeleteCustomer.Text = "Delete Client";
+            this.btnDeleteCustomer.Text = "Deactivate Client";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
@@ -243,7 +243,7 @@ namespace GI_Inc
             this.btnCustomerReports.Padding = new System.Windows.Forms.Padding(5);
             this.btnCustomerReports.Size = new System.Drawing.Size(168, 70);
             this.btnCustomerReports.TabIndex = 6;
-            this.btnCustomerReports.Text = "Customner Reports";
+            this.btnCustomerReports.Text = "Customer Reports";
             this.btnCustomerReports.UseVisualStyleBackColor = false;
             this.btnCustomerReports.Click += new System.EventHandler(this.btnCustomerReports_Click);
             // 
@@ -256,7 +256,7 @@ namespace GI_Inc
             this.btnDeleteAppointment.Padding = new System.Windows.Forms.Padding(5);
             this.btnDeleteAppointment.Size = new System.Drawing.Size(168, 69);
             this.btnDeleteAppointment.TabIndex = 5;
-            this.btnDeleteAppointment.Text = "Delete Appointment";
+            this.btnDeleteAppointment.Text = "Deactivate Appointment";
             this.btnDeleteAppointment.UseVisualStyleBackColor = true;
             this.btnDeleteAppointment.Click += new System.EventHandler(this.btnDeleteAppointment_Click);
             // 

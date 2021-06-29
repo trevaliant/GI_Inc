@@ -1,5 +1,4 @@
-﻿using GI_Inc.BusinessMethods;
-using GI_Inc.DAL;
+﻿using GI_Inc.DAL;
 using GI_Inc.Forms;
 using GI_Inc.Forms.ApptReports;
 using GI_Inc.Forms.CustReports;
@@ -27,7 +26,7 @@ namespace GI_Inc
             DataTable dt = new DataTable();
             TimeZoneInfo loginTime1 = TimeZoneInfo.Local;
             dgvApptList.DataSource = bindingSource1;
-            getData("SELECT type AS Type, start AS Start, agentId AS Agent FROM appointment WHERE start BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 DAY) order by start");
+            getData("SELECT appointment.customerId As Customer, type AS Type, appointment.start AS Start, appointment.agentId AS AgentID, agent.agentName AS Agent FROM appointment JOIN agent ON appointment.agentId = agent.agentId WHERE start BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 day) order by appointment.start");
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace GI_Inc
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            CustomerDelete customerDelete = new CustomerDelete();
+            CustomerDeactivate customerDelete = new CustomerDeactivate();
             customerDelete.Show();
             Hide();
         }
@@ -70,7 +69,7 @@ namespace GI_Inc
 
         private void btnDeleteAppointment_Click(object sender, EventArgs e)
         {
-            AppointmentDelete appointmentDelete = new AppointmentDelete();
+            AppointmentDeactivate appointmentDelete = new AppointmentDeactivate();
             appointmentDelete.Show();
             Hide();
         }

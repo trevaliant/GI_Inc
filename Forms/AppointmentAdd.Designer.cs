@@ -29,13 +29,6 @@ namespace GI_Inc.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label lblAgent;
-            System.Windows.Forms.Label startLabel;
-            System.Windows.Forms.Label endLabel;
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label6;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.Label typeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentAdd));
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbLocation = new System.Windows.Forms.ComboBox();
@@ -56,13 +49,13 @@ namespace GI_Inc.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            lblAgent = new System.Windows.Forms.Label();
-            startLabel = new System.Windows.Forms.Label();
-            endLabel = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            typeLabel = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.lblAgent = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.lblEnd = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,100 +63,23 @@ namespace GI_Inc.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAgent
-            // 
-            lblAgent.AutoSize = true;
-            lblAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblAgent.Location = new System.Drawing.Point(212, 106);
-            lblAgent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblAgent.Name = "lblAgent";
-            lblAgent.Size = new System.Drawing.Size(56, 20);
-            lblAgent.TabIndex = 113;
-            lblAgent.Text = "Agent:";
-            // 
-            // startLabel
-            // 
-            startLabel.AutoSize = true;
-            startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            startLabel.Location = new System.Drawing.Point(144, 341);
-            startLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            startLabel.Name = "startLabel";
-            startLabel.Size = new System.Drawing.Size(125, 20);
-            startLabel.TabIndex = 105;
-            startLabel.Text = "Start Date/Time:";
-            // 
-            // endLabel
-            // 
-            endLabel.AutoSize = true;
-            endLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            endLabel.Location = new System.Drawing.Point(150, 395);
-            endLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            endLabel.Name = "endLabel";
-            endLabel.Size = new System.Drawing.Size(119, 20);
-            endLabel.TabIndex = 106;
-            endLabel.Text = "End Date/Time:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(194, 222);
-            label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(74, 20);
-            label7.TabIndex = 102;
-            label7.Text = "Location:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(83, 283);
-            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(185, 20);
-            label6.TabIndex = 101;
-            label6.Text = "Appointment description:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(188, 42);
-            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(82, 20);
-            label5.TabIndex = 95;
-            label5.Text = "Customer:";
-            // 
-            // typeLabel
-            // 
-            typeLabel.AutoSize = true;
-            typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            typeLabel.Location = new System.Drawing.Point(110, 166);
-            typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            typeLabel.Name = "typeLabel";
-            typeLabel.Size = new System.Drawing.Size(160, 20);
-            typeLabel.TabIndex = 90;
-            typeLabel.Text = "Type of Appointment:";
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblEnd);
+            this.panel2.Controls.Add(this.lblStart);
+            this.panel2.Controls.Add(this.lblDescription);
+            this.panel2.Controls.Add(this.lblLocation);
+            this.panel2.Controls.Add(this.lblType);
+            this.panel2.Controls.Add(this.lblAgent);
+            this.panel2.Controls.Add(this.lblCustomer);
             this.panel2.Controls.Add(this.cbLocation);
             this.panel2.Controls.Add(this.cbType);
             this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Controls.Add(this.cbAgent);
-            this.panel2.Controls.Add(lblAgent);
             this.panel2.Controls.Add(this.dtStart);
             this.panel2.Controls.Add(this.dtEnd);
-            this.panel2.Controls.Add(startLabel);
-            this.panel2.Controls.Add(endLabel);
-            this.panel2.Controls.Add(label7);
-            this.panel2.Controls.Add(label6);
-            this.panel2.Controls.Add(label5);
             this.panel2.Controls.Add(this.cbAppointment);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(typeLabel);
             this.panel2.Controls.Add(this.btnBackToDash);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.btnSave);
@@ -391,6 +307,76 @@ namespace GI_Inc.Forms
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.UseCompatibleTextRendering = true;
             // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(163, 41);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(104, 25);
+            this.lblCustomer.TabIndex = 114;
+            this.lblCustomer.Text = "Customer";
+            // 
+            // lblAgent
+            // 
+            this.lblAgent.AutoSize = true;
+            this.lblAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgent.Location = new System.Drawing.Point(190, 107);
+            this.lblAgent.Name = "lblAgent";
+            this.lblAgent.Size = new System.Drawing.Size(68, 25);
+            this.lblAgent.TabIndex = 115;
+            this.lblAgent.Text = "Agent";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(190, 164);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(60, 25);
+            this.lblType.TabIndex = 116;
+            this.lblType.Text = "Type";
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.Location = new System.Drawing.Point(156, 224);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(94, 25);
+            this.lblLocation.TabIndex = 117;
+            this.lblLocation.Text = "Location";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(156, 286);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(120, 25);
+            this.lblDescription.TabIndex = 118;
+            this.lblDescription.Text = "Description";
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStart.Location = new System.Drawing.Point(84, 341);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(183, 25);
+            this.lblStart.TabIndex = 119;
+            this.lblStart.Text = "Appointment Start";
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Location = new System.Drawing.Point(84, 395);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(176, 25);
+            this.lblEnd.TabIndex = 120;
+            this.lblEnd.Text = "Appointment End";
+            // 
             // AppointmentAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,5 +428,12 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ComboBox cbLocation;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblAgent;
     }
 }

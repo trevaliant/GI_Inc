@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -80,9 +81,9 @@ namespace GI_Inc.Forms
             string offsetUTC = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6);
             try
             {
-                
+
                 string query = $"SELECT appointmentId, concat(type, ' -- ',  DATE_FORMAT(CONVERT_TZ(start, '+00:00', '{offsetUTC}'), '%M %D %Y %r')) " +
-                    $"as DISPLAY FROM appointment WHERE appointment.customerId = '{cbCustomer.SelectedValue}' ;";
+                    $"as DISPLAY FROM appointment WHERE appointment.customerId = '{cbCustomer.SelectedValue}' AND appointment.start > now()  ;";
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
                 DataSet dataSet = new DataSet();
@@ -118,7 +119,7 @@ namespace GI_Inc.Forms
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-          bool pass = CheckFields();
+            bool pass = validAppointment();
 
             if (pass == true)
             {
@@ -216,6 +217,37 @@ namespace GI_Inc.Forms
             return 0;
         }
 
+        private bool validAppointment()
+        {
+            if (string.IsNullOrEmpty(txtAgent.Text))
+            {
+                showError(lblAgent.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtLocation.Text))
+            {
+                showError(lblLocation.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtType.Text))
+            {
+                showError(lblType.Text);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtDescription.Text))
+            {
+                showError(lblDescription.Text);
+                return false;
+            }
+
+              return true;
+        }
+        private void showError(string item)
+        {
+            MessageBox.Show("Please enter valid information for " + item);
+
+        }
+
         private void btnBackToDash_Click(object sender, EventArgs e)
         {
             MainForm mf = new MainForm();
@@ -272,29 +304,30 @@ namespace GI_Inc.Forms
             }
         }
 
-
+        //?? why isn't this working??
         private void btnAgentSearch_Click(object sender, EventArgs e)
         {
-            string searchValue = txtSearchAgent.Text;
-            dgvAgent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dgvAgent.Rows)
-                {
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                        row.Selected = true;
+            bool found = false;
 
-                        break;
-                    }
-                }
-            }
-            catch (Exception ex)
+            foreach (DataGridViewRow row in dgvAgent.Rows)
             {
-                MessageBox.Show(ex.Message);
+                if (txtSearchAgent.Text == row.Cells[0].Value.ToString())
+                {
+                    found = true;
+                    row.DefaultCellStyle.BackColor = Color.LightSkyBlue;
+                    continue;
+                    
+                }
+
             }
+            if(!found)
+            {
+                MessageBox.Show("No agent with that Id is active.");
+            }
+           
 
         }
+                   
 
         private void AppointmentModify_Load(object sender, EventArgs e)
         {
@@ -303,44 +336,5 @@ namespace GI_Inc.Forms
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCustId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAgent_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAgent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApptId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

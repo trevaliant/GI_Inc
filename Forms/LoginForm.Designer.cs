@@ -64,7 +64,7 @@ namespace GI_Inc
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(240, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,11 +77,11 @@ namespace GI_Inc
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(51, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(603, 37);
+            this.label1.Size = new System.Drawing.Size(510, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             // 
             // label3
             // 
@@ -217,7 +217,7 @@ namespace GI_Inc
             this.Name = "LoginForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Global Internetworking, Inc";
+            this.Text = "Global Appointments, Inc";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

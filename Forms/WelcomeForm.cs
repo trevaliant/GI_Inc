@@ -25,5 +25,7 @@ namespace GI_Inc.Forms
             loginForm.Show();
             Hide();
         }
+
+  
     }
 }

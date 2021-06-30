@@ -73,13 +73,14 @@ namespace GI_Inc.Forms
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.GhostWhite;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(90, 3);
+            this.label3.Location = new System.Drawing.Point(153, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(605, 43);
+            this.label3.Size = new System.Drawing.Size(510, 43);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Welcome To Global Internetworking, Inc.";
+            this.label3.Text = "Global Appointments, Inc Tracker.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.UseCompatibleTextRendering = true;
+
             // 
             // label2
             // 

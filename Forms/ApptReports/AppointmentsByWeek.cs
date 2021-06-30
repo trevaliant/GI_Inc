@@ -9,11 +9,9 @@ namespace GI_Inc.Forms.ApptReports
     public partial class AppointmentsByWeek : Form
     {
         MySqlConnection conn = new MySqlConnection("server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo = True; password =53688828432; database = U06P8D");
-        agent currentUser;
-        string startWeek;
-        string endWeek;
+
         public static int index = 0;
-        DataTable dt = new DataTable();
+
         public AppointmentsByWeek()
         {
             InitializeComponent();

@@ -30,7 +30,7 @@ namespace GI_Inc.Forms.CustReports
 
         private void CustomerByState_Load(object sender, EventArgs e)
         {
-            var query = "SELECT customerId, customerName, city, state FROM customer";
+            var query = "SELECT customerId AS CustomerID , customerName AS Name, city AS City, state AS State FROM customer ORDER BY state";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             MySqlDataAdapter sda = new MySqlDataAdapter();

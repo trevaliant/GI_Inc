@@ -8,9 +8,7 @@ namespace GI_Inc.Forms.ApptReports
 {
     public partial class AppointmentSales : Form
     {
-        agent currentUser;
-        string startWeek;
-        string endWeek;
+
         public static int index = 0;
         DataTable dt = new DataTable();
         public AppointmentSales()

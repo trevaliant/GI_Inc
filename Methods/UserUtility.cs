@@ -10,9 +10,7 @@ namespace GI_Inc.BusinessMethods
     {
 
         private const string connectionString = "server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D";
-        string username;
-        private static int agentID;
-        private static string userName;
+
         U06P8DEntities u06P8DEntities1 = new U06P8DEntities();
         public UserUtility()
         {

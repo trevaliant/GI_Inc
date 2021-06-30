@@ -1,5 +1,4 @@
-﻿using GI_Inc.BusinessMethods;
-using GI_Inc.DAL;
+﻿using GI_Inc.DAL;
 using System;
 using System.Windows.Forms;
 
@@ -7,7 +6,7 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerAdd : Form
     {
-        agent currentUser;
+        
         public CustomerAdd(agent user)
         {
             InitializeComponent();
@@ -138,6 +137,7 @@ namespace GI_Inc.Forms
 
         }
 
+        private readonly agent currentUser;
         private void btnReset_Click(object sender, EventArgs e)
         {
             CustomerAdd customerAdd = new CustomerAdd(currentUser);

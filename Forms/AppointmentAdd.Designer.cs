@@ -31,6 +31,13 @@ namespace GI_Inc.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentAdd));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblAgent = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
             this.cbLocation = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -49,13 +56,6 @@ namespace GI_Inc.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCustomer = new System.Windows.Forms.Label();
-            this.lblAgent = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblStart = new System.Windows.Forms.Label();
-            this.lblEnd = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +88,76 @@ namespace GI_Inc.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(886, 477);
             this.panel2.TabIndex = 37;
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Location = new System.Drawing.Point(84, 395);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(176, 25);
+            this.lblEnd.TabIndex = 120;
+            this.lblEnd.Text = "Appointment End";
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStart.Location = new System.Drawing.Point(84, 341);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(183, 25);
+            this.lblStart.TabIndex = 119;
+            this.lblStart.Text = "Appointment Start";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(156, 286);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(120, 25);
+            this.lblDescription.TabIndex = 118;
+            this.lblDescription.Text = "Description";
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.Location = new System.Drawing.Point(156, 224);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(94, 25);
+            this.lblLocation.TabIndex = 117;
+            this.lblLocation.Text = "Location";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(190, 164);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(60, 25);
+            this.lblType.TabIndex = 116;
+            this.lblType.Text = "Type";
+            // 
+            // lblAgent
+            // 
+            this.lblAgent.AutoSize = true;
+            this.lblAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgent.Location = new System.Drawing.Point(190, 107);
+            this.lblAgent.Name = "lblAgent";
+            this.lblAgent.Size = new System.Drawing.Size(68, 25);
+            this.lblAgent.TabIndex = 115;
+            this.lblAgent.Text = "Agent";
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(163, 41);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(104, 25);
+            this.lblCustomer.TabIndex = 114;
+            this.lblCustomer.Text = "Customer";
             // 
             // cbLocation
             // 
@@ -258,9 +328,9 @@ namespace GI_Inc.Forms
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(189, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 43);
+            this.label2.Size = new System.Drawing.Size(510, 43);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -285,9 +355,9 @@ namespace GI_Inc.Forms
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(232, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
+            this.label1.Size = new System.Drawing.Size(510, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -299,83 +369,13 @@ namespace GI_Inc.Forms
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(331, 214);
+            this.label3.Location = new System.Drawing.Point(331, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(272, 43);
             this.label3.TabIndex = 2;
             this.label3.Text = "Appointment Add";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.UseCompatibleTextRendering = true;
-            // 
-            // lblCustomer
-            // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(163, 41);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(104, 25);
-            this.lblCustomer.TabIndex = 114;
-            this.lblCustomer.Text = "Customer";
-            // 
-            // lblAgent
-            // 
-            this.lblAgent.AutoSize = true;
-            this.lblAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgent.Location = new System.Drawing.Point(190, 107);
-            this.lblAgent.Name = "lblAgent";
-            this.lblAgent.Size = new System.Drawing.Size(68, 25);
-            this.lblAgent.TabIndex = 115;
-            this.lblAgent.Text = "Agent";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(190, 164);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(60, 25);
-            this.lblType.TabIndex = 116;
-            this.lblType.Text = "Type";
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.Location = new System.Drawing.Point(156, 224);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(94, 25);
-            this.lblLocation.TabIndex = 117;
-            this.lblLocation.Text = "Location";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(156, 286);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(120, 25);
-            this.lblDescription.TabIndex = 118;
-            this.lblDescription.Text = "Description";
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStart.Location = new System.Drawing.Point(84, 341);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(183, 25);
-            this.lblStart.TabIndex = 119;
-            this.lblStart.Text = "Appointment Start";
-            // 
-            // lblEnd
-            // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnd.Location = new System.Drawing.Point(84, 395);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(176, 25);
-            this.lblEnd.TabIndex = 120;
-            this.lblEnd.Text = "Appointment End";
             // 
             // AppointmentAdd
             // 

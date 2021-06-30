@@ -11,8 +11,7 @@ namespace GI_Inc
 {
     public partial class MainForm : Form
     {
-        agent currentUser;
-        int customerId;
+        
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         private BindingSource bindingSource1 = new BindingSource();
         public MainForm()
@@ -28,6 +27,8 @@ namespace GI_Inc
             dgvApptList.DataSource = bindingSource1;
             getData("SELECT appointment.customerId As Customer, type AS Type, appointment.start AS Start, appointment.agentId AS AgentID, agent.agentName AS Agent FROM appointment JOIN agent ON appointment.agentId = agent.agentId WHERE start BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 day) order by appointment.start");
         }
+        readonly agent currentUser;
+        private readonly int customerId;
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {

@@ -1,11 +1,14 @@
 ﻿using GI_Inc.BusinessMethods;
+using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GI_Inc.Forms
 {
     public partial class AppointmentDeactivate : Form
     {
+        public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
 
         public AppointmentDeactivate()
         {
@@ -15,9 +18,37 @@ namespace GI_Inc.Forms
 
         private void AppointmentDelete_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'u06P8DDataSet2.appointment' table. You can move, or remove it, as needed.
-            this.appointmentTableAdapter.Fill(this.u06P8DDataSet2.appointment);
+            
+            dgvAppointments.DataSource = populateFutureAppointments();
             dgvAppointments.DefaultCellStyle.NullValue = false;
+
+        }
+
+        public DataTable populateFutureAppointments()
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+
+            string offsetUTC = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).ToString().Substring(0, 6);
+
+
+                string query = "SELECT appointmentId AS AppointmentID, customerId AS CustomerID, description AS Description,  location AS Location, " +
+                "type AS Type, start AS Start, end AS End, agentId AS AgentID FROM appointment WHERE start > now() ORDER by start";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                DataTable datatable = new DataTable();
+                datatable.Load(cmd.ExecuteReader());
+
+                foreach (DataRow row in datatable.Rows)
+
+                {
+                    DateTime utcStart = Convert.ToDateTime(row["start"]);
+                    DateTime utcEnd = Convert.ToDateTime(row["end"]);
+
+                    row["Start"] = TimeZone.CurrentTimeZone.ToLocalTime(utcStart);
+                    row["End"] = TimeZone.CurrentTimeZone.ToLocalTime(utcEnd);
+                }
+                conn.Close();
+            return datatable;
 
         }
 

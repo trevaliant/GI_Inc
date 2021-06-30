@@ -34,29 +34,29 @@ namespace GI_Inc.Forms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.txtPostalCode = new System.Windows.Forms.TextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
-            this.lblPostalCode = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.cbCustomerName = new System.Windows.Forms.ComboBox();
-            this.btnBackToDash = new System.Windows.Forms.Button();
             this.grbxCustomerModify = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblPostalCode = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtPostalCode = new System.Windows.Forms.TextBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnBackToDash = new System.Windows.Forms.Button();
+            this.cbCustomerName = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,7 +79,7 @@ namespace GI_Inc.Forms
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(401, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(372, 49);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(122, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,11 +94,11 @@ namespace GI_Inc.Forms
             this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(152, 9);
+            this.label2.Location = new System.Drawing.Point(195, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 43);
+            this.label2.Size = new System.Drawing.Size(510, 43);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -111,205 +111,6 @@ namespace GI_Inc.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(918, 677);
             this.panel1.TabIndex = 8;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(311, 541);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(292, 26);
-            this.txtEmail.TabIndex = 49;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(311, 488);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(292, 26);
-            this.txtPhone.TabIndex = 48;
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCountry.Location = new System.Drawing.Point(311, 428);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(292, 26);
-            this.txtCountry.TabIndex = 47;
-            // 
-            // txtPostalCode
-            // 
-            this.txtPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPostalCode.Location = new System.Drawing.Point(311, 380);
-            this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(292, 26);
-            this.txtPostalCode.TabIndex = 46;
-            // 
-            // txtState
-            // 
-            this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtState.Location = new System.Drawing.Point(311, 322);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(292, 26);
-            this.txtState.TabIndex = 45;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Location = new System.Drawing.Point(311, 264);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(292, 26);
-            this.txtCity.TabIndex = 44;
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress2.Location = new System.Drawing.Point(311, 201);
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(292, 26);
-            this.txtAddress2.TabIndex = 43;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(311, 138);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(292, 26);
-            this.txtAddress.TabIndex = 42;
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(191, 138);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(68, 20);
-            this.lblAddress.TabIndex = 40;
-            this.lblAddress.Text = "Address";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(148, 547);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(111, 20);
-            this.lblEmail.TabIndex = 39;
-            this.lblEmail.Text = "Email Address";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(204, 488);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(55, 20);
-            this.lblPhone.TabIndex = 38;
-            this.lblPhone.Text = "Phone";
-            // 
-            // lblCountry
-            // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(195, 428);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(64, 20);
-            this.lblCountry.TabIndex = 37;
-            this.lblCountry.Text = "Country";
-            // 
-            // lblPostalCode
-            // 
-            this.lblPostalCode.AutoSize = true;
-            this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(164, 380);
-            this.lblPostalCode.Name = "lblPostalCode";
-            this.lblPostalCode.Size = new System.Drawing.Size(95, 20);
-            this.lblPostalCode.TabIndex = 36;
-            this.lblPostalCode.Text = "Postal Code";
-            // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(211, 322);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(48, 20);
-            this.lblState.TabIndex = 35;
-            this.lblState.Text = "State";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(224, 264);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(35, 20);
-            this.lblCity.TabIndex = 34;
-            this.lblCity.Text = "City";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(178, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Address 2";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(135, 82);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(124, 20);
-            this.lblName.TabIndex = 32;
-            this.lblName.Text = "Customer Name";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(791, 593);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(103, 58);
-            this.btnUpdate.TabIndex = 51;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(791, 509);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(103, 58);
-            this.btnReset.TabIndex = 50;
-            this.btnReset.Text = "Reset Form";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // cbCustomerName
-            // 
-            this.cbCustomerName.FormattingEnabled = true;
-            this.cbCustomerName.Location = new System.Drawing.Point(311, 82);
-            this.cbCustomerName.Name = "cbCustomerName";
-            this.cbCustomerName.Size = new System.Drawing.Size(292, 28);
-            this.cbCustomerName.TabIndex = 0;
-            this.cbCustomerName.SelectedIndexChanged += new System.EventHandler(this.cbCustomerName_SelectedIndexChanged);
-            // 
-            // btnBackToDash
-            // 
-            this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToDash.Location = new System.Drawing.Point(791, 428);
-            this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBackToDash.Name = "btnBackToDash";
-            this.btnBackToDash.Size = new System.Drawing.Size(103, 58);
-            this.btnBackToDash.TabIndex = 52;
-            this.btnBackToDash.Text = "Back to Dashboard";
-            this.btnBackToDash.UseVisualStyleBackColor = true;
-            this.btnBackToDash.Click += new System.EventHandler(this.btnBackToDash_Click);
             // 
             // grbxCustomerModify
             // 
@@ -355,9 +156,208 @@ namespace GI_Inc.Forms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(259, 43);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Csutomer Modify";
+            this.label1.Text = "Customer Modify";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(135, 82);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(124, 20);
+            this.lblName.TabIndex = 32;
+            this.lblName.Text = "Customer Name";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(191, 138);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(68, 20);
+            this.lblAddress.TabIndex = 40;
+            this.lblAddress.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(311, 138);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(292, 26);
+            this.txtAddress.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(178, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Address 2";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(224, 264);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(35, 20);
+            this.lblCity.TabIndex = 34;
+            this.lblCity.Text = "City";
+            // 
+            // lblState
+            // 
+            this.lblState.AutoSize = true;
+            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(211, 322);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(48, 20);
+            this.lblState.TabIndex = 35;
+            this.lblState.Text = "State";
+            // 
+            // lblPostalCode
+            // 
+            this.lblPostalCode.AutoSize = true;
+            this.lblPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostalCode.Location = new System.Drawing.Point(164, 380);
+            this.lblPostalCode.Name = "lblPostalCode";
+            this.lblPostalCode.Size = new System.Drawing.Size(95, 20);
+            this.lblPostalCode.TabIndex = 36;
+            this.lblPostalCode.Text = "Postal Code";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Location = new System.Drawing.Point(195, 428);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(64, 20);
+            this.lblCountry.TabIndex = 37;
+            this.lblCountry.Text = "Country";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(204, 488);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(55, 20);
+            this.lblPhone.TabIndex = 38;
+            this.lblPhone.Text = "Phone";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(148, 547);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(111, 20);
+            this.lblEmail.TabIndex = 39;
+            this.lblEmail.Text = "Email Address";
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress2.Location = new System.Drawing.Point(311, 201);
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(292, 26);
+            this.txtAddress2.TabIndex = 43;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Location = new System.Drawing.Point(311, 264);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(292, 26);
+            this.txtCity.TabIndex = 44;
+            // 
+            // txtState
+            // 
+            this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtState.Location = new System.Drawing.Point(311, 322);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(292, 26);
+            this.txtState.TabIndex = 45;
+            // 
+            // txtPostalCode
+            // 
+            this.txtPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPostalCode.Location = new System.Drawing.Point(311, 380);
+            this.txtPostalCode.Name = "txtPostalCode";
+            this.txtPostalCode.Size = new System.Drawing.Size(292, 26);
+            this.txtPostalCode.TabIndex = 46;
+            // 
+            // txtCountry
+            // 
+            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountry.Location = new System.Drawing.Point(311, 428);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(292, 26);
+            this.txtCountry.TabIndex = 47;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(311, 488);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(292, 26);
+            this.txtPhone.TabIndex = 48;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(311, 541);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(292, 26);
+            this.txtEmail.TabIndex = 49;
+            // 
+            // btnBackToDash
+            // 
+            this.btnBackToDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToDash.Location = new System.Drawing.Point(791, 428);
+            this.btnBackToDash.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBackToDash.Name = "btnBackToDash";
+            this.btnBackToDash.Size = new System.Drawing.Size(103, 58);
+            this.btnBackToDash.TabIndex = 52;
+            this.btnBackToDash.Text = "Back to Dashboard";
+            this.btnBackToDash.UseVisualStyleBackColor = true;
+            this.btnBackToDash.Click += new System.EventHandler(this.btnBackToDash_Click);
+            // 
+            // cbCustomerName
+            // 
+            this.cbCustomerName.FormattingEnabled = true;
+            this.cbCustomerName.Location = new System.Drawing.Point(311, 82);
+            this.cbCustomerName.Name = "cbCustomerName";
+            this.cbCustomerName.Size = new System.Drawing.Size(292, 28);
+            this.cbCustomerName.TabIndex = 0;
+            this.cbCustomerName.SelectedIndexChanged += new System.EventHandler(this.cbCustomerName_SelectedIndexChanged);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(791, 509);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(103, 58);
+            this.btnReset.TabIndex = 50;
+            this.btnReset.Text = "Reset Form";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(791, 593);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(103, 58);
+            this.btnUpdate.TabIndex = 51;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // CustomerModify
             // 

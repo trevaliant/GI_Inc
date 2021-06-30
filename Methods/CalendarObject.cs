@@ -10,16 +10,14 @@ namespace GI_Inc.BusinessMethods
 {
     public class CalendarObject
     {
-        private static string userName;
-        private static int agentID;
-        private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
-        U06P8DEntities dEntities = new U06P8DEntities();
+        
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
 
         public CalendarObject()
         {
 
         }
+        private static int agentID;
         public static int getUserID()
         {
             return agentID;
@@ -32,10 +30,12 @@ namespace GI_Inc.BusinessMethods
         {
             agentID = assignedAgent;
         }
+        private static readonly string userName;
         public static string getUserName()
         {
             return userName;
         }
+        private static Dictionary<int, Hashtable> _agents = new Dictionary<int, Hashtable>();
         public static Dictionary<int, Hashtable> getAgentList()
         {
             return _agents;
@@ -47,6 +47,9 @@ namespace GI_Inc.BusinessMethods
         }
 
         private static Dictionary<int, Hashtable> currentAppointments = new Dictionary<int, Hashtable>();
+
+        public static string UserName => userName;
+
         public static Dictionary<int, Hashtable> getAppts()
         {
             return currentAppointments;

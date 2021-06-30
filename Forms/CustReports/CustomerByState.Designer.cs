@@ -73,11 +73,11 @@ namespace GI_Inc.Forms.CustReports
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(166, 9);
+            this.label1.Location = new System.Drawing.Point(187, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
+            this.label1.Size = new System.Drawing.Size(510, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -150,7 +150,7 @@ namespace GI_Inc.Forms.CustReports
             this.Name = "CustomerByState";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerByState";
+            this.Text = "Customer By State";
             this.Load += new System.EventHandler(this.CustomerByState_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

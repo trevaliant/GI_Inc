@@ -240,7 +240,7 @@ namespace GI_Inc.Forms
                 return false;
             }
 
-              return true;
+            return true;
         }
         private void showError(string item)
         {
@@ -316,18 +316,18 @@ namespace GI_Inc.Forms
                     found = true;
                     row.DefaultCellStyle.BackColor = Color.LightSkyBlue;
                     continue;
-                    
+
                 }
 
             }
-            if(!found)
+            if (!found)
             {
                 MessageBox.Show("No agent with that Id is active.");
             }
-           
+
 
         }
-                   
+
 
         private void AppointmentModify_Load(object sender, EventArgs e)
         {

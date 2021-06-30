@@ -23,7 +23,7 @@ namespace GI_Inc.Forms
             this.Validate();
             this.agentBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.u06P8DAgentDept);
-            
+
 
         }
 

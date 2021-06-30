@@ -6,9 +6,7 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerDeactivate : Form
     {
-        agent currentUser;
-        int custId;
-
+ 
         CustomerObject customerObject = new CustomerObject();
         public CustomerDeactivate()
         {
@@ -26,7 +24,7 @@ namespace GI_Inc.Forms
 
         private void CustomerDelete_Load(object sender, EventArgs e)
         {
-      
+
             dgvCustomerList.DataSource = customerObject.getActiveCustomerList();
 
             dgvCustomerList.DefaultCellStyle.NullValue = false;

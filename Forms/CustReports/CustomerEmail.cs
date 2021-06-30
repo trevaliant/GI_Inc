@@ -30,7 +30,7 @@ namespace GI_Inc.Forms.CustReports
 
         private void CustomerEmail_Load(object sender, EventArgs e)
         {
-            var query = "SELECT customerId, customerName, email FROM customer";
+            var query = "SELECT customerId AS CustomerID, customerName AS Name, email AS Email FROM customer";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             MySqlDataAdapter sda = new MySqlDataAdapter();

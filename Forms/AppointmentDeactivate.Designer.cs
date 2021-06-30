@@ -77,7 +77,7 @@ namespace GI_Inc.Forms
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(417, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(397, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(110, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,9 +94,9 @@ namespace GI_Inc.Forms
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(172, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
+            this.label1.Size = new System.Drawing.Size(510, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -159,7 +159,7 @@ namespace GI_Inc.Forms
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -280,7 +280,7 @@ namespace GI_Inc.Forms
             this.Name = "AppointmentDeactivate";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Deactivate Appointment";
+            this.Text = "Appointment Deactivate ";
             this.Load += new System.EventHandler(this.AppointmentDelete_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -300,15 +300,6 @@ namespace GI_Inc.Forms
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBackToDash;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn appointmentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn agentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvAppointments;
         private U06P8DDataSet2 u06P8DDataSet2;
         private System.Windows.Forms.BindingSource appointmentBindingSource;

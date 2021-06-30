@@ -80,9 +80,9 @@ namespace GI_Inc.Forms.ApptReports
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(166, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
+            this.label1.Size = new System.Drawing.Size(510, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -208,7 +208,7 @@ namespace GI_Inc.Forms.ApptReports
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "AppointmentsByWeek";
-            this.Text = "AppointmentsByWeek";
+            this.Text = "Appointments By Week";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -31,7 +31,7 @@ namespace GI_Inc.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentByDept));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,12 +43,12 @@ namespace GI_Inc.Forms
             this.btnBackToDashboard = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvAgent = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.agentTableAdapter = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.agentTableAdapter();
-            this.tableAdapterManager = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.agentTableAdapter = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.agentTableAdapter();
+            this.tableAdapterManager = new GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,7 +75,7 @@ namespace GI_Inc.Forms
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(430, 55);
+            this.pictureBox2.Location = new System.Drawing.Point(402, 55);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(107, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,11 +90,11 @@ namespace GI_Inc.Forms
             this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(214, 9);
+            this.label2.Location = new System.Drawing.Point(165, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 43);
+            this.label2.Size = new System.Drawing.Size(582, 43);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -173,20 +173,39 @@ namespace GI_Inc.Forms
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgvAgent.DataSource = this.agentBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAgent.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAgent.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAgent.Location = new System.Drawing.Point(137, 225);
             this.dgvAgent.Name = "dgvAgent";
             this.dgvAgent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgent.Size = new System.Drawing.Size(682, 409);
             this.dgvAgent.TabIndex = 7;
             this.dgvAgent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgent_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "agentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Agent ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "agentName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Agent Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Agent Department";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // label1
             // 
@@ -213,25 +232,6 @@ namespace GI_Inc.Forms
             this.tableAdapterManager.agentTableAdapter = this.agentTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = GI_Inc.DAL.U06P8DAgentDeptTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "agentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Agent ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "agentName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Agent Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "agentDepartment";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Agent Department";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // label3
             // 

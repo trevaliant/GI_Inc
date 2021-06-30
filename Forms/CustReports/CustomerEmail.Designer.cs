@@ -58,7 +58,7 @@ namespace GI_Inc.Forms.CustReports
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(421, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(410, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,11 +73,11 @@ namespace GI_Inc.Forms.CustReports
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(166, 9);
+            this.label1.Location = new System.Drawing.Point(198, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(605, 43);
+            this.label1.Size = new System.Drawing.Size(510, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -150,7 +150,7 @@ namespace GI_Inc.Forms.CustReports
             this.Name = "CustomerEmail";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerEmail";
+            this.Text = "Customer Email";
             this.Load += new System.EventHandler(this.CustomerEmail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

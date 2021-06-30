@@ -34,6 +34,7 @@ namespace GI_Inc.Forms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace GI_Inc.Forms
             this.btnBackToDash = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -93,11 +93,11 @@ namespace GI_Inc.Forms
             this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(166, 3);
+            this.label2.Location = new System.Drawing.Point(205, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 43);
+            this.label2.Size = new System.Drawing.Size(510, 43);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -132,6 +132,22 @@ namespace GI_Inc.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(918, 677);
             this.panel1.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Location = new System.Drawing.Point(388, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 25);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "All fields are required";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.UseCompatibleTextRendering = true;
             // 
             // label1
             // 
@@ -346,22 +362,6 @@ namespace GI_Inc.Forms
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(388, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 25);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "All fields are required";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.UseCompatibleTextRendering = true;
             // 
             // CustomerAdd
             // 

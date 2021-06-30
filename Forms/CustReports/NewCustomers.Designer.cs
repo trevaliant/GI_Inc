@@ -82,7 +82,7 @@ namespace GI_Inc.Forms.CustReports
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(605, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome To Global Internetworking, Inc.";
+            this.label1.Text = "Global Appointments, Inc Tracker.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 

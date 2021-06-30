@@ -193,7 +193,7 @@ namespace GI_Inc.Forms
                     {
                         case 0:
                             CalendarObject.createAppointment(custID, cbLocation.SelectedItem.ToString(), cbType.SelectedItem.ToString(), txtDescription.Text, agentID, start, end); ;
-                            MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Question", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            MessageBox.Show("Appointment has been created, press ok to go back to Dashboard.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             MainForm mf = new MainForm();
                             mf.Show();
                             Close();

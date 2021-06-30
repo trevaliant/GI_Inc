@@ -33,8 +33,8 @@ namespace GI_Inc.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDeactivate));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@ namespace GI_Inc.Forms
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(403, 49);
+            this.pictureBox2.Location = new System.Drawing.Point(398, 49);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,9 +100,9 @@ namespace GI_Inc.Forms
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.Location = new System.Drawing.Point(176, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(605, 43);
+            this.label3.Size = new System.Drawing.Size(582, 43);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Welcome To Global Internetworking, Inc.";
+            this.label3.Text = "Global Appointments, Inc Tracker.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label3.UseCompatibleTextRendering = true;
             // 
@@ -175,13 +175,13 @@ namespace GI_Inc.Forms
             this.dgvCustomerList.MultiSelect = false;
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.NullValue = null;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvCustomerList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCustomerList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
             this.dgvCustomerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerList.Size = new System.Drawing.Size(861, 361);
@@ -262,9 +262,9 @@ namespace GI_Inc.Forms
             // active
             // 
             this.active.DataPropertyName = "active";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "True";
-            this.active.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "True";
+            this.active.DefaultCellStyle = dataGridViewCellStyle1;
             this.active.FalseValue = "0";
             this.active.HeaderText = "Active";
             this.active.Name = "active";

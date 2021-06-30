@@ -18,7 +18,7 @@ namespace GI_Inc.Forms.CustReports
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            var query = "SELECT customerId, customerName, createDate, createdBy FROM `customer` WHERE `createDate` BETWEEN @start and @end";
+            var query = "SELECT customerId AS CustomerID, customerName AS Name, createDate AS Date_Created, createdBy AS Agent FROM `customer` WHERE `createDate` BETWEEN @start and @end order by createdDate";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@start", dateTimePicker1.Value);
             cmd.Parameters.AddWithValue("@end", dateTimePicker2.Value);

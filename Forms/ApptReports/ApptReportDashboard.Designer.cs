@@ -70,11 +70,11 @@ namespace GI_Inc.Forms.ApptReports
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label2.Location = new System.Drawing.Point(105, 5);
+            this.label2.Location = new System.Drawing.Point(126, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(603, 37);
+            this.label2.Size = new System.Drawing.Size(510, 37);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             // 
             // button1
             // 
@@ -136,7 +136,7 @@ namespace GI_Inc.Forms.ApptReports
             this.Name = "ApptReportDashboard";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ApptReportDashboard";
+            this.Text = "Appointment Report Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -9,7 +9,7 @@ namespace GI_Inc.Forms
     {
         string connectionString = "server=wgudb.ucertify.com;user id=U06P8D;persistsecurityinfo=True;password=53688828432;database=U06P8D";
         private static int agentId;
-        private static string userName;
+
 
         public Register()
         {
@@ -125,7 +125,7 @@ namespace GI_Inc.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("You have chosen a username that is already in use, please try again.");
+                MessageBox.Show(ex.Message, "You have chosen a username that is already in use, please try again." );
             }
         }
 

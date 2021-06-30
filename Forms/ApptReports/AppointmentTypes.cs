@@ -16,7 +16,7 @@ namespace GI_Inc.Forms.AppointmentReports
     }
     public partial class AppointmentTypes : Form
     {
-        agent currentUser;
+
         public AppointmentTypes()
         {
             InitializeComponent();

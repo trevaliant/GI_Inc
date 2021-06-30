@@ -1,5 +1,4 @@
-﻿using GI_Inc.BusinessMethods;
-using GI_Inc.DAL;
+﻿using GI_Inc.DAL;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,13 +10,30 @@ namespace GI_Inc.Forms
 {
     public partial class CustomerModify : Form
     {
-        agent currentUser;
-        int custId;
+        
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         public CustomerModify(agent users, int modCustId)
         {
             InitializeComponent();
             populateCustomerList();
+            cbDefaultSettings();
+        }
+
+        public void cbDefaultSettings()
+        {
+
+            cbCustomerName.SelectedItem = null;
+            cbCustomerName.Text = "--Choose--";
+
+            txtAddress.Visible = false;
+            txtAddress2.Visible = false;
+            txtCity.Visible = false;
+            txtCountry.Visible = false;
+            txtEmail.Visible = false;
+            txtPhone.Visible = false;
+            txtPostalCode.Visible = false;
+            txtState.Visible = false;
+            btnUpdate.Visible = false;
         }
         public static List<KeyValuePair<string, object>> CustomerList;
         public void setCustomerList(List<KeyValuePair<string, object>> list)
@@ -169,6 +185,8 @@ namespace GI_Inc.Forms
 
         }
 
+        readonly agent currentUser;
+        private readonly int custId;
         private void btnReset_Click(object sender, EventArgs e)
         {
             CustomerModify customerModify = new CustomerModify(currentUser, custId);
@@ -185,14 +203,14 @@ namespace GI_Inc.Forms
 
             if (cbCustomerName.SelectedIndex != -1)
             {
-                txtAddress.Enabled = true;
-                txtAddress2.Enabled = true;
-                txtCity.Enabled = true;
-                txtState.Enabled = true;
-                txtCountry.Enabled = true;
-                txtPostalCode.Enabled = true;
-                txtPhone.Enabled = true;
-                txtEmail.Enabled = true;
+                txtAddress.Visible = true;
+                txtAddress2.Visible = true;
+                txtCity.Visible = true;
+                txtState.Visible = true;
+                txtCountry.Visible = true;
+                txtPostalCode.Visible = true;
+                txtPhone.Visible = true;
+                txtEmail.Visible = true;
                 populateFields(CustomerList);
             }
         }

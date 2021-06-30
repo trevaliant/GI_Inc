@@ -84,9 +84,9 @@ namespace GI_Inc.Forms.AppointmentReports
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
             this.label2.Location = new System.Drawing.Point(155, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(603, 37);
+            this.label2.Size = new System.Drawing.Size(510, 37);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome To Global Internetworking, Inc.";
+            this.label2.Text = "Global Appointments, Inc Tracker.";
             // 
             // u06P8DDataSet2
             // 
@@ -201,7 +201,7 @@ namespace GI_Inc.Forms.AppointmentReports
             this.Name = "AppointmentTypes";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AppointmentTypes";
+            this.Text = "Appointment Types";
             this.Load += new System.EventHandler(this.AppointmentTypes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

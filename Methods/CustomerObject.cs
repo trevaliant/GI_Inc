@@ -11,13 +11,11 @@ namespace GI_Inc
     public class CustomerObject
     {
 
-        agent currentUser;
-
-        string username;
+        private readonly string _username;
         public static string connectionString = "server = wgudb.ucertify.com; user id = U06P8D; persistsecurityinfo=True;password=53688828432;database=U06P8D";
         public CustomerObject(string username)
         {
-            this.username = username;
+            _username = username;
         }
         public CustomerObject()
         {
@@ -165,7 +163,7 @@ namespace GI_Inc
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        private static int customerId;
+        private readonly static int customerId;
         public static int getCustomerId()
         {
             return customerId;
